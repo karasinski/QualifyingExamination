@@ -1,0 +1,105 @@
+\documentclass[float=false, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{geometry}
+\usepackage{tabularx}
+% document specific information: 
+\newcommand{\proposalTitle}{The Effects of Concurrent Bandwidth\\~\\Feedback on Motor Control Tasks}
+\newcommand{\authorName}{J. A. Karasinski}
+\newcommand{\authorFullName}{John Austin Karasinski}
+\newcommand{\schoolName}{University of California, Davis}
+\newcommand{\department}{Mechanical and Aerospace Engineering}
+\newcommand{\authorEmail}{\href{mailto:karasinskiucdavis.edu}{\texttt{karasinski@ucdavis.edu}}}
+
+% committee information
+\newcommand{\advisor}{Stephen K. Robinson}
+\newcommand{\members}[1]{
+	\def \memberNumber{#1}
+	\ifnum\memberNumber=0
+		Ron Hess
+	\else
+		\ifnum\memberNumber=1
+			Sanjay Joshi
+		\else
+			\ifnum\memberNumber=2
+				Zhaodan Kong
+			\else
+				\ifnum\memberNumber=3
+					Stavros Vougioukas
+				\else
+					Dorrit Billman%
+				\fi
+			\fi
+		\fi
+	\fi
+}
+\newcommand{\affiliation}[1]{
+	\def \memberNumber{#1}
+	\ifnum\memberNumber=1
+		Mechanical and Aerospace Engineering
+	\else
+		\ifnum\memberNumber=2
+			NASA Ames
+		\else
+			\ifnum\memberNumber=3
+				Insert new affiliation
+			\else
+				who knows...
+			\fi
+		\fi
+	\fi
+}
+
+% Using tabularx for table, sizing for columns
+% --makes 3 new colum sizes
+% --adds s+b and then whatever is left to b, I think...
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\newcolumntype{m}{>{\hsize=.5\hsize}X}
+\newcolumntype{b}{>{\hsize=1\hsize}X}
+
+% Here we are using someone's title page from the Title page pdf (look in bookmarks)
+
+\newlength{\drop}% for my convenience
+\newcommand*{\titleDS}{\begingroup% DS Thesis
+	\drop=0.1\textheight
+	%\vspace*{\drop}
+	\centering
+	% Title in Large bold font. used \proposalTitle in document specific information
+	{\Large\bfseries\proposalTitle}\par
+	\vspace{2.5\baselineskip}
+	{SUBMITTED BY:}\\[0.6\baselineskip]
+	% here is the author name. used \authorFullName in document specific information
+	{\authorFullName\\[0.6\baselineskip]
+	Ph.D. Dissertation Proposal\\[0.5\baselineskip]
+	% here is the school name and department
+	\schoolName\\[0.5\baselineskip]
+	\department}\par
+	\vspace{4.5\baselineskip}
+	%here begins the table with committee members
+	\begin{tabularx}{\textwidth}{s m}
+		Examining Committee:\\ \\
+		COMMITTEE CHAIR: 	& Professor\members{0} \\
+							& \affiliation{1} \\ \\
+		COMMITTEE MEMBERS 	& Professor\members{1} \\
+							& \affiliation{1} \\ \\
+		 					& Professor\members{2} \\
+							& \affiliation{1} \\ \\
+		 					& Professor\members{3} \\
+							& \affiliation{1} \\ \\
+		 					& \members{4}, Ph.D. \\
+							& \affiliation{2} 
+	\end{tabularx}
+~\\[0.5\baselineskip]
+\par
+\centering
+% here begins theis advisor signature, used \advisor in document specific information
+\vspace{6\baselineskip}
+\rule{20em}{0.4pt}\\
+Dr. \advisor, Advisor \\[1\baselineskip]
+\vfill
+\endgroup}
+% if I want to change the page geometry, uncomment below
+%\geometry{letterpaper, top=1.5in, bottom=1.5in, left=1.0in, right=1.0in }
+\begin{document}
+\pagestyle{empty}
+\titleDS
+\end{document}

@@ -1,0 +1,48 @@
+%!TEX root = ../main.tex
+\documentclass[float=false, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\begin{document}
+\section{Problem Statement}
+\subsection{Motivation}
+We aim to improve performance and decrease learning times for novice operators of highly complex motor control tasks in extremely dangerous environments.
+We are specifically interested improving and modeling human performance in robotic arm tasks, which generally require a large amount of training to master.
+The robotic arm on the International Space Station (ISS), for instance, requires hundreds of hours of time for astronauts to reach proficiency.
+Being able to decrease this training time could lead to significant savings, and the predictive ability provided by modeling allows for much safer operation of the robotic arm.
+
+Motor control tasks include a variety of skills such as playing tuba, pole jumping, and flying an aircraft.
+These three examples have very little in common with each other, but it’s easy to recognize the difference between a novice and an expert in each case.
+Humans rely on several kinds feedback during practice to improve their performance in a given motor control task.
+These feedbacks can be largely grouped into two types: internal, or intrinsic feedback and external, or extrinsic feedback.
+Internal feedback is anything a person can infer using their senses: the feel of the valve’s of the tuba as you play, your sense of balance mid-jump, or the sound the aircraft engine makes during an ascent.
+Extrinsic feedback, on the other hand, is provided by an external source, often in the form of an expert instructor.
+
+Extrinsic feedback comes in a variety of forms, and has a long history of improving performance in a large variety of motor control tasks.
+This work will focus on a specific type of extrinsic feedback, which we call concurrent bandwidth feedback.
+Concurrent feedback is provided in real-time, as an operator is completing a task.
+Bandwidth feedback is provided when a particular value deviates outside a designated range or bandwidth.
+Concurrent bandwidth feedback (CBF) is feedback provided to an operator in real-time during the time that a signal deviates out of a predefined range.
+This type of feedback has been shown to improve performance in many simple motor control tasks, but has not been investigated in high degree of freedom, complex tasks.
+
+% Training astronauts to better levels of performance can reduce the threat of disaster in an extremely dangerous environment.
+
+\subsection{Research Aims}
+We are interested in the measuring, modeling, and predicting the effects of concurrent bandwidth feedback (CBF) on human performance in complex manual control tasks.
+To this end, this proposed research includes three research aims.
+The first aim is complete, and the second aim is in progress.
+\begin{enumerate}
+\item Can CBF improve human performance in a 3DoF manual tracking task?
+\begin{enumerate}
+\item Can subjects use CBF to learn depth cues?
+\item Do 3D augmented reality displays show improved performance compared to traditional 2D displays?
+\end{enumerate}
+\item Can CBF improve performance of simulated robotics tasks?
+\begin{enumerate}
+\item Can CBF reduce the required training time to peak performance?
+\item Can CBF be removed after reaching peak performance with reducing subject performance?
+\end{enumerate}
+\item Can we develop a descriptive model of human performance which includes the effects of CBF? How does the model compare with experimental data?
+\end{enumerate}
+
+The remainder of this proposal is split into three sections: a literature review, the proposed research, and conclusions.
+
+\end{document}

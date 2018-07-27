@@ -1,0 +1,214 @@
+\ProvidesPackage{customstyle}
+
+% --------------PACKAGES--------------
+% ------------------------------------
+% Standard packages that I use
+% ------------------------------------
+% --placing images
+\usepackage{graphicx} 		% general image
+\usepackage{subcaption}
+\usepackage{caption} 	% subcaptions 
+% --fancy tables with tabularx
+\usepackage{tabularx} % requires defining some table lengths below
+% --set up references, links, urls
+\usepackage{hyperref}
+% --maths
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+% --testing random text
+\usepackage{blindtext}
+% ------------------------------------
+% some not so standard packages
+% ------------------------------------
+% --color
+\usepackage{xcolor}
+\usepackage{colortbl}
+% --for reducing spaces between items
+\usepackage{enumitem}
+% --using mutiple columns and rows and rotations
+\usepackage{multicol} % standardish
+\usepackage{multirow} % same as abover
+\usepackage{vwcol} % no so standard lengths
+\usepackage{array} % for parbox?
+% --page packages, not sure what I used these for
+\usepackage{geometry}
+% --fancy headers
+\usepackage{fancyhdr}
+% -- added these for section formating in a better way
+\usepackage{titlesec}
+\usepackage{titletoc}
+% -- only paragraph spacing (for readability)
+\usepackage{setspace}
+% -- adding booktabs tables
+\usepackage{booktabs}
+% -- symbols, maybe standard
+\usepackage{latexsym}
+% ------------------------------------
+% really not standard packages
+% ------------------------------------
+% --for encoding input of files with utf8 characters
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+% --used this for some type of font/reading utf8 characters
+%\usepackage{polyglossia}
+% --using latin modern fonts (specifically arial?)
+%\usepackage{nimbussans}
+\usepackage{lmodern}
+% --used this for index at the end
+% ----debugging index -_-Xxx\usepackage{showidx}
+%\usepackage{imakeidx}
+% -- for putting weird symbols
+% \usepackage{fdsymbol} % conflicted with nabla?
+
+
+% --------------COMMANDS--------------
+% used for polyglossia package...
+% if not using xelatex to use polyglossia, then don't use
+% \setmainlanguage{english}
+
+% this makes the index with title and in table of contents
+%\makeindex[title=Author Index,intoc=true]
+% define color of sections
+\definecolor{art}{RGB}{248,90,113}
+\definecolor{oral}{RGB}{255,112,166}
+\definecolor{panel}{RGB}{63,183,233}
+\definecolor{poster}{RGB}{177,196,48}
+\definecolor{text}{RGB}{0,102,204}
+\definecolor{text2}{RGB}{221,178,8}
+\definecolor{text3}{RGB}{0,75,133}
+% define logo colors
+\definecolor{logoLightBlue}{RGB}{27,137,202}
+\definecolor{logoMintGreen}{RGB}{87,195,186}
+\definecolor{logoLightGreen}{RGB}{115,199,160}
+\definecolor{logoDarkBlue}{RGB}{32,58,111}
+\definecolor{logoGold}{RGB}{244,186,23}
+\definecolor{ucdLogoBlue}{RGB}{9,87,144}
+\definecolor{ucdLogoGold}{RGB}{186,149,46}
+
+% how some of the links are set up
+\hypersetup{colorlinks=false,linkcolor=text2,breaklinks=true}
+%\renewcommand*\sfdefault{ppl}
+
+% table stuff using special sizes in tabularx
+% --sponsors special table
+\newcolumntype{s}{>{\hsize=.1\hsize}X}
+
+% Figure particulars
+% -- JP recommended
+\renewcommand{\figurename}{\footnotesize\sffamily\bfseries FIGURE}
+% --taken from 
+% for figures: caption label is italic, the caption text is bold / italic
+\captionsetup[figure]{
+	labelfont={sf,bf},
+	textfont={sf},
+	singlelinecheck=off,
+	justification=raggedright}
+% for subfigures: caption label is bold, the caption text normal.
+% justification is raggedright (i.e. left aligned)
+% singlelinecheck=off means that the justification setting is used even when the caption is only a single line long. 
+% if singlelinecheck=on, then caption is always centered when the caption is only one line.
+\captionsetup[subfigure]{
+	labelfont={sf,bf},
+	textfont=sf,
+	singlelinecheck=off,
+	justification=centering}
+% -- here I am adding my table modifiers, supposedly the same
+\captionsetup[table]{
+	labelfont={sf,bf},
+	textfont={sf},
+	singlelinecheck=off,
+	justification=centering}
+% keynote column figure
+% --added a new command to make the figure in a mini page
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+% keynote list separation
+% --no item seperation in lists
+\setlist{noitemsep}
+\setlist{nosep}
+
+% section 
+% -- need to define spacing and size
+\newcommand{\textSpace}{1.1}
+\newcommand{\sectionSpace}{-0.2}
+\newcommand{\topSectionSpace}{-0.6}
+% -- took this from the titlesec documentation
+
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}
+{\normalfont\Large\bfseries\singlespacing}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]
+{\normalfont\normalsize\itshape}{\theparagraph}{1em}{---}[:~~~]
+\titleformat{\subparagraph}[runin]
+{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+\titlespacing*{\chapter} {0pt}{5pt}{4pt}
+% \titlespacing*{\section} {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+% \titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+% \titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+% \titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
+% \titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
+
+
+\titlespacing*{\section} {0pt}{-4.5ex}{-\sectionSpace ex}
+\titlespacing*{\subsection} {0pt}{-\sectionSpace ex}{-\sectionSpace ex}
+\titlespacing*{\subsubsection} {0pt}{-\sectionSpace ex}{-\sectionSpace ex}
+\titlespacing*{\paragraph} {0pt}{-\sectionSpace ex}{-\sectionSpace ex}
+
+% \titleformat{\section}
+% {\Huge\bfseries\color{logoDarkBlue}}{\thesection}{1em}{}
+% \titleformat{\subsection}
+% {\Large\bfseries\color{logoLightBlue}}{\thesubsection}{1em}{}
+% \titleformat{\subsubsection}
+% {\large\bfseries\color{logoMintGreen}}{\thesubsubsection}{1em}{}
+% \titleformat{\paragraph}[runin]
+% {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+% \titleformat{\paragraph}[runin]
+% {\normalfont\normalsize\bfseries\color{logoLightGreen}}{\theparagraph}{1em}{}
+% \titleformat{\subparagraph}[runin]
+% {\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+
+% -- added the titlespacing for each section to be the same...
+%\titlespacing{\section}{0pt}{0pt}{0pt}[-6pt]
+% --this is for making a section without a number, not appear in TOC
+%\newenvironment{noNumberSection}
+%{\setcounter{secnumdepth}{0}%
+%\renewcommand\sectionmark[1]{}}
+%{\setcounter{secnumdepth}{5}}
+%\setcounter{tocdepth}{4}
+% \titleformat*{\paragraph}{\large\bfseries\sffamily}
+% \titleformat*{\subparagraph}{\large\bfseries\sffamily}
+
+% --page geometry
+\geometry{letterpaper, top=1.0in, bottom=1.0in, left=1.0in, right=1.0in }
+%\geometry{letterpaper, top=0.75in, bottom=0.75in, left=0.5in, right=0.5in }
+
+%header footer styles
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\cfoot{\thepage}
+\renewcommand{\footrulewidth}{0.5pt}
+% And now for the `plain` pagestyle
+\fancypagestyle{plain}
+
+% --paragraph set up
+% setspace package
+\setstretch{\textSpace}
+% spacing after each paragraph
+%DONT\setlength{\parskip}{3pt} 
+% line spacing for all in document, maybe use package set space
+%DONT\renewcommand{\baselinestretch}{1.15} 
+
+\newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}}
+\def\CC{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+%column options
+%\setlength{\columnsep}{0.5cm}
+% --------------FIX-------------------
