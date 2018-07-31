@@ -1,8 +1,129 @@
-%!TEX root = ../main.tex
-\documentclass[float=false, crop=false]{standalone}
-\usepackage[subpreambles=true]{standalone}
+\documentclass{paper}
+\usepackage[utf8]{inputenc}
+
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\usepackage{longtable,tabularx}
+\setlength\LTleft{0pt}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{color}
+\usepackage{flexisym}
+% \usepackage[margin=1in]{geometry}
+% \usepackage{fullpage} % For More Realistic Page Usage
+\usepackage{grffile}
+
+% \title{Improving and Modeling Human Performance in Space Robotics}
+\title{The Effects of Concurrent Bandwidth Feedback on Motor Control Tasks}
+% Human Performance}
+ % in Space Robotics}
+\subtitle{Qualifying Exam Proposal}
+% \author{John Karasinski}
+% \date{August 29, 2018}
+
 \begin{document}
-\section{Background}
+\pagenumbering{gobble}
+\maketitle
+
+\noindent John Karasinski \\
+August 29, 2018
+
+\section*{}%{Exam Committee}
+\begin{description}
+  \item[Committee Chairperson:] \begin{tabular}{c} \\ \end{tabular}\\
+    Prof. Hess
+  \item[Committee Members:] \begin{tabular}{c} \\ \end{tabular}\\
+    Prof. Joshi \\
+    Prof. Kong \\
+    Prof. Vougioukas \\
+    Dorrit Billman, PhD (NASA Ames) \\
+    \\
+  \item[Faculty Advisor:] \begin{tabular}{c} \\ \end{tabular}\\
+    \\
+    \\
+    \\
+    \\
+    ____________________________\\
+    Prof. Robinson
+\end{description}
+% \\
+% Committee:\\
+% Prof. Hess (Chair)\\
+% Prof. Joshi\\
+% Prof. Kong\\
+% Prof. Vougioukas\\
+% Dorrit Billman, PhD (NASA Ames)\\
+% \\
+% ____________________________\\
+% Prof. Stephen K. Robinson
+% }
+
+\clearpage
+\tableofcontents
+
+\clearpage
+\pagenumbering{arabic}
+
+\section{Overview}
+\subsection{Motivation}
+We aim to improve performance and decrease learning times for novice operators of highly complex motor control tasks in extremely dangerous environments.
+We are specifically interested improving and modeling human performance in robotic arm tasks, which generally require a large amount of training to master.
+The robotic arm on the International Space Station (ISS), for instance, requires hundreds of hours of time for astronauts to reach proficiency.
+Being able to decrease this training time could lead to significant savings, and the predictive ability provided by modeling allows for much safer operation of the robotic arm.
+
+Motor control tasks include a variety of skills such as playing tuba, pole jumping, and flying an aircraft.
+These three examples have very little in common with each other, but it’s easy to recognize the difference between a novice and an expert in each case.
+Humans rely on several kinds feedback during practice to improve their performance in a given motor control task.
+These feedbacks can be largely grouped into two types: internal, or intrinsic feedback and external, or extrinsic feedback.
+Internal feedback is anything a person can infer using their senses: the feel of the valve’s of the tuba as you play, your sense of balance mid-jump, or the sound the aircraft engine makes during an ascent.
+Extrinsic feedback, on the other hand, is provided by an external source, often in the form of an expert instructor.
+
+Extrinsic feedback comes in a variety of forms, and has a long history of improving performance in a large variety of motor control tasks.
+This work will focus on a specific type of extrinsic feedback, which we call concurrent bandwidth feedback.
+Concurrent feedback is provided in real-time, as an operator is completing a task.
+Bandwidth feedback is provided when a particular value deviates outside a designated range or bandwidth.
+Concurrent bandwidth feedback (CBF) is feedback provided to an operator in real-time during the time that a signal deviates out of a predefined range.
+This type of feedback has been shown to improve performance in many simple motor control tasks, but has not been investigated in high degree of freedom, complex tasks.
+
+% Training astronauts to better levels of performance can reduce the threat of disaster in an extremely dangerous environment.
+
+\subsection{Research Aims}
+We are interested in the measuring, modeling, and predicting the effects of concurrent bandwidth feedback (CBF) on human performance in complex manual control tasks.
+To this end, this proposed research includes three research aims.
+The first aim is complete, and the second aim is in progress.
+\begin{enumerate}
+\item Can CBF improve human performance in a 3DoF manual tracking task?
+\begin{enumerate}
+\item Can subjects use CBF to learn depth cues?
+\item Do 3D augmented reality displays show improved performance compared to traditional 2D displays?
+\end{enumerate}
+\item Can CBF improve performance of simulated robotics tasks?
+\begin{enumerate}
+\item Can CBF reduce the required training time to peak performance?
+\item Can CBF be removed after reaching peak performance with reducing subject performance?
+\end{enumerate}
+\item Can we develop a descriptive model of human performance which includes the effects of CBF? How does the model compare with experimental data?
+\end{enumerate}
+
+The remainder of this proposal is split into three sections: a literature review, the proposed research, and conclusions.
+
+\section{Literature Review}
 \subsection{Augmented Feedback}
 The concept of feedback was popularized when closed-loop control systems were first developed, and has since been defined many times, and ~\cite{Wierner1948}.
 In the context of this work, a convenient definition of feedback comes from Ramaprasad, ``[f]eedback is information about the gap between the actual level and the reference level of a system parameter which is used to alter the gap in some way~\cite{Ramaprasad1983}.''
@@ -120,88 +241,20 @@ In addition to improving performance, subjects in both treatment groups also had
 The concurrent bandwidth feedback also had the added benefit of significantly reducing the amount of time required to train the subjects to their maximum skill level.
 Subjects in this group performed better on their first trial than subjects in the control group did on their last.
 
-% \subsection{Robotics Performance}
-% 1 page\\
-% There are limited examples of spacecraft robotic arm tasks in human literature\\
-% Robotic laparoscopic surgery examples
 
-\clearpage
+\subsection{Robotics Performance}
+1 page\\
+There are limited examples of spacecraft robotic arm tasks in human literature\\
+Robotic laparoscopic surgery examples
+
 \subsection{Pilot Modeling}
-In addition to popularizing the concept of feedback, the creation of control theory in the early 1940s also provided the tools required for the mathematical modeling of the human pilot.
-At the time, new weapons were being created for World War 2 which could only be effectively used with the use of trained operators working in tandem with the machine.
-While it was thought that a human could be viewed as a unique kind of servomechanism in the control feedback loop, it was still unclear what variables effected human performance.
-Early work by Tustin and others extended the control theory framework and applied these theories to actual human operators~\cite{tustininvestigation}.
-Particular interest was focused on ``attempt[ing] to find the laws of relationship of movement and error. In particular, it was hoped that this relationship [would] be approximately linear and so permit well developed theory of `linear servomechanisms' to be applied to manual control in the same way as it applies to automatic following.~\cite{tustininvestigation}''
-% ``The object of the series of tests was to investigate the nature of the layer's response in a number of particular cases and to attempt to find the laws of relationship of movement and error. In particular, it was hoped that this relationship be found (within the range of practical requirements) to be approximately linear and so permit well developed theory of `linear servomechanisms' to be applied to manual control in the same way as it applies to automatic following.''
+In addition to popularizing the concept of feedback, the creation of control theory in the early 1940s also provided the tools required for the mathematical modeling of the human pilot. At the time, new weapons were being created for World War 2 which could only be effectively used with the use of trained operators working in tandem with the machine. Early work by Tustin~\cite{tustininvestigation}\\
+\\
+1 page\\
+McRuer model\\
+Hess model\\
 
-These early works were summarized in McRuer's 1957 report, ``Dynamic Response of Human Operators''~\cite{McRuer1957}.
-This work evaluated measurements for single-input/single-output (SISO) manual control systems and developed predictive models consistent with this data.
-Indeed, McRuer writes, ``[i]t is possible, without doing violence to the data, to obtain describing functions which are generally applicable to the results of the many diverse experiments~\cite{McRuer1957}.''
-The report concludes by describing a hypothetical transfer function of the human operator which includes a time delay, a neuromuscular lag, and a gain.
-McRuer's early model of the complete pilot/vehicle system is presented in Figure~\ref{figure:mcruer1974}.
-McRuer revisited these results in 1974, after three decades of supporting engineering and experimental psychology experiments, and was able to further generalize these results for a wide variety of system dynamics~\cite{McRuer1974}.
-In his study, McRuer completed a detailed analysis which included the human response to proportional, rate/velocity, and acceleration type controlled element dynamics, see Table~\ref{table:mcruer1974a}.
-The result of this report was the so called ``crossover model,'' which relates the operator and controlled element transfer characteristics by the equation
-\begin{align*}
-Y_c(jw) Y_p(jw) = \dfrac{w_c e^{-jw \tau_e}}{jw}
-\end{align*}
-where $Y_c$ is the controlled element transfer function, $Y_p$ is the approximate human operator transfer function, $w_c$ is the crossover frequency, and $\tau_e$ is the effective time delay of the pilot.
-The crossover model is so named as it allows for linear behavior at approximately -20 dB/decade slope in the region of the crossover frequency.
-The approximate human operator response to several controlled element transfer functions, and their combined open-loop transfer function are presented in Table~\ref{table:mcruer1974b}.
-Modeling the human pilot with the crossover enabled a more complete view of the complete pilot/vehicle system, and allowed for human factors recommendations towards the design of new vehicles.
-Even today, the crossover is used as the standard for describing pilot/vehicle systems at the crossover frequency~\cite{McRuer1965, McRuer1974, Xu2017}.
 
-\begin{table}
-    \centering
-    \caption{Example Applications of Idealized Controlled Element Forms, adapted from~\cite{McRuer1974}}
-    \label{table:mcruer1974a}
-    \small
-    \begin{tabular}{p{.2\linewidth} *{2}{p{.3\linewidth}}}
-        \toprule
-            Controlled Element Form & Aerospace Control & Automobile Control \\
-        \midrule
-            $K_c$ & Attitude control with ACAH system & Speed control \\
-            $\dfrac{K_c}{s}$ & Attitude control with a rate command system & Heading control at low to moderate speeds \\
-            $\dfrac{K_c}{s^2}$ & Attitude control with a spacecraft with damper off & Longitudinal position control \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-
-\begin{table}
-    \renewcommand{\arraystretch}{2}
-    \centering
-    \caption{Summary of Human Operator Approximate Characteristics, adapted from~\cite{McRuer1974}}
-    \label{table:mcruer1974b}
-    \small
-    \begin{tabular}{*{3}{c}}
-         \toprule
-            \thead{Controlled Element\\ Transfer Function\\ $Y_c$} & \thead{Approximate Human Operator\\ Transfer Function\\ $Y_p$} & \thead{Open-Loop\\ Transfer Function\\ $Y_c Y_p$} \\
-        \midrule
-            $K_c$ & $\dfrac{K_p e^{-\tau_1 s}}{s}$ & $\dfrac{w_c e^{-\tau_e s}}{s}$ \\
-            $\dfrac{K_c}{s}$ & $K_p e^{-\tau_2 s}$ & $\dfrac{w_c e^{-\tau_e s}}{s}$ \\
-            $\dfrac{K_c}{s^2}$ & $K_p s e^{-\tau_3 s}$ & $\dfrac{w_c e^{-\tau_e s}}{s}$ \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-
-\begin{figure}[tb!]
-    \begin{center}
-        \includegraphics[width=0.8\linewidth]{./../img/Screen Shot 2018-07-25 at 10.37.08 AM.png}
-        \caption{Variables Affecting the Pilot/Vehicle System, from~\cite{McRuer1974}}
-        \label{figure:mcruer1974}
-    \end{center}
-\end{figure}
-
-Since the invention of the crossover model the demand for human pilot models for use in informing vehicle design, as well predicting, preventing, and explaining accidents has led to a number of more detailed pilot models.
-A recent review by Xu et al. surveyed the state of the art in human pilot modeling, and grouped existing models into three classes of models based on: control theory, human physiology, and intelligence techniques~\cite{Xu2017}.
-Classical models based on control theory include the McRuer crossover model and optimal control models by Kleinman et al. developed in the early 1970s~\cite{Kleinman1970, Baron1970}.
-Models based on human physiology were developed to understand human pilot perception and control behavior, and include the Hess structural model~\cite{Hess1980, Hess1990, Hess1997}, Hosman's descriptive model~\cite{Hosman1996, Hosman1999}, and the biodynamic model~\cite{Griffin2001}.
-Recent intelligence models take advantage of techniques including fuzzy control and neural networks~\cite{Zaychik2006, Gestwa}.
-
-Of these three overarching sets of models, the models based on human physiology are of the greatest interest here.
-The Hess Structural Model, is of particular interest due to it's incorporation of multiple sensory channels and models of visual acuity and time-varying human pilot.
-
-\clearpage
 \subsection{Summary}
 % \textit{add brief, 1 paragraph summary of literature review}
 
@@ -217,4 +270,127 @@ If operator performance while using augmented reality displays is improved--or a
 There are a variety of robotics tasks, such as pick-and-place tasks, for which performance may be improved by allowing an operator the mobility to move and view the scene from whatever position is convenient at a given time.
 Traditional robotics stations require the operator to remain in a single position, and typically only allow for several camera angles.
 Mobile augmented reality displays allow the operator to take advantage of their ability to move through the environment, without needing to manage external cameras.
+
+
+\section{Proposed Research}
+\subsection{Strategy}
+We will run human subject experiments to test our hypotheses. Over the past few years at UC Davis and NASA Ames, I’ve spent over 300 hours subject testing with more than 100 subjects.
+
+\begin{itemize}
+\item Lunar Lander      30 subjects, 3 hours/subject
+\item 1D Tracking       15 subjects, 5 days * 30 minutes/day
+\item SAFER        		30 subjects, 3 hours/subject
+\item 3D Tracking       26 subjects, 2 hours/subject
+\end{itemize}
+
+In addition to these experiments, I have also completed numerous user tests for several products developed at NASA Ames.
+
+The proposed research includes two human subject experiments and the development of a model to predict human performance. Experiment One investigates if concurrent bandwidth feedback can be used to teach novice subjects to interpret depth cues in a three-axis manual tracking task. Experiment Two investigates if concurrent bandwidth feedback can decrease the required learning time to peak performance in a simulated robotic arm pick and place task. The Model will extend Professor Hess’ structural model of the human pilot to include the effects of concurrent bandwidth feedback. The outputs of this model will be compared to the results of Experiment One and Two.
+
+Cool things we could do with The Model:
+\begin{itemize}
+\item Predict the optimal bandwidth provided task and controller characteristics
+\item Predict the effects of scheduled bandwidth changes across training
+\end{itemize}
+
+Hypotheses:
+\begin{itemize}
+\item Concurrent bandwidth feedback can improve performance in simple, yet difficult tasks.
+\item The depth cue offered by 3D augmented reality displays can improve performance.
+\item Concurrent bandwidth feedback can be used to teach depth cues.
+\item Concurrent bandwidth feedback can improve performance in robotic arm pick and place task.
+\item The effects of concurrent bandwidth feedback on human performance can be modeled.
+\end{itemize}
+
+\section{Results and Research Products}
+Experiment 1 investigates CBF guidance display benefits (will be complete)
+Experiment 2 uses simulation of robotic arm
+Compare subjects with and without feedback in a track and capture task
+We can use this to validate the results we find in following experiment
+We can also use this to create our model and validate the predictions of the model
+
+\subsection{Experiment 1}
+Experiment One investigated the effects of concurrent bandwidth feedback on performance in a three-axis manual tracking task.
+
+Two pages of task description, methodology, analysis and results from AIAA submission.
+
+\subsection{Experiment 2}
+Experiment Two will investigate if concurrent bandwidth feedback can decrease the required learning time to peak performance in a simulated robotic arm pick and place task.
+We will compare task performance and workload between two groups: a control group, which receives no feedback, and a treatment group, which receives concurrent bandwidth feedback on one or more sensor readouts.
+Subjects in both groups will complete the same task, and it is hypothesized that subjects in the treatment group will perform the task better and require less training time to reach peak performance.
+This hypothesis is based on the results of the SAFER experiment, as well as the results of Experiment One.
+
+In this task, subjects will command a robotic arm to pick up an object from one location and place it in another.
+This is analogous to the primary use of the robot arm on the International Space Station, which grasps visiting vehicles when they arrive at the station and then attaches them to a separate fixed location on the station.
+Subjects will be trained on this task, and will then repeat the task for one to two hours through a variety of slightly different start and end conditions.
+While they are completing the robotics task, subjects will also be required to attend to a secondary task which will require them to look away from their primary flight display.
+Subjects will also be asked to report their subjective workload after each trial.
+
+NASA’s Robotic Onboard Trainer (ROBoT) will be used for this experiment.
+ROBoT is a package of simulation software which includes a dynamic model of the robotic arm on the space station, and presents the user with multiple camera angle views and the instrument panel required to operate effectively.
+In addition to these displays, ROBoT also includes the two hand controllers required to control the arm.
+NASA trainers at Johnson Space Center developed metrics which are included in ROBoT, and include the time to capture, alignment measurements during approach, the amount of wobble in the arm, the number of times the grapple fixture contacted the structure, the overall path efficiency, and the number of capture attempts.
+This presents a list of candidate metrics from which we may observe human performance.
+
+\begin{figure}[tb!]
+    \begin{center}
+        \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{img/Screen Shot 2018-07-26 at 1.43.16 PM.png}
+        \caption{The Robotic Onboard Trainer (ROBoT) station set up in the NASA HERA Analog.}
+        % \label{}
+    \end{center}
+\end{figure}
+
+\begin{figure}[tb!]
+    \begin{center}
+        \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{img/Screen Shot 2018-07-26 at 1.43.02 PM.png}
+        \caption{ROBoT visualization laptop, showing four camera views.}
+        % \label{}
+    \end{center}
+\end{figure}
+
+\begin{figure}[tb!]
+    \begin{center}
+        \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{img/Screen Shot 2018-07-26 at 1.43.05 PM.png}
+        \caption{The camera attached to the end effector of the robotic arm, showing the grapple fixture.}
+        % \label{}
+    \end{center}
+\end{figure}
+
+% \begin{figure}[tb!]
+%     \begin{center}
+%         \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{img/Screen Shot 2018-07-26 at 1.43.07 PM.png}
+%         \caption{Example performance score report shown to the user after each trial.}
+%         % \label{}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}[tb!]
+%     \begin{center}
+%         \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{img/Screen Shot 2018-07-26 at 1.43.10 PM.png}
+%         \caption{The hand controller inputs and position and angular errors are also logged throughout the trial.}
+%         % \label{}
+%     \end{center}
+% \end{figure}
+
+
+\subsection{Model Extension}
+The Model will extend Professor Hess’ structural model of the human pilot to include the effects of concurrent bandwidth feedback.
+The outputs of this model will be compared to the results of Experiment One and Two.
+
+\subsection{Timeline}
+
+\begin{figure}[h!]
+    \begin{center}
+        \includegraphics[width=\linewidth]{img/image1.png}
+        % \caption{}
+        % \label{}
+    \end{center}
+\end{figure}
+
+\section{Conclusions}
+Improving performance leads to smaller chance of critical errors in high risk environments in a near future with a larger number of potentially less trained actors in space
+
+\bibliographystyle{ieeetr}
+\bibliography{MyCollection}
+
 \end{document}
