@@ -243,12 +243,12 @@ Rotated & 30 & No \\
 \label{tab:designs}
 \end{table}
 
-Three designs were presented to the subjects to evaluate: a baseline display, a color feedback display, and an rotated display.
+Three designs were presented to the subjects to evaluate: a baseline, a color-based concurrent bandwidth feedback (CBF) design, and a rotated design.
 Figure~\ref{fig:designs} shows all three designs in the same error state.
 The three designs were very similar, having only minor differences between each other.
 Compared to the baseline, the color feedback and rotated displays were expected to produce superior performance along the $z$ axis.
 
-The baseline display consists of a flat cross which a center target point and a green sphere error indicator.
+The baseline consists of a flat cross which a center target point and a green sphere error indicator.
 This indicator also casts a green rod perpendicular to the plane of the cross, which allows for a visual estimation of the error in the $z$ axis.
 The $x$ axis is parallel with the horizontal cross, while the $y$ axis is parallel with the vertical cross.
 The color feedback display was identical to the baseline design in every way, but also had visual concurrent bandwidth feedback on the $z$ axis.
@@ -261,7 +261,7 @@ This order group was created to remove any order effects that might arise due to
 (The order of the designs was initially considered to be insignificant, but we will later discuss how this is not the case.)
 % Subjects were naive to this order, and were only told which design they were evaluating directly before they began.
 After entering the experiment room, the subjects signed a consent form, and then sat through a twenty minute training session which familiarized them with the task, the three designs, the NASA-TLX, and the controller.
-Subjects were instructed that they were evaluating three different display designs: a baseline display, a color feedback display, and and rotated display.
+Subjects were instructed that they were evaluating three different display designs. %: a baseline display, a color feedback display, and and rotated display.
 They were further instructed that they had two tasks.
 They were told to:
 \begin{itemize}
@@ -285,21 +285,192 @@ Subjects then repeated this process for their second and third designs.
 After completing this process for their third design, subjects were also asked to complete a preference survey which inquired into what design the subjects believed to be the best.
 
 \subsubsection{Results}
+We conducted three-way mixed ANOVAs between device (HoloLens or LCD), design (Baseline, Feedback, or Rotated), and starting design ((Baseline, Feedback, or Rotated)) with repeated measures on the design factor.
+When significant effects were observed, post hoc comparisons using the Tukey HSD test with a Bonferroni adjustment were completed to investigate which pairs of the factor were significant.
+In order to remove learning and fatigue effects, each subject's best performing five trials in each design were averaged together to produce one average score for each subject and design.
+Additionally, the first ten seconds of each sixty second trial were not included in the analysis to remove initial transient effects.
 
+% \subsection{Tracking Performance}
+The root-mean-square error (RMSE) of each axis was analyzed individually and combined to understand the differences between the three designs and the two devices.
+For a given variable, $i$, RMSE is calculated via
+\begin{align}
+\text{RMSE}_i = \sqrt{\dfrac{1}{n} \sum_{j=1}^{n} \left(i_j - \hat{i}_j\right)^{2}}
+\end{align}
+where $i_j$ is an observed value at time $j$ and $\hat{i}_j$ is a targeted, predicted, or otherwise desired value.
+As this is a regulation task, however, $\hat{i}_j = 0$ for all $j$.
+The RMS of the disturbance signal was calculated along each axis, and used to normalize the RMSE.
+As such, an RMSE of 1 indicates performance that is just as equivalent as inserting no input, and an RMSE greater than 1 indicates quite poor performance.
+% The RMSE along the $i^{th}$ axis, RMSE$_i$, was calculated for the $x$, $y$, and $z$ axes via
+% \begin{align}
+% \text{RMSE}_i = \sqrt{\dfrac{1}{n} \sum_{j=1}^{n} \left(i_j\right)^{2}}
+% \end{align}
+It was expected that the baseline design would lead to the worst performance in the $z$ axis, while the color feedback and rotated designs would have better performance in the $z$ axis.
+It was also expected that, due to the stereoscopic nature of the display, the HoloLens would allow for better performance than the LCD monitor along $z$ axis.
 
+\begin{table}[tb]
+\caption{Results of three-way ANOVA on $z$ axis RMSE.
+All main effects significant, several significant interactions.}
+\centering
+\begin{tabular}{*{5}{r}}
+\toprule
+                            & numDF & denDF & F-value   & p-value \\
+\midrule
+% (Intercept)                 & 1     & 36     & 2354.6349 & <.0001 \\
+design                      & 2     & 36     &   84.9179 & <.0001 \\
+device                      & 1     & 18     &    7.2158 & 0.0151 \\
+startdesign                 & 2     & 18     &    4.8132 & 0.0212 \\
+design:device               & 2     & 36     &    1.8359 & 0.1741 \\
+design:startdesign          & 4     & 36     &    8.5499 & 0.0001 \\
+device:startdesign          & 2     & 18     &    2.4652 & 0.1132 \\
+design:device:startdesign   & 4     & 36     &    5.5672 & 0.0014 \\
+\bottomrule
+\end{tabular}
+\label{tab:exp1anovarmse}
+\end{table}
 
+\begin{table}[tb]
+\caption{Results of three-way ANOVA on NASA-TLX.
+No significant effects or interactions.}
+\centering
+\begin{tabular}{*{5}{r}}
+\toprule
+                            & numDF & denDF & F-value   & p-value \\
+\midrule
+% (Intercept)                 & 1   & 36 & 472.0358 & <.0001 \\
+design                      & 2   & 36 &   0.3615 & 0.6991 \\
+device                      & 1   & 18 &   0.3797 & 0.5455 \\
+startdesign                 & 2   & 18 &   0.2769 & 0.7613 \\
+design:device               & 2   & 36 &   0.5595 & 0.5764 \\
+design:startdesign          & 4   & 36 &   0.2649 & 0.8985 \\
+device:startdesign          & 2   & 18 &   0.0025 & 0.9975 \\
+design:device:startdesign   & 4   & 36 &   0.5381 & 0.7086 \\
+\bottomrule
+\end{tabular}
+\label{tab:exp1anovaworkload}
+\end{table}
 
+% > startdesign
+%          Simultaneous Tests for General Linear Hypotheses
+% Multiple Comparisons of Means: Tukey Contrasts
+% Fit: lme.formula(fixed = Zrmse ~ design * device * startdesign, data = data,
+%     random = ~1 | subject/design)
 
+% Linear Hypotheses:
+%            Estimate Std. Error z value Pr(>|z|)
+% 2 - 1 == 0 -0.27861    0.07566  -3.683 0.000693 ***
+% 3 - 1 == 0  0.11523    0.07566   1.523 0.383277
+% 3 - 2 == 0  0.39383    0.07566   5.206  5.8e-07 ***
+% ---
+% Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+% (Adjusted p values reported -- bonferroni method)
 
+\begin{figure}[tb!]
+    \begin{center}
+        \includegraphics[width=\linewidth]{./../img/x_design_y_zrmse_col_startdesign_hue_device.pdf}
+        \includegraphics[width=\linewidth]{./../img/x_design_y_zrmse_hue_startdesign_col_device.pdf}
+        \caption{Three-way ANOVA $z$-axis RMSE. Additional formatting required. Which of these plots better shows the result?}
+        \label{fig:zrmseanovas}
+    \end{center}
+\end{figure}
 
+Results of the ANOVA on the $z$-axis RMSE showed significant effects for design ($F(2, 36)=84.9, p<.001$), device ($F(1, 18)= 7.2, p<0.015$), and start design ($F(2, 18)=4.8, p<0.021$).
+The ANOVA also showed a significant interaction effect between design and starting design ($F(4, 36)=8.5499, p<0.0001$), and a three way interaction between design, device, and starting design ($F(4, 36)=5.5672, p<0.0014$).
+Further investigating the effect of starting design, a Tukey Honest Significance Difference (HSD) comparison with a Bonferroni correction shows significance differences between subjects that started in the concurrent bandwidth feedback group and those in the baseline ($p<0.001$) or rotated ($p<0.001$) designs, but no difference between subjects that started in the baseline and rotated designs ($p>.38$).
+The difference in performance along the depth axis between design, device, and starting design can be seen in Figure~\ref{fig:zrmseanovas}.
 
+% >     y = lme(Zrmse ~ design*device, data=data, random=~1|subject/design, subset=startdesign==2)
+% >     anova <- anova(y)
+% > anova
+%               numDF denDF   F-value p-value
+% (Intercept)       1    12 2665.7021  <.0001
+% design            2    12   21.6481  0.0001
+% device            1     6   36.7320  0.0009
+% design:device     2    12    5.4211  0.0210
+%
+% >     y = lme(Zrmse ~ design*device, data=data, random=~1|subject/design, subset=startdesign!=2)
+% >     anova <- anova(y)
+% > anova
+%               numDF denDF   F-value p-value
+% (Intercept)       1    28 1285.5677  <.0001
+% design            2    28   38.6980  <.0001
+% device            1    14    1.0299  0.3274
+% design:device     2    28    0.0263  0.9741
 
+Due to the presence of interaction effects in the starting design factor, the remainder of the analysis is split between subjects who started with the concurrent bandwidth feedback design and those that did not (those that started in the baseline or rotated design).
+For subjects that started in the CBF design, there was a significant effect of design ($F(2, 12)= 21.6481, p <.0001$), a significant effect or display ($F(1, 6)=  36.7320, p <0.001$), and a significant interaction effect between design and device ($F(2, 12)=  5.4211, p <0.021$).
+For subjects that did not start in the CBF design, there was a significant effect of design ($F(2, 28)= 38.6980, p <.0001$), no significant effect or display ($F(1, 14)=  1.0299, p >0.32$), and no interaction effect ($F(2, 12)=  0.0263, p >0.97$).
+The resulting difference between subjects who started in the CBF design and those that did not is presented in Figure~\ref{fig:zrmseanovas2}.
 
+\begin{figure}[tb!]
+    \begin{center}
+        \includegraphics[width=\linewidth]{./../img/x_design_y_zrmse_hue_device_col_cbf_first.pdf}
+        \caption{Three-way ANOVA $z$-axis RMSE. Additional formatting required. Difference between starting with/without CBF.}
+        \label{fig:zrmseanovas2}
+    \end{center}
+\end{figure}
 
+% >     y = lme(rt ~ design*device*startdesign, data=data, random=~1|subject/design)
+% >     anova <- anova(y)
+% > anova
+%                           numDF denDF   F-value p-value
+% (Intercept)                   1    36 1290.3273  <.0001
+% design                        2    36    7.9333  0.0014
+% device                        1    18    1.2139  0.2851
+% startdesign                   2    18    2.0733  0.1548
+% design:device                 2    36    0.0045  0.9955
+% design:startdesign            4    36    1.1689  0.3408
+% device:startdesign            2    18    1.1634  0.3348
+% design:device:startdesign     4    36    0.1799  0.9473
+% >     y = lme(Score ~ design*device*startdesign, data=data, random=~1|subject/design)
+% >     anova <- anova(y)
+% > anova
+%                           numDF denDF  F-value p-value
+% (Intercept)                   1    36 472.0358  <.0001
+% design                        2    36   0.3615  0.6991
+% device                        1    18   0.3797  0.5455
+% startdesign                   2    18   0.2769  0.7613
+% design:device                 2    36   0.5595  0.5764
+% design:startdesign            4    36   0.2649  0.8985
+% device:startdesign            2    18   0.0025  0.9975
+% design:device:startdesign     4    36   0.5381  0.7086
 
+The NASA-TLX was used to measure differences in subjective workload, and the reaction time to the secondary task was used to measure differences in objective workload between design, device, and starting design.
+There were no significant effects, nor interaction effects, found in the ANOVA for design, device, or starting design for the NASA-TLX measurements.
+There was a significant effect of design ($F(2, 36)=  7.9333, p <0.0014$) for the reaction time to the secondary task, though this effect was very small between designs, less than 100ms difference, and was not significant during Tukey HSD tests.
+In general, there were no significant effects found for workload measurements.
 
+To summarize these results, there were significant effects found in the $z$-axis RMSE for design, with subjects generally performing the best using the angled design, followed by the CBF design, and performing worst with the baseline design.
+There were significant effects found for the factors of device and starting design, though these must be interpreted carefully.
+Subjects that started in the design with concurrent bandwidth feedback performed better than subjects that did not.
+We believe that this result follows that found in our prior SAFER experiment, where subjects that were exposed to the CBF early on learned the task better than those that were not exposed.
+An interesting effect of this exposure is that, after learning the task with CBF, subjects continued on to perform significantly better in the baseline condition than those subjects that did not start in the CBF design.
 
+Subjects that started in the CBF design and that were wearing the HoloLens appear to have used the CBF to better learn the depth cue presented in the stereoscopic display.
+These subjects continued to perform significantly better than subjects who started with the CBF design but without the stereoscopic display when they continued to the baseline design.
+This indicates that even a brief exposure to the concurrent bandwidth feedback was sufficient to induce improved performance.
+Additional, this further suggests that well trained subjects could perform better using the stereoscopic display compared with the traditional display, but that subjects who were still learning the task could not take advantage of the additional depth cues provided by the display.
+Finally, there were no significant effects found for the NASA-TLX measurements, and there were significant effects found between the designs for reaction time, though this difference was very small at less than 100ms.
 
+% Returning to our hypotheses, we find that:
+% \begin{description}[align=left]
+% \item [Hypothesis 1] Concurrent bandwidth feedback will improve performance in the depth ($z$) axis for both display types, and will decrease workload.
+% \item [Hypothesis 2] Stereoscopic augmented reality displays improve performance in the depth ($z$) axis, but do not affect workload.
+% \item [Hypothesis 3] Rotating the display improves performance in the depth ($z$) axis for both display types, and will decrease workload.
+% % \item [Hypothesis 4] The performance along the $x$ and $y$ axes will be the same for all three designs.
+% \end{description}
+
+In summary, we find partial agreement with all of our hypotheses in respect to the performance aspects of our experiment, while the workload was essentially unaffected by all of our experimental factors.
+% For Hypothesis 1, ``Concurrent bandwidth feedback will improve performance in the depth ($z$) axis for both display types, and will decrease workload,'' we find partial agreement.
+For Hypothesis 1, subjects that completed the baseline design before the CBF design performed better in the CBF design, while subjects that completed the CBF design before the baseline performed approximately the same in both designs.
+This indicates that CBF can both improve performance compared to a baseline design, and better train subjects such that, even after brief exposure, the CBF is no longer required.
+Workload was unaffected by the CBF.
+%
+% Addressing Hypothesis 2, ``Stereoscopic augmented reality displays improve performance in the depth ($z$) axis, but do not affect workload,'' we also find partial agreement.
+For Hypothesis 2, subjects that started in the CBF design appear to have better learned the task and used the CBF to learn to interpret the depth cue provided by the stereoscopic display.
+Subjects that were not initially exposed to this feedback were unable to take advantage of the display, and did not perform significantly better than subjects without the display.
+%
+% In response to Hypothesis 3, ``Rotating the display improves performance in the depth ($z$) axis for both display types, and will decrease workload,''
+For Hypothesis 3, subjects in the rotated design did perform better than those in the baseline design, and appeared to be able to use this view to better interpret the depth of the target.
 
 \subsection{Experiment 2}
 Experiment Two will investigate if concurrent bandwidth feedback can decrease the required learning time to peak performance in a simulated robotic arm pick and place task.
