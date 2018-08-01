@@ -54,30 +54,19 @@ more powerful perceptual event than a stimulus offset, facilitating low-level pe
 This effect could explain a repeated suggestion that off-track feedback is superior to on-track feedback, even if the effect is, in general, small.
 de Groot et al. also measured response time to a secondary task as an estimate of workload, but found no differences across groups.
 
-\subsection{Stereoscopic Displays}
-Stereoscopic displays are systems ``in which two slightly different views of a scene are provided to a viewer, one image for each eye... allow[ing] the viewer's binocular visual system to extract depth information in a scene using this disparate information''~\cite{McIntire2014}.
-Without the aid of the binocular depth cue presented by stereoscopic displays, viewers are instead reliant entirely on monocular clues such relative sizing, occlusion, and motion.
-One of the primary motivation for stereoscopic displays is that ``[t]he visual scene of a 3D world is a more `natural,' `ecological,' or `compatible' representation than that provided by 2D displays''~\cite{Wickens1990}.
-As a result of this motivation, the effects of stereoscopic displays on human performance have been extensively studied in the literature.
-Several authors have attempted to classify which types of tasks may stand to benefit~\cite{McIntire2014, Wickens1990, Wickens1989, Naikar1998, Dixon2009}.
-A recent review of 184 papers, for example, suggests that 60\% of studies showed some benefit of 3D stereo displays, 15\% of tasks showed unclear or mixed benefits, and 25\% of studies showed no clear benefits~\cite{McIntire2014}.
-In this study, tasks involving finding/identifying/classifying objects and tasks involving real/virtual spatial manipulations of objects benefited the most, while learning/training/planning tasks were the least likely to show a benefit.
 
-Kim et al. also performed a quantitative evaluation of perspective and stereoscopic displays in three-axis manual tracking task~\cite{Kim1987}.
-They investigated the differences between perspective and stereoscopic displays, the elevation angle, azimuth angle, and the effects of two visual enhancements: a grid and a reference line.
-They found very strong relationships between elevation and azimuth angles and tracking performance, with the best performance occurring with an elevation angle of 45 degrees and an azimuth angle of 0 degrees.
-Tracking performance decreased rapidly as the azimuth angle varied, and decreased less rapidly as the elevation angle varied.
-In generally, they found that the stereoscopic display allowed for better tracking performance, though the inclusion of the reference line visual enhancement greatly decreased the benefit over the perspective display.
-Using only two subjects, they provided some insight into intrasubject and intersubject variability.
-In several instances, intrasubject variability showed 50\% changes within the same experimental condition, while intersubject variability also appeared to be large in some conditions.
-Kim et al. repeated the evaluation of these parameters on a telerobotics pick and place study~\cite{WonKim1987}.
-They found similar results in this second study, suggesting that their results could be generalized and that three-axis tracking performance can be correlated with pick and place completion time.
-
-Smallman at al. similarly investigated the effect of visual enhancements and 2D vs 3D displays for the development of a naval air warfare console~\cite{Smallman2000}.
-Participants viewed naval and aircraft tracks in either a conventional 2D top-down display or a 3D display, and then attempted to reconstruct track positions.
-They investigated the effectiveness of drop-lines and drop-shadows, and found that they significantly improved subjects ability to localize aircraft compared to when the enhancements were not present.
-Furthermore, in the absence of either visual enhancement subjects performed better with the 2D display than the 3D display.
-Similar to Kim et al., they ultimately recommended that 3D stereoscopic displays include the use of a reference or drop-line for optimal performance.
+\subsubsection{SAFER Experiment}
+% We have previously shown that concurrent bandwidth feedback can improve task performance and decrease workload for a 4DoF analog spacecraft task.
+% Would be good to say that we have submitted journal article for review.
+Our recent work has also included investigations into concurrent bandwidth feedback in a four degree of freedom Simplified Aid for EVA Rescue (SAFER) task~\cite{Karasinski2017}.
+SAFER is a small propulsive jet pack worn during spacewalks for self-rescue~\cite{Vassigh1998}.
+In our experiment, subjects were placed into one of three groups: a control, a high precision augmented feedback group, and a concurrent bandwidth feedback group.
+Subjects in the high precision group had an extra significant figure in their guidance display and an analog display which was scaled twice as large (but had half the maximum value) of their flight parameters.
+Subjects in the concurrent bandwidth feedback group had two display elements which would change from a green to a red color when subjects' performance was outside a predefined range.
+Both treatment groups performed better than the control group, with the concurrent bandwidth feedback group performing the best.
+In addition to improving performance, subjects in both treatment groups also had less subjective and objective workload, with the concurrent feedback group again being the most superior.
+The concurrent bandwidth feedback also had the added benefit of significantly reducing the amount of time required to train the subjects to their maximum skill level.
+Subjects in this group performed better on their first trial than subjects in the control group did on their last.
 
 \subsection{Workload Measurement}
 Improving performance, through some kind of feedback or other technique, usually comes at an increase in workload.
@@ -100,33 +89,20 @@ One of the most common objective measurement techniques is the secondary task, w
 Secondary tasks can provide a sensitive measure to differences in workload and performance compared to a single task alone, and allow for a common measure between experimental conditions~\cite{slocum1971meaningful}.
 Care must be taken, however, to ensure that the secondary task does not intrude upon primary task performance~\cite{williges1979behavioral}.
 
-For this study we chose a common type of secondary task, the choice reaction time task.
-In this secondary task, subjects are presented with several different stimuli, each of which requires a different response~\cite{lysaght1989operator}.
-Subjects' objective workload can then be inferred by either the percentage of secondary tasks which were correctly responded to within a given time, the number of secondary tasks which were correctly responded to in a trial, or both.
-We have previously found this type of task to be accurately tied to subjective workload scales~\cite{Karasinski2017}.
-
-
-\subsection{SAFER Experiment}
-We have shown that concurrent bandwidth feedback can improve task performance and decrease workload for a 4DoF analog spacecraft task.
-Would be good to say that we have submitted journal article for review.
-
-Our recent work has also included investigations into augmented feedback in a four degree of freedom Simplified Aid for EVA Rescue (SAFER) task~\cite{Karasinski2017}.
-SAFER is a small propulsive jet pack worn during spacewalks for self-rescue~\cite{Vassigh1998}.
-In our experiment, subjects were placed into one of three groups: a control, a high precision augmented feedback group, and a concurrent bandwidth feedback group.
-Subjects in the high precision group had an extra significant figure in their guidance display and an analog display which was scaled twice as large (but had half the maximum value) of their flight parameters.
-Subjects in the concurrent bandwidth feedback group had two display elements which would change from a green to a red color when subjects' performance was outside a predefined range.
-Both treatment groups performed better than the control group, with the concurrent bandwidth feedback group performing the best.
-In addition to improving performance, subjects in both treatment groups also had less subjective and objective workload, with the concurrent feedback group again being the most superior.
-The concurrent bandwidth feedback also had the added benefit of significantly reducing the amount of time required to train the subjects to their maximum skill level.
-Subjects in this group performed better on their first trial than subjects in the control group did on their last.
-
 % \subsection{Robotics Performance}
 % 1 page\\
 % There are limited examples of spacecraft robotic arm tasks in human literature\\
 % Robotic laparoscopic surgery examples
 
-\clearpage
 \subsection{Pilot Modeling}
+\begin{figure}[tb]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{./../img/Screen Shot 2018-07-25 at 10.37.08 AM.png}
+        \caption{Variables Affecting the Pilot/Vehicle System, from~\cite{McRuer1974}}
+        \label{figure:mcruer1974}
+    \end{center}
+\end{figure}
+
 In addition to popularizing the concept of feedback, the creation of control theory in the early 1940s also provided the tools required for the mathematical modeling of the human pilot.
 At the time, new weapons were being created for World War 2 which could only be effectively used with the use of trained operators working in tandem with the machine.
 While it was thought that a human could be viewed as a unique kind of servomechanism in the control feedback loop, it was still unclear what variables effected human performance.
@@ -151,7 +127,7 @@ The approximate human operator response to several controlled element transfer f
 Modeling the human pilot with the crossover enabled a more complete view of the complete pilot/vehicle system, and allowed for human factors recommendations towards the design of new vehicles.
 Even today, the crossover is used as the standard for describing pilot/vehicle systems at the crossover frequency~\cite{McRuer1965, McRuer1974, Xu2017}.
 
-\begin{table}
+\begin{table}[tb]
     \centering
     \caption{Example Applications of Idealized Controlled Element Forms, adapted from~\cite{McRuer1974}}
     \label{table:mcruer1974a}
@@ -167,7 +143,7 @@ Even today, the crossover is used as the standard for describing pilot/vehicle s
     \end{tabular}
 \end{table}
 
-\begin{table}
+\begin{table}[tb]
     \renewcommand{\arraystretch}{2}
     \centering
     \caption{Summary of Human Operator Approximate Characteristics, adapted from~\cite{McRuer1974}}
@@ -184,37 +160,27 @@ Even today, the crossover is used as the standard for describing pilot/vehicle s
     \end{tabular}
 \end{table}
 
-\begin{figure}[tb!]
-    \begin{center}
-        \includegraphics[width=0.8\linewidth]{./../img/Screen Shot 2018-07-25 at 10.37.08 AM.png}
-        \caption{Variables Affecting the Pilot/Vehicle System, from~\cite{McRuer1974}}
-        \label{figure:mcruer1974}
-    \end{center}
-\end{figure}
-
 Since the invention of the crossover model the demand for human pilot models for use in informing vehicle design, as well predicting, preventing, and explaining accidents has led to a number of more detailed pilot models.
 A recent review by Xu et al. surveyed the state of the art in human pilot modeling, and grouped existing models into three classes of models based on: control theory, human physiology, and intelligence techniques~\cite{Xu2017}.
 Classical models based on control theory include the McRuer crossover model and optimal control models by Kleinman et al. developed in the early 1970s~\cite{Kleinman1970, Baron1970}.
 Models based on human physiology were developed to understand human pilot perception and control behavior, and include the Hess structural model~\cite{Hess1980, Hess1990, Hess1997}, Hosman's descriptive model~\cite{Hosman1996, Hosman1999}, and the biodynamic model~\cite{Griffin2001}.
 Recent intelligence models take advantage of techniques including fuzzy control and neural networks~\cite{Zaychik2006, Gestwa}.
 
+\begin{figure}[tb!]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{./../img/Screen Shot 2018-07-31 at 11.21.44 AM.png}
+        \caption{The Hess Structural Model of the Human Pilot, from~\cite{Hess1997}}
+        \label{figure:structuralmodel}
+    \end{center}
+\end{figure}
+
 Of these three overarching sets of models, the models based on human physiology are of the greatest interest here.
-The Hess Structural Model, is of particular interest due to it's incorporation of multiple sensory channels and models of visual acuity and time-varying human pilot.
+While the McRuer was very successful in predicting pilot behavior, it it did not attempt ``to describe the underlying structure which contributes to human pilot dynamics~\cite{Hess1980}.''
+% ``Despite their relative successes, neither the servo model nor the optimal control model attempts to describe the underlying structure which contributes to human pilot dynamics~\cite{Hess1980}.''
+For this reason, the Hess Structural Model is of particular interest due to it's incorporation of multiple sensory channels and models of visual acuity and the time-varying human pilot~\cite{Hess2009}.
+The Structural Model includes the effects of the neuromuscular system, the force-feel characteristics of the input device, and the contributions of proprioceptive, vestibular, and visual feedback, see Figure~\ref{figure:structuralmodel}.
+The model has been used in predicting evaluating handling qualities and and pilot-induced oscillation rating levels for helicopters, Boeing 747, Lockheed C-5A, and twin ducted-fan aircraft~\cite{Hess2013, Andreea-Irina2014, Grant2015}.
+% It has also been useful in a variety of applications including assessing flight simulator fidelity
+Recent work from Bachelder et al. has included modifications to the Structural Model to link pilot performance and workload, and to enable the modeling of pulsive pilot behavior~\cite{Bachelder2017, Bachelder2018}.
 
-\clearpage
-\subsection{Summary}
-% \textit{add brief, 1 paragraph summary of literature review}
-
-Concurrent bandwidth feedback has been used in a large variety of motor control tasks, and has generally been found to improve performance.
-Until recently, however, only simple tasks such as physical movements or basic pursuit tasks have been investigated.
-More recent works, including the lane-keeping task by de Groot et al., and our previous work with the SAFER task, have indicated that concurrent bandwidth feedback can also be quite effective for complex tasks.
-The decrease in required learning time, improved performance, and decreased workload seen in the SAFER task show that concurrent bandwidth feedback may prove to be most useful very early in training when subjects are first exposed to complex, highly dynamic tasks.
-While visual concurrent bandwidth feedback has been used in a variety of tasks, no researchers have investigated its effects on a three-axis tracking task.
-If concurrent bandwidth can improve performance without an increase in workload, then it may prove a useful technique for training other robotics tasks.
-
-Despite extensive previous research, to the authors' knowledge there exists no study in the literature addressing human performance or workload changes in manual tracking tasks between traditional computer monitors and mobile, augmented reality headsets.
-If operator performance while using augmented reality displays is improved--or at the very least, not degraded--then these devices could prove especially valuable in scenarios where it is impractical or otherwise difficult to provide a traditional computer interface.
-There are a variety of robotics tasks, such as pick-and-place tasks, for which performance may be improved by allowing an operator the mobility to move and view the scene from whatever position is convenient at a given time.
-Traditional robotics stations require the operator to remain in a single position, and typically only allow for several camera angles.
-Mobile augmented reality displays allow the operator to take advantage of their ability to move through the environment, without needing to manage external cameras.
 \end{document}
