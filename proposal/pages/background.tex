@@ -56,17 +56,56 @@ de Groot et al. also measured response time to a secondary task as an estimate o
 
 
 \subsubsection{SAFER Experiment}
+\begin{figure}[tb]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{./../img/SAFER_DangerChris.jpg}
+        \caption{A subject from the SAFER experiment seated in the fixed-base simulator~\cite{Karasinski2016Masters}}
+        \label{figure:safersim}
+    \end{center}
+\end{figure}
+
 % We have previously shown that concurrent bandwidth feedback can improve task performance and decrease workload for a 4DoF analog spacecraft task.
 % Would be good to say that we have submitted journal article for review.
-Our recent work has also included investigations into concurrent bandwidth feedback in a four degree of freedom Simplified Aid for EVA Rescue (SAFER) task~\cite{Karasinski2017}.
+Our recent work has also included investigations into concurrent bandwidth feedback in a four degree of freedom Simplified Aid for EVA Rescue (SAFER) task~\cite{Karasinski2016Masters, Karasinski2017}.
 SAFER is a small propulsive jet pack worn during spacewalks for self-rescue~\cite{Vassigh1998}.
+Subjects were tasked with flying SAFER to perform an inspection of the International Space Station's (ISS) solar arrays.
+% An example side view of the task can be seen in Figure~\ref{fig:safer_demo}.
+Subjects were initially placed 40 feet away from the solar array, and were asked to close to 30 feet and hold this distance for the remainder of the task.
+They could gauge their distance from the solar array using the indicator on the guidance display.
+Subjects were then asked to inspect 4 ``damaged'' points on the solar array, and were given a guidance display for navigation to the waypoints. %, see Figure~\ref{fig:displays}.
+% We also implemented an unexpected waypoint redesignation during half the trials.
+% When this occurred, one of the waypoints would be updated to a new location while the subject was in mid-flight toward the original waypoint.
+% Subjects were notified of this change with an audible ``ding'', and the guidance display updated instantaneously.
+% If the trial had an waypoint redesignation on the second waypoint, for instance, the subject would: close from 40 feet to 30 feet, use the guidance to fly towards the first waypoint and inspect, use the guidance to fly towards the second waypoint, hear the audible ``ding'' and guidance display changes and readjust their trajectory, inspect the waypoint, fly to third waypoint and inspect, and fly to the fourth waypoint and inspect.
+Two vertically arranged displays in the simulator were available to complete the task, see Figure~\ref{figure:safersim}.
+The primary display contained an out-the-window view of the solar array and, depending on which group the subject was in, one of the guidance displays. % from Figure~\ref{fig:displays}.
+Subjects used the out-the-window view and guidance display to navigate their environment.
+The secondary display located directly below the primary display displayed information about the subject's current mode, remaining fuel, and a ``comm light''.
+
 In our experiment, subjects were placed into one of three groups: a control, a high precision augmented feedback group, and a concurrent bandwidth feedback group.
 Subjects in the high precision group had an extra significant figure in their guidance display and an analog display which was scaled twice as large (but had half the maximum value) of their flight parameters.
 Subjects in the concurrent bandwidth feedback group had two display elements which would change from a green to a red color when subjects' performance was outside a predefined range.
-Both treatment groups performed better than the control group, with the concurrent bandwidth feedback group performing the best.
-In addition to improving performance, subjects in both treatment groups also had less subjective and objective workload, with the concurrent feedback group again being the most superior.
+Both treatment groups performed better than the control group, with the concurrent bandwidth feedback group performing the best, see Figure~\ref{figure:saferdistance}.
+In addition to improving performance, subjects in both treatment groups also had less subjective and objective workload, with the concurrent feedback group again being the most superior, see Figure~\ref{figure:saferworkload}.
 The concurrent bandwidth feedback also had the added benefit of significantly reducing the amount of time required to train the subjects to their maximum skill level.
 Subjects in this group performed better on their first trial than subjects in the control group did on their last.
+
+\begin{figure}[tb!]
+    \begin{center}
+        \begin{subfigure}{0.49\textwidth}
+	        \includegraphics[width=\linewidth]{./../img/Group_absDistErr_clean_fit_30.pdf}
+	        \caption{Mean absolute distance error, by group.}
+	        \label{figure:saferdistance}
+        \end{subfigure}\hfill
+        \begin{subfigure}{0.49\textwidth}
+	        \includegraphics[width=\linewidth]{./../img/Group_Workload_fit_30.pdf}
+	        \caption{Mean subjective workload rating, by group.}
+	        \label{figure:saferworkload}
+        \end{subfigure}
+        \caption{Group 1 was the control group, while Group 3 experienced CBF. Subjects with CBF performed the best (a) and reported the lowest workload (b). Errors are the standard error of the mean~\cite{Karasinski2016Masters}.}
+        % \label{fig:designs}%
+    \end{center}
+\end{figure}
 
 \subsection{Workload Measurement}
 Improving performance, through some kind of feedback or other technique, usually comes at an increase in workload.
@@ -118,9 +157,9 @@ McRuer's early model of the complete pilot/vehicle system is presented in Figure
 McRuer revisited these results in 1974, after three decades of supporting engineering and experimental psychology experiments, and was able to further generalize these results for a wide variety of system dynamics~\cite{McRuer1974}.
 In his study, McRuer completed a detailed analysis which included the human response to proportional, rate/velocity, and acceleration type controlled element dynamics, see Table~\ref{table:mcruer1974a}.
 The result of this report was the so called ``crossover model,'' which relates the operator and controlled element transfer characteristics by the equation
-\begin{align*}
+\begin{align}
 Y_c(jw) Y_p(jw) = \dfrac{w_c e^{-jw \tau_e}}{jw}
-\end{align*}
+\end{align}
 where $Y_c$ is the controlled element transfer function, $Y_p$ is the approximate human operator transfer function, $w_c$ is the crossover frequency, and $\tau_e$ is the effective time delay of the pilot.
 The crossover model is so named as it allows for linear behavior at approximately -20 dB/decade slope in the region of the crossover frequency.
 The approximate human operator response to several controlled element transfer functions, and their combined open-loop transfer function are presented in Table~\ref{table:mcruer1974b}.
