@@ -7,7 +7,7 @@
 % --placing images
 \usepackage{graphicx} 		% general image
 \usepackage{subcaption}
-\usepackage{caption} 	% subcaptions 
+\usepackage{caption} 	% subcaptions
 % --fancy tables with tabularx
 \usepackage{tabularx} % requires defining some table lengths below
 % --set up references, links, urls
@@ -97,7 +97,7 @@
 % Figure particulars
 % -- JP recommended
 \renewcommand{\figurename}{\footnotesize\sffamily\bfseries FIGURE}
-% --taken from 
+% --taken from
 % for figures: caption label is italic, the caption text is bold / italic
 \captionsetup[figure]{
 	labelfont={sf,bf},
@@ -106,7 +106,7 @@
 	justification=raggedright}
 % for subfigures: caption label is bold, the caption text normal.
 % justification is raggedright (i.e. left aligned)
-% singlelinecheck=off means that the justification setting is used even when the caption is only a single line long. 
+% singlelinecheck=off means that the justification setting is used even when the caption is only a single line long.
 % if singlelinecheck=on, then caption is always centered when the caption is only one line.
 \captionsetup[subfigure]{
 	labelfont={sf,bf},
@@ -129,7 +129,7 @@
 \setlist{noitemsep}
 \setlist{nosep}
 
-% section 
+% section
 % -- need to define spacing and size
 \newcommand{\textSpace}{1.1}
 \newcommand{\sectionSpace}{-0.2}
@@ -203,9 +203,9 @@
 % setspace package
 \setstretch{\textSpace}
 % spacing after each paragraph
-%DONT\setlength{\parskip}{3pt} 
+%DONT\setlength{\parskip}{3pt}
 % line spacing for all in document, maybe use package set space
-%DONT\renewcommand{\baselinestretch}{1.15} 
+%DONT\renewcommand{\baselinestretch}{1.15}
 
 \newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}}
 \def\CC{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
@@ -214,6 +214,9 @@
 % --------------FIX-------------------
 
 
+\usepackage{graphicx}
+\usepackage[space]{grffile}
+\usepackage{makecell}
 \usepackage{tikz}
 \usetikzlibrary{arrows}
 \usepackage{flexisym}

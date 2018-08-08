@@ -4,7 +4,7 @@
 \begin{document}
 \section{Background}
 \subsection{Augmented Feedback}
-The concept of feedback was popularized when closed-loop control systems were first developed, and has since been defined many times, and ~\cite{Wierner1948}.
+The concept of feedback was popularized when closed-loop control systems were first developed, and has since been defined many times~\cite{Wierner1948}.
 In the context of this work, a convenient definition of feedback comes from Ramaprasad, ``[f]eedback is information about the gap between the actual level and the reference level of a system parameter which is used to alter the gap in some way~\cite{Ramaprasad1983}.''
 This information about the gap between an actual and reference level, or the error, can be conveyed to the operator of a system in a variety of ways.
 Feedback can be broadly classified into two types: intrinsic, feedback which is generated from within the context of the action itself, and extrinsic, feedback which is given from an external source~\cite{laurillard1993rethinking}.
@@ -12,9 +12,9 @@ Feedback can be broadly classified into two types: intrinsic, feedback which is 
 Extrinsic feedback, which is also known as augmented feedback, has been extensively studied in the field motor learning~\cite{Sigrist2013}.
 In their 2013 review, Sigrist et al. write ``[i]t is generally accepted that augmented feedback, provided by a human expert or a technical display, effectively enhances motor learning~\cite{Sigrist2013}.''
 There are a variety of different forms of augmented feedback, however, which can be further classified by how, when, and by what form the feedback is provided.
-For this experiment and our past work, however, we sought to evaluate a type of feedback which was both conceptually simple and could be tied to operational requirements.
+For this work, however, we sought to evaluate a type of feedback which was both conceptually simple and could be tied to operational requirements.
 With these requirements in mind, we investigate the effects of concurrent bandwidth feedback.
-Concurrent or real-time feedback is displayed to the operator while the task is being executed, compared to terminal feedback which is displayed after the task is complete.
+Concurrent, or real-time, feedback is displayed to the operator while the task is being executed, in comparison to terminal feedback, which is displayed after the task is complete.
 Bandwidth feedback is displayed to the operator when some parameter is inside (on-track feedback) or outside (off-track feedback) of an acceptable, predefined tolerance limit.
 In our implementation, concurrent bandwidth feedback describes feedback conveyed to the operator when their real-time performance drifts outside of an acceptable tolerance limit.
 
@@ -24,36 +24,35 @@ The experiment was divided into two groups of subjects, one group of subjects re
 Subjects that received the verbal bandwidth feedback improved from an initial median ``right'' percentage of 13\% to 54\% after several training sessions.
 The feedback was then removed after these training trials, during which time subjects dropped to a median percentage of 26\%.
 This is consistent with the guidance hypothesis (which was not formalized for another fifty years after this experiment was concluded), which states that consistent feedback during the acquisition phase of learning leads to a dependency on the feedback~\cite{salmoni1984knowledge}.
-Subjects became dependent on the verbal feedback (extrinsic feedback) rather than their proprioceptive sense (intrinsic feedback) to such an effect that they could no longer perform with the verbal feedback removed.
+Subjects became dependent on the verbal feedback (extrinsic feedback) rather than their visual or proprioceptive sense (intrinsic feedback) to such an effect that they could no longer perform with the verbal feedback removed.
 
 Payne and Hauty performed one of the first concurrent bandwidth feedback studies in 1955~\cite{payne1955effect}.
 In their study, subjects completed a multidimensional pursuit test, which required them to scan four simulated aircraft instruments and counter their drift by adjusting simulated aircraft controls.
-Subjects were placed into one of three feedback groups: a control level, where no feedback was provided, a second level, which included a single peripheral visual signal when a deviation in one of the displays occurred, but not specify which instrument, and a third level, which provided individual indicators for each of the four instruments, and noted the locus of the deviation.
+Subjects were placed into one of three feedback groups: a control level, where no feedback was provided, a second level, which included a single peripheral visual signal when a deviation in one of the displays occurred, but did not specify which instrument, and a third level, which provided individual indicators for each of the four instruments, and noted the locus of the deviation.
 They found a very significant effect between the different feedback groups, with the control group performing the worst, the second level performing better, and the third level performing better still.
 Subjects completed the test every hour for a four hour period.
 Performance dropped across all three groups as time elapsed, but the performance of the subjects in level three was superior at the end of this period compared to the subjects in the control group at the beginning of the experiment.
-They conclude by stating that ``the increment is a positive function of the specificity of the information supplied, it can be ascribed largely to the directive properties of the cues, i.e., the cues impose a more efficient temporal and spatial organization upon [the subject's] scanning behavior~\cite{payne1955effect}.''
+They concluded by stating that ``the increment is a positive function of the specificity of the information supplied, it can be ascribed largely to the directive properties of the cues, i.e., the cues impose a more efficient temporal and spatial organization upon [the subject's] scanning behavior~\cite{payne1955effect}.''
 
 Gordon and Gottlieb performed a rotary pursuit study investigating the effects on on-track and off-track concurrent bandwidth feedback in 1967~\cite{Gordon1967}.
 Subjects in their study were placed into one of three groups: a control, on-track feedback, and off-track feedback.
-The subjects in the bandwidth feedback groups had to track a 0.75 inch by 0.75 inch target with 0.187 inches rigid stylus tip.
-For subjects in the on-track feedback group, a lightbulb was illuminated when they were on target, while the lightbulb was illuminated for subjects in the on-track group when they were not on the target.
-While both the on-track and off-track groups performed better than the control group, the off-target group performed slightly superior, which was consistent with Williams and Briggs for subjects completing their similar task~\cite{williams1962target}.
-Additionally, subjects in the feedback groups completed several trials at the end of the experiment without a loss of performance which is often seen due to the guidance hypothesis.
+The subjects in the bandwidth feedback groups had to track a 0.75 inch by 0.75 inch target with 0.187 inch rigid stylus tip.
+For subjects in the on-track feedback group, a light bulb was illuminated when they were on target, and the light bulb was illuminated for subjects in the off-track group when they were not on the target.
+While both the on-track and off-track groups performed better than the control group, the off-target group performance was slightly superior.
+This finding was consistent with Williams and Briggs for subjects completing their similar task~\cite{williams1962target}.
+Additionally, subjects in the feedback groups completed several trials at the end of the experiment without feedback, and did not experience the loss of performance which is often seen due to the guidance hypothesis.
 This indicates that subjects were able to use the feedback to better learn the task, and were not completely dependent on the feedback.
-Subjects used their own intrinsic feedback to learn the task, and were able to take advantage of the concurrent bandwidth feedback to both better learn and perform in a non-dependent way.
+Subjects used their own intrinsic feedback to learn the task, and were able to take advantage of the concurrent bandwidth feedback to both better learn and perform the task without becoming dependent on the external feedback.
 
-More recently, de Groot et al. investigated the effects of concurrent bandwidth feedback on learning a lane-keeping task in a driving simulator~\cite{DeGroot2011}.
+In 2011, de Groot et al. investigated the effects of concurrent bandwidth feedback on learning a lane-keeping task in a driving simulator~\cite{DeGroot2011}.
 Similar to Gordon and Gottlieb, they investigated the effects of on-track and off-track feedback compared to a control group.
 Instead of using a visual indicator, however, de Groot et al. used haptic feedback in the form of a vibrating chair for their feedback groups.
-They found that on-target and off-target groups had better lane-keeping performance than the control group, and that, similar to Gordon and Gottlieb and Williams and Brigg, that the off-target group was the superior performer.
-Retention trials, however, showed that a majority of this performance improvement was lost during retention trials, which was in accordance with the guidance hypothesis.
+They found that on-target and off-target groups had better lane-keeping performance than the control group, and that, similar to Gordon and Gottlieb and Williams and Brigg, the off-target group performed best.
+Retention trials, however, showed that a majority of this performance improvement was lost during when the feedback was removed, which was in accordance with the guidance hypothesis.
 The off-target group, though, did still retain some minor performance improvement, which the authors partially attribute to the onset advantage~\cite{fischer2008differential}.
-The onset advantage ``suggests that the sudden onset of a stimulus is a
-more powerful perceptual event than a stimulus offset, facilitating low-level perceptual processing and resulting in faster reaction times~\cite{DeGroot2011}.''
+The onset advantage ``suggests that the sudden onset of a stimulus is a more powerful perceptual event than a stimulus offset, facilitating low-level perceptual processing and resulting in faster reaction times~\cite{DeGroot2011}.''
 This effect could explain a repeated suggestion that off-track feedback is superior to on-track feedback, even if the effect is, in general, small.
 de Groot et al. also measured response time to a secondary task as an estimate of workload, but found no differences across groups.
-
 
 \subsubsection{SAFER Experiment}
 \begin{figure}[tb]
@@ -71,7 +70,7 @@ SAFER is a small propulsive jet pack worn during spacewalks for self-rescue~\cit
 Subjects were tasked with flying SAFER to perform an inspection of the International Space Station's (ISS) solar arrays.
 % An example side view of the task can be seen in Figure~\ref{fig:safer_demo}.
 Subjects were initially placed 40 feet away from the solar array, and were asked to close to 30 feet and hold this distance for the remainder of the task.
-They could gauge their distance from the solar array using the indicator on the guidance display.
+They could gauge their distance from the solar array using the indicator on the guidance display and the out-the-window display.
 Subjects were then asked to inspect 4 ``damaged'' points on the solar array, and were given a guidance display for navigation to the waypoints. %, see Figure~\ref{fig:displays}.
 % We also implemented an unexpected waypoint redesignation during half the trials.
 % When this occurred, one of the waypoints would be updated to a new location while the subject was in mid-flight toward the original waypoint.
@@ -82,13 +81,14 @@ The primary display contained an out-the-window view of the solar array and, dep
 Subjects used the out-the-window view and guidance display to navigate their environment.
 The secondary display located directly below the primary display displayed information about the subject's current mode, remaining fuel, and a ``comm light''.
 
-In our experiment, subjects were placed into one of three groups: a control, a high precision augmented feedback group, and a concurrent bandwidth feedback group.
+In our experiment, subjects were placed into one of three groups: a control, a high precision augmented feedback group, and a concurrent bandwidth feedback (CBF) group.
 Subjects in the high precision group had an extra significant figure in their guidance display and an analog display which was scaled twice as large (but had half the maximum value) of their flight parameters.
-Subjects in the concurrent bandwidth feedback group had two display elements which would change from a green to a red color when subjects' performance was outside a predefined range.
-Both treatment groups performed better than the control group, with the concurrent bandwidth feedback group performing the best, see Figure~\ref{figure:saferdistance}.
-In addition to improving performance, subjects in both treatment groups also had less subjective and objective workload, with the concurrent feedback group again being the most superior, see Figure~\ref{figure:saferworkload}.
+Subjects in the CBF group had two display elements which would change from a green to a red color when subjects' performance was outside a predefined range.
+Both treatment groups performed better than the control group, with the CBF group performing the best, see Figure~\ref{figure:saferdistance}.
+While performance was improved in both treatment groups, the effects that the treatment had on subject workload was very different.
+Subjects in the high precision group reported significantly more workload than the control group, while subjects in the feedback group reported significantly less workload than the control group, see Figure~\ref{figure:saferworkload}.
 The concurrent bandwidth feedback also had the added benefit of significantly reducing the amount of time required to train the subjects to their maximum skill level.
-Subjects in this group performed better on their first trial than subjects in the control group did on their last.
+Subjects in this group performed better on their first trial than subjects in the control group did on their last, after approximately two hours of practice.
 
 \begin{figure}[tb!]
     \begin{center}
@@ -108,25 +108,29 @@ Subjects in this group performed better on their first trial than subjects in th
 \end{figure}
 
 \subsection{Workload Measurement}
-Improving performance, through some kind of feedback or other technique, usually comes at an increase in workload.
-The sustained presence of increased workload, however, can leads to a loss of the ability to sustain improved performance.
+Improving performance, through some kind of feedback or other technique, usually comes with the cost of increased workload.
+The sustained presence of increased workload, however, can lead to a loss of the ability to sustain improved performance.
 Workload was defined by Hart and Staveland as ``the perceived relationship between the amount of mental processing capability or resources and the amount required by the task''~\cite{Hart1988}.
 More simply put, having a low workload indicates that it would be easy to complete additional tasks, while having a high workload suggests that it would be difficult.
 
-One of the most venerable workload measures in the NASA Task Load Index (NASA-TLX).
+The NASA Task Load Index (NASA-TLX) is one of the most well known and commonly used subjective workload measures.
 The NASA-TLX has been in use for thirty years, and has been used and validated over a large variety of tasks~\cite{Hart2006}.
 The NASA-TLX is a multidimensional rating scale which uses the magnitude and ranking of six subscales to produce an overall estimate of subjective workload~\cite{Hart1988}.
 The six subscales are: Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, and Frustration.
 Each of these scales is rated from a 0 (Very Low) to 100 (Very High) scale, with the exception of Performance, which is rated from 0 (Perfect) to 100 (Failure).
 After marking a value for each of these subscales, subjects then make fifteen pairwise weightings, which allows them to rate each pair of subscales based on their perceived contribution to their overall workload.
-A final, overall workload score is computed by multiplying each subscales score by the number of times it was chosen in the pairwise weightings, adding these values, and dividing by fifteen.
+A final, overall workload score is computed by multiplying each subscale's score by the number of times it was chosen in the pairwise weightings, adding these values, and dividing by fifteen.
 As certain subscales may be more or less important than others, depending on the task being evaluated, some researchers can drop subscales or simply not compute the overall score.
-There has been some argument in the literature that the raw scales, rather than the overall scale, may be more valid~\cite{bustamante2008measurement}.
+% There has been some argument in the literature that the raw scales, rather than the overall scale, may be more valid~\cite{bustamante2008measurement}.
 
-In addition to subjective measures of workload, there are a variety of techniques which aim to estimate objective measures.
+In addition to subjective measures of workload, there are a variety of techniques which aim to estimate objective workload.
 One of the most common objective measurement techniques is the secondary task, which requires subjects to complete the primary task, then use any spare workload to respond to a secondary task~\cite{gawron2008human}.
 Secondary tasks can provide a sensitive measure to differences in workload and performance compared to a single task alone, and allow for a common measure between experimental conditions~\cite{slocum1971meaningful}.
 Care must be taken, however, to ensure that the secondary task does not intrude upon primary task performance~\cite{williges1979behavioral}.
+We often use a multiple choice reaction time task as an objective workload measurement.
+In this secondary task, subjects are presented with several different stimuli, each of which requires a different response~\cite{lysaght1989operator}.
+Subjects' objective workload can then be inferred by either the percentage of secondary tasks which were correctly responded to within a given time, the number of secondary tasks which were correctly responded to in a trial, or both.
+We have previously found this type of task to be accurately tied to subjective workload scales~\cite{Karasinski2017}.
 
 % \subsection{Robotics Performance}
 % 1 page\\
@@ -144,17 +148,18 @@ Care must be taken, however, to ensure that the secondary task does not intrude 
 
 In addition to popularizing the concept of feedback, the creation of control theory in the early 1940s also provided the tools required for the mathematical modeling of the human pilot.
 At the time, new weapons were being created for World War 2 which could only be effectively used with the use of trained operators working in tandem with the machine.
-While it was thought that a human could be viewed as a unique kind of servomechanism in the control feedback loop, it was still unclear what variables effected human performance.
+While it was thought that a human could be viewed as a unique kind of servomechanism in the control feedback loop, it was still unclear what factors affected human performance.
 Early work by Tustin and others extended the control theory framework and applied these theories to actual human operators~\cite{tustininvestigation}.
-Particular interest was focused on ``attempt[ing] to find the laws of relationship of movement and error. In particular, it was hoped that this relationship [would] be approximately linear and so permit well developed theory of `linear servomechanisms' to be applied to manual control in the same way as it applies to automatic following.~\cite{tustininvestigation}''
+Particular interest was focused on ``attempt[ing] to find the laws of relationship of movement and error. In particular, it was hoped that this relationship [would] be approximately linear and so permit well developed theory of `linear servomechanisms' to be applied to manual control in the same way as it applies to automatic following~\cite{tustininvestigation}.''
 % ``The object of the series of tests was to investigate the nature of the layer's response in a number of particular cases and to attempt to find the laws of relationship of movement and error. In particular, it was hoped that this relationship be found (within the range of practical requirements) to be approximately linear and so permit well developed theory of `linear servomechanisms' to be applied to manual control in the same way as it applies to automatic following.''
+This would allow for the prediction of human performance and the ability to predict the limits of human control.
 
 These early works were summarized in McRuer's 1957 report, ``Dynamic Response of Human Operators''~\cite{McRuer1957}.
 This work evaluated measurements for single-input/single-output (SISO) manual control systems and developed predictive models consistent with this data.
 Indeed, McRuer writes, ``[i]t is possible, without doing violence to the data, to obtain describing functions which are generally applicable to the results of the many diverse experiments~\cite{McRuer1957}.''
 The report concludes by describing a hypothetical transfer function of the human operator which includes a time delay, a neuromuscular lag, and a gain.
 McRuer's early model of the complete pilot/vehicle system is presented in Figure~\ref{figure:mcruer1974}.
-McRuer revisited these results in 1974, after three decades of supporting engineering and experimental psychology experiments, and was able to further generalize these results for a wide variety of system dynamics~\cite{McRuer1974}.
+McRuer revisited these results in 1974, after three decades of supporting engineering and experimental psychology experiments, and was able to further generalize these results to a wide variety of system dynamics~\cite{McRuer1974}.
 In his study, McRuer completed a detailed analysis which included the human response to proportional, rate/velocity, and acceleration type controlled element dynamics, see Table~\ref{table:mcruer1974a}.
 The result of this report was the so called ``crossover model,'' which relates the operator and controlled element transfer characteristics by the equation
 \begin{align}
@@ -199,8 +204,8 @@ Even today, the crossover is used as the standard for describing pilot/vehicle s
     \end{tabular}
 \end{table}
 
-Since the invention of the crossover model the demand for human pilot models for use in informing vehicle design, as well predicting, preventing, and explaining accidents has led to a number of more detailed pilot models.
-A recent review by Xu et al. surveyed the state of the art in human pilot modeling, and grouped existing models into three classes of models based on: control theory, human physiology, and intelligence techniques~\cite{Xu2017}.
+The continued demand for human pilot models for use in informing vehicle design, as well predicting, preventing, and explaining accidents has led to a variety of more complex pilot models since the creation of the crossover model.
+A recent review by Xu et al. in 2017 surveyed the state of the art in human pilot modeling, and grouped existing models into three classes of models based on: control theory, human physiology, and intelligence techniques~\cite{Xu2017}.
 Classical models based on control theory include the McRuer crossover model and optimal control models by Kleinman et al. developed in the early 1970s~\cite{Kleinman1970, Baron1970}.
 Models based on human physiology were developed to understand human pilot perception and control behavior, and include the Hess structural model~\cite{Hess1980, Hess1990, Hess1997}, Hosman's descriptive model~\cite{Hosman1996, Hosman1999}, and the biodynamic model~\cite{Griffin2001}.
 Recent intelligence models take advantage of techniques including fuzzy control and neural networks~\cite{Zaychik2006, Gestwa}.
@@ -218,8 +223,12 @@ While the McRuer was very successful in predicting pilot behavior, it it did not
 % ``Despite their relative successes, neither the servo model nor the optimal control model attempts to describe the underlying structure which contributes to human pilot dynamics~\cite{Hess1980}.''
 For this reason, the Hess Structural Model is of particular interest due to it's incorporation of multiple sensory channels and models of visual acuity and the time-varying human pilot~\cite{Hess2009}.
 The Structural Model includes the effects of the neuromuscular system, the force-feel characteristics of the input device, and the contributions of proprioceptive, vestibular, and visual feedback, see Figure~\ref{figure:structuralmodel}.
+One of the key strengths of the Structural Model is the relatively few number of free parameters that need to be set to predict pilot performance.
 The model has been used in predicting evaluating handling qualities and and pilot-induced oscillation rating levels for helicopters, Boeing 747, Lockheed C-5A, and twin ducted-fan aircraft~\cite{Hess2013, Andreea-Irina2014, Grant2015}.
 % It has also been useful in a variety of applications including assessing flight simulator fidelity
+Hess has also investigated how pilot control characteristics change with time due to flight anomalies, changing flight dynamics, and sudden increases in task demand~\cite{Hess2009, Hess2016}.
+The results of this model have been compared to the results of a human-in-the-loop simulation for a well trained subject, and showed good comparison~\cite{Hess2016}.
 Recent work from Bachelder et al. has included modifications to the Structural Model to link pilot performance and workload, and to enable the modeling of pulsive pilot behavior~\cite{Bachelder2017, Bachelder2018}.
+
 
 \end{document}
