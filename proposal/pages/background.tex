@@ -2,6 +2,7 @@
 \documentclass[float=false, crop=false]{standalone}
 \usepackage[subpreambles=true]{standalone}
 \begin{document}
+
 \section{Background}
 \subsection{Augmented Feedback}
 The concept of feedback was popularized when closed-loop control systems were first developed, and has since been defined many times~\cite{Wierner1948}.
@@ -81,6 +82,23 @@ The primary display contained an out-the-window view of the solar array and, dep
 Subjects used the out-the-window view and guidance display to navigate their environment.
 The secondary display located directly below the primary display displayed information about the subject's current mode, remaining fuel, and a ``comm light''.
 
+\begin{figure}[tb!]
+    \begin{center}
+        \begin{subfigure}{0.49\textwidth}
+            \includegraphics[width=\linewidth]{./../img/Group_absDistErr_clean_fit_30.pdf}
+            \caption{Mean absolute distance error, by group.}
+            \label{figure:saferdistance}
+        \end{subfigure}\hfill
+        \begin{subfigure}{0.49\textwidth}
+            \includegraphics[width=\linewidth]{./../img/Group_Workload_fit_30.pdf}
+            \caption{Mean subjective workload rating, by group.}
+            \label{figure:saferworkload}
+        \end{subfigure}
+        \caption{Group 1 was the control group, while Group 3 experienced CBF. Subjects with CBF performed the best (a) and reported the lowest workload (b). Errors are the standard error of the mean~\cite{Karasinski2016Masters}.}
+        % \label{fig:designs}%
+    \end{center}
+\end{figure}
+
 In our experiment, subjects were placed into one of three groups: a control, a high precision augmented feedback group, and a concurrent bandwidth feedback (CBF) group.
 Subjects in the high precision group had an extra significant figure in their guidance display and an analog display which was scaled twice as large (but had half the maximum value) of their flight parameters.
 Subjects in the CBF group had two display elements which would change from a green to a red color when subjects' performance was outside a predefined range.
@@ -89,23 +107,6 @@ While performance was improved in both treatment groups, the effects that the tr
 Subjects in the high precision group reported significantly more workload than the control group, while subjects in the feedback group reported significantly less workload than the control group, see Figure~\ref{figure:saferworkload}.
 The concurrent bandwidth feedback also had the added benefit of significantly reducing the amount of time required to train the subjects to their maximum skill level.
 Subjects in this group performed better on their first trial than subjects in the control group did on their last, after approximately two hours of practice.
-
-\begin{figure}[tb!]
-    \begin{center}
-        \begin{subfigure}{0.49\textwidth}
-	        \includegraphics[width=\linewidth]{./../img/Group_absDistErr_clean_fit_30.pdf}
-	        \caption{Mean absolute distance error, by group.}
-	        \label{figure:saferdistance}
-        \end{subfigure}\hfill
-        \begin{subfigure}{0.49\textwidth}
-	        \includegraphics[width=\linewidth]{./../img/Group_Workload_fit_30.pdf}
-	        \caption{Mean subjective workload rating, by group.}
-	        \label{figure:saferworkload}
-        \end{subfigure}
-        \caption{Group 1 was the control group, while Group 3 experienced CBF. Subjects with CBF performed the best (a) and reported the lowest workload (b). Errors are the standard error of the mean~\cite{Karasinski2016Masters}.}
-        % \label{fig:designs}%
-    \end{center}
-\end{figure}
 
 \subsection{Workload Measurement}
 Improving performance, through some kind of feedback or other technique, usually comes with the cost of increased workload.
@@ -229,6 +230,5 @@ The model has been used in predicting evaluating handling qualities and and pilo
 Hess has also investigated how pilot control characteristics change with time due to flight anomalies, changing flight dynamics, and sudden increases in task demand~\cite{Hess2009, Hess2016}.
 The results of this model have been compared to the results of a human-in-the-loop simulation for a well trained subject, and showed good comparison~\cite{Hess2016}.
 Recent work from Bachelder et al. has included modifications to the Structural Model to link pilot performance and workload, and to enable the modeling of pulsive pilot behavior~\cite{Bachelder2017, Bachelder2018}.
-
 
 \end{document}

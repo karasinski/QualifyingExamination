@@ -4,15 +4,13 @@
 
 \begin{document}
 
-\section{Research Products}
-\subsection{Proposed Research}
+\section{Proposed Research}
+% \subsection{Proposed Research}
 We propose to run human-in-the-loop subject testing experiments to understand the effects of concurrent bandwidth feedback, and to integrate the effects of this feedback into a human performance model.
+To investigate the three Aims outlined in the Problem Statement, we propose two experiments and the development of a model.
 %
 % \subsection{Strategy}
 % We will run human subject experiments to test our hypotheses.
-%
-% A draft journal article on the SAFER experiment is being prepared for submission in the journal of Human Factors.
-% A conference paper, ``Evaluating Augmented Reality in a Three-Axis Manual Tracking Task'', J. Karasinski and S. Robinson has recently been submitted for consideration at AIAA SciTech 2018.
 %
 % In addition to these experiments, I have also completed numerous user tests for several products developed at NASA Ames.
 %
@@ -21,7 +19,8 @@ We propose to run human-in-the-loop subject testing experiments to understand th
 \begin{description}[align=left]
 \item [Experiment One] investigates if concurrent bandwidth feedback can be used to teach novice subjects to interpret depth cues in a three-axis manual tracking task.
 \item [Experiment Two] investigates if concurrent bandwidth feedback can decrease the required learning time to peak performance in a simulated robotic arm track and capture task.
-\item [The Model] will extend Professor Hess’ structural model of the human pilot to include the effects of concurrent bandwidth feedback. The outputs of this model will be compared to the results of Experiment One and Two.
+\item [The Model] will extend Professor Hess’ structural model of the human pilot to include the effects of concurrent bandwidth feedback.
+% The outputs of this model will be compared to the results of Experiment One and Two.
 \end{description}
 % Experiment One investigates if concurrent bandwidth feedback can be used to teach novice subjects to interpret depth cues in a three-axis manual tracking task.
 % Experiment Two investigates if concurrent bandwidth feedback can decrease the required learning time to peak performance in a simulated robotic arm track and capture task.
@@ -175,42 +174,43 @@ For subjects in the HoloLen's group, the $z$ motion of the cross also could move
 Subjects in both groups used the same Microsoft Xbox controller and control scheme to complete the task.
 
 % \paragraph{Selection of Disturbance}
-The disturbance function was a sum of 13 sinusoids approximating a rectangular spectrum with a 2.0 rad/s cutoff frequency~\cite{hess1984effects}.
+The disturbance function was a sum of 13 sinusoids approximating a rectangular spectrum with a 2.0 rad/s cutoff frequency.
 The disturbing force, as a function of time, $d(t)$, was
 \begin{align}
 d(t) = \sum_{i=1}^{13} A_i \sin \left( w_i t + \phi_i \right)
 \label{eq:disturbance}
 \end{align}
-Table~\ref{sine-table} lists the sine wave amplitude, frequency, number of cycles in a 60 second run, and phase offset for each sine wave in the disturbance force.
+The sine wave amplitude, frequency, and phase offset for each sine wave in the disturbance force was borrowed from a similar experiment~\cite{hess1984effects}.
+% Table~\ref{sine-table} lists the sine wave amplitude, frequency, number of cycles in a 60 second run, and phase offset for each sine wave in the disturbance force.
 This disturbance was the same for all subjects and trials, though the subjects were naive to this.
 The $x$, $y$ and $z$ axes all experienced the same disturbance force generating function, but the $y$ axis was temporally offset by 60 seconds and the $z$ axis was offset by 120 seconds.
 This allowed for a very similar generation of disturbance forces for each axis.
 The RMSE of the disturbance force was normalized along each axis such that all three were the same.
 
-\begin{table}[tb]
-\caption{The relative amplitude, frequency, number of cycles in each 60 second run, and phase offset each $i^{th}$ sine, see Equation~\ref{eq:disturbance}.}
-\centering
-\begin{tabular}{*{5}{r}}
-\toprule
-i & $A_i/A_1$ & $w_i$ rad/s & \multicolumn{1}{p{3cm}}{\centering No. of cycles \\in 60-s run} & $\phi_i$ \\
-\midrule
-1  & 1.0 &  0.18850 & 1   & $\pi/6.5$ \\
-2  & 1.0 &  0.31416 & 3   & $2 \times \phi_1$ \\
-3  & 1.0 &  0.50265 & 4   & $3 \times \phi_1$ \\
-4  & 1.0 &  0.87965 & 8   & $4 \times \phi_1$ \\
-5  & 1.0 &  1.44513 & 13  & $5 \times \phi_1$ \\
-6  & 1.0 &  2.13628 & 20  & $6 \times \phi_1$ \\
-7  & 0.1 &  3.07876 & 29  & $7 \times \phi_1$ \\
-8  & 0.1 &  4.20973 & 40  & $8 \times \phi_1$ \\
-9  & 0.1 &  5.78053 & 55  & $9 \times \phi_1$ \\
-10 & 0.1 &  8.23097 & 78  & $10 \times \phi_1$ \\
-11 & 0.1 & 11.24690 & 107 & $11 \times \phi_1$ \\
-12 & 0.1 & 15.77079 & 150 & $12 \times \phi_1$ \\
-13 & 0.1 & 23.93894 & 228 & $13 \times \phi_1$ \\
-\bottomrule
-\end{tabular}
-\label{sine-table}
-\end{table}
+% \begin{table}[tb]
+% \caption{The relative amplitude, frequency, number of cycles in each 60 second run, and phase offset each $i^{th}$ sine, see Equation~\ref{eq:disturbance}.}
+% \centering
+% \begin{tabular}{*{5}{r}}
+% \toprule
+% i & $A_i/A_1$ & $w_i$ rad/s & \multicolumn{1}{p{3cm}}{\centering No. of cycles \\in 60-s run} & $\phi_i$ \\
+% \midrule
+% 1  & 1.0 &  0.18850 & 1   & $\pi/6.5$ \\
+% 2  & 1.0 &  0.31416 & 3   & $2 \times \phi_1$ \\
+% 3  & 1.0 &  0.50265 & 4   & $3 \times \phi_1$ \\
+% 4  & 1.0 &  0.87965 & 8   & $4 \times \phi_1$ \\
+% 5  & 1.0 &  1.44513 & 13  & $5 \times \phi_1$ \\
+% 6  & 1.0 &  2.13628 & 20  & $6 \times \phi_1$ \\
+% 7  & 0.1 &  3.07876 & 29  & $7 \times \phi_1$ \\
+% 8  & 0.1 &  4.20973 & 40  & $8 \times \phi_1$ \\
+% 9  & 0.1 &  5.78053 & 55  & $9 \times \phi_1$ \\
+% 10 & 0.1 &  8.23097 & 78  & $10 \times \phi_1$ \\
+% 11 & 0.1 & 11.24690 & 107 & $11 \times \phi_1$ \\
+% 12 & 0.1 & 15.77079 & 150 & $12 \times \phi_1$ \\
+% 13 & 0.1 & 23.93894 & 228 & $13 \times \phi_1$ \\
+% \bottomrule
+% \end{tabular}
+% \label{sine-table}
+% \end{table}
 
 % \paragraph{The Three Designs}
 \begin{figure}[tb!]
@@ -286,22 +286,22 @@ i & $A_i/A_1$ & $w_i$ rad/s & \multicolumn{1}{p{3cm}}{\centering No. of cycles \
     \end{center}
 \end{figure}
 
-\begin{table}[tb]
-\caption{The factors that were modified between the different designs.}
-\centering
-\begin{tabular}{*{3}{r}}
-\toprule
-Design & $\theta$ (degrees) & Feedback \\
-\midrule
-Baseline & 0 & No \\
-Feedback & 0 & Yes \\
-Rotated & 30 & No \\
-\bottomrule
-\end{tabular}
-\label{tab:designs}
-\end{table}
+% \begin{table}[tb]
+% \caption{The factors that were modified between the different designs.}
+% \centering
+% \begin{tabular}{*{3}{r}}
+% \toprule
+% Design & $\theta$ (degrees) & Feedback \\
+% \midrule
+% Baseline & 0 & No \\
+% Feedback & 0 & Yes \\
+% Rotated & 30 & No \\
+% \bottomrule
+% \end{tabular}
+% \label{tab:designs}
+% \end{table}
 
-Three designs were presented to the subjects to evaluate: a baseline, a color-based concurrent bandwidth feedback (CBF) design, and a rotated design.
+Three designs were presented to the subjects to evaluate: a baseline design, a color-based concurrent bandwidth feedback (CBF) design, and a rotated design.
 Figure~\ref{fig:designs} shows all three designs in the same error state.
 The three designs were very similar, having only minor differences between each other.
 Compared to the baseline, the color feedback and rotated displays were expected to produce superior performance along the $z$ axis tracking task.
@@ -315,7 +315,7 @@ When the absolute value of the error on the $z$ axis was lowered back below this
 The rotated display was identical to the baseline design, but the relative attitude of the display was rotated about the $y$ axis by 30 degrees.
 
 Before entering the study, subjects were randomly placed in a display group (either the LCD monitor or HoloLens), and were then randomly placed into an order group (which consisted of Baseline-Feedback-Rotated, Feedback-Rotated-Baseline, and Rotated-Baseline-Feedback).
-This order group was created to remove any order effects that might arise due to training on a given display, and follows a standard latin squares design.
+This order group was created to remove any order effects that might arise due to training on a given display, and follows a standard Latin squares design.
 (The order of the designs was initially considered to be insignificant, but we will later discuss how this is not the case.)
 % Subjects were naive to this order, and were only told which design they were evaluating directly before they began.
 After entering the experiment room, the subjects signed a consent form, and then sat through a twenty minute training session which familiarized them with the task, the three designs, the NASA-TLX, and the controller.
@@ -365,47 +365,47 @@ As such, an RMSE of 1 indicates performance that is just as equivalent as insert
 It was expected that the baseline design would lead to the worst performance in the $z$ axis, while the color feedback and rotated designs would have better performance in the $z$ axis.
 It was also expected that, due to the stereoscopic nature of the display, the HoloLens would allow for better performance than the LCD monitor along $z$ axis.
 
-\begin{table}[tb]
-\caption{Results of three-way ANOVA on $z$ axis RMSE.
-All main effects significant, several significant interactions.}
-\centering
-\begin{tabular}{*{5}{r}}
-\toprule
-                            & numDF & denDF & F-value   & p-value \\
-\midrule
-% (Intercept)                 & 1     & 36     & 2354.6349 & <.0001 \\
-design                      & 2     & 36     &   84.9179 & <.0001 \\
-device                      & 1     & 18     &    7.2158 & 0.0151 \\
-startdesign                 & 2     & 18     &    4.8132 & 0.0212 \\
-design:device               & 2     & 36     &    1.8359 & 0.1741 \\
-design:startdesign          & 4     & 36     &    8.5499 & 0.0001 \\
-device:startdesign          & 2     & 18     &    2.4652 & 0.1132 \\
-design:device:startdesign   & 4     & 36     &    5.5672 & 0.0014 \\
-\bottomrule
-\end{tabular}
-\label{tab:exp1anovarmse}
-\end{table}
+% \begin{table}[tb]
+% \caption{Results of three-way ANOVA on $z$ axis RMSE.
+% All main effects significant, several significant interactions.}
+% \centering
+% \begin{tabular}{*{5}{r}}
+% \toprule
+%                             & numDF & denDF & F-value   & p-value \\
+% \midrule
+% % (Intercept)                 & 1     & 36     & 2354.6349 & <.0001 \\
+% design                      & 2     & 36     &   84.9179 & <.0001 \\
+% device                      & 1     & 18     &    7.2158 & 0.0151 \\
+% startdesign                 & 2     & 18     &    4.8132 & 0.0212 \\
+% design:device               & 2     & 36     &    1.8359 & 0.1741 \\
+% design:startdesign          & 4     & 36     &    8.5499 & 0.0001 \\
+% device:startdesign          & 2     & 18     &    2.4652 & 0.1132 \\
+% design:device:startdesign   & 4     & 36     &    5.5672 & 0.0014 \\
+% \bottomrule
+% \end{tabular}
+% \label{tab:exp1anovarmse}
+% \end{table}
 
-\begin{table}[tb]
-\caption{Results of three-way ANOVA on NASA-TLX.
-No significant effects or interactions.}
-\centering
-\begin{tabular}{*{5}{r}}
-\toprule
-                            & numDF & denDF & F-value   & p-value \\
-\midrule
-% (Intercept)                 & 1   & 36 & 472.0358 & <.0001 \\
-design                      & 2   & 36 &   0.3615 & 0.6991 \\
-device                      & 1   & 18 &   0.3797 & 0.5455 \\
-startdesign                 & 2   & 18 &   0.2769 & 0.7613 \\
-design:device               & 2   & 36 &   0.5595 & 0.5764 \\
-design:startdesign          & 4   & 36 &   0.2649 & 0.8985 \\
-device:startdesign          & 2   & 18 &   0.0025 & 0.9975 \\
-design:device:startdesign   & 4   & 36 &   0.5381 & 0.7086 \\
-\bottomrule
-\end{tabular}
-\label{tab:exp1anovaworkload}
-\end{table}
+% \begin{table}[tb]
+% \caption{Results of three-way ANOVA on NASA-TLX.
+% No significant effects or interactions.}
+% \centering
+% \begin{tabular}{*{5}{r}}
+% \toprule
+%                             & numDF & denDF & F-value   & p-value \\
+% \midrule
+% % (Intercept)                 & 1   & 36 & 472.0358 & <.0001 \\
+% design                      & 2   & 36 &   0.3615 & 0.6991 \\
+% device                      & 1   & 18 &   0.3797 & 0.5455 \\
+% startdesign                 & 2   & 18 &   0.2769 & 0.7613 \\
+% design:device               & 2   & 36 &   0.5595 & 0.5764 \\
+% design:startdesign          & 4   & 36 &   0.2649 & 0.8985 \\
+% device:startdesign          & 2   & 18 &   0.0025 & 0.9975 \\
+% design:device:startdesign   & 4   & 36 &   0.5381 & 0.7086 \\
+% \bottomrule
+% \end{tabular}
+% \label{tab:exp1anovaworkload}
+% \end{table}
 
 % > startdesign
 %          Simultaneous Tests for General Linear Hypotheses
@@ -425,8 +425,8 @@ design:device:startdesign   & 4   & 36 &   0.5381 & 0.7086 \\
 \begin{figure}[tb!]
     \begin{center}
         \includegraphics[width=\linewidth]{./../img/x_design_y_zrmse_col_startdesign_hue_device.pdf}
-        \includegraphics[width=\linewidth]{./../img/x_design_y_zrmse_hue_startdesign_col_device.pdf}
-        \caption{Three-way ANOVA $z$-axis RMSE. Additional formatting required. Which of these plots better shows the result?}
+        % \includegraphics[width=\linewidth]{./../img/x_design_y_zrmse_hue_startdesign_col_device.pdf}
+        \caption{Three-way ANOVA $z$-axis RMSE. Additional formatting required.}
         \label{fig:zrmseanovas}
     \end{center}
 \end{figure}
@@ -532,6 +532,14 @@ For Hypothesis 3, subjects in the rotated design did perform better than those i
 An unexpected side effect of angling the display, however, was that subjects performed worse in the $x$ axis tracking task, which was rotated out of parallel with the display.
 
 \subsection{Experiment 2}
+\begin{figure}[tb]
+    \begin{center}
+        \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{./../img/Screen Shot 2018-07-26 at 1.43.16 PM.png}
+        \caption{The Robotic On-board Trainer (ROBoT) station set up in the NASA HERA Analog, from~\cite{robottalk}}
+        \label{figure:robotinhera}
+    \end{center}
+\end{figure}
+
 Experiment Two will investigate if concurrent bandwidth feedback can decrease the required learning time to peak performance in a simulated robotic arm track and capture task.
 We will compare task performance and workload between two groups: a control group, which receives no feedback, and a treatment group, which receives concurrent bandwidth feedback on one or more sensor readouts.
 Subjects in both groups will complete the same task, and it is hypothesized that subjects in the treatment group will perform the task better and require less training time to reach peak performance.
@@ -544,34 +552,26 @@ Subjects will be trained on this task, and will then repeat the task for one to 
 % Subjects will also be asked to report their subjective workload after each trial.
 
 NASA’s Robotic On-board Trainer (ROBoT) will be used for this experiment.
-ROBoT is a package of simulation software which includes a dynamic model of the robotic arm on the space station, and presents the user with multiple camera angle views and the instrument panel required to operate effectively.
+ROBoT is a package of simulation software which includes a dynamic model of the robotic arm on the space station, and presents the user with multiple camera angle views and the instrument panel required to operate effectively, see Figure~\ref{figure:robotinhera}.
 In addition to these displays, ROBoT also includes the two hand controllers required to control the arm.
 NASA trainers at Johnson Space Center developed metrics which are included in ROBoT, and include the time to capture, alignment measurements during approach, the amount of wobble in the arm, the number of times the grapple fixture contacted the structure, the overall path efficiency, and the number of capture attempts.
 This presents a list of candidate metrics from which we may observe human performance.
 
-\begin{figure}[tb!]
-    \begin{center}
-        \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{./../img/Screen Shot 2018-07-26 at 1.43.16 PM.png}
-        \caption{The Robotic On-board Trainer (ROBoT) station set up in the NASA HERA Analog.}
-        % \label{}
-    \end{center}
-\end{figure}
+% \begin{figure}[tb!]
+%     \begin{center}
+%         \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{./../img/Screen Shot 2018-07-26 at 1.43.02 PM.png}
+%         \caption{ROBoT visualization laptop, showing four camera views.}
+%         % \label{}
+%     \end{center}
+% \end{figure}
 
-\begin{figure}[tb!]
-    \begin{center}
-        \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{./../img/Screen Shot 2018-07-26 at 1.43.02 PM.png}
-        \caption{ROBoT visualization laptop, showing four camera views.}
-        % \label{}
-    \end{center}
-\end{figure}
-
-\begin{figure}[tb!]
-    \begin{center}
-        \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{./../img/Screen Shot 2018-07-26 at 1.43.05 PM.png}
-        \caption{The camera attached to the end effector of the robotic arm, showing the grapple fixture.}
-        % \label{}
-    \end{center}
-\end{figure}
+% \begin{figure}[tb!]
+%     \begin{center}
+%         \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{./../img/Screen Shot 2018-07-26 at 1.43.05 PM.png}
+%         \caption{The camera attached to the end effector of the robotic arm, showing the grapple fixture.}
+%         % \label{}
+%     \end{center}
+% \end{figure}
 
 % \begin{figure}[tb!]
 %     \begin{center}
