@@ -283,6 +283,7 @@ The RMSE of the disturbance force was normalized along each axis such that all t
         \end{tikzpicture}
 
         \caption{Perspective display of the coordinate frame for the tracking tasks, with the $x$, $y$, and $z$ axes labeled. After rotating by $\theta$ around the y axis, the resulting reference frame of $x\textprime y\textprime z\textprime$ is also labeled.}
+        \label{designdiagram}
     \end{center}
 \end{figure}
 
@@ -312,7 +313,7 @@ The $x$ axis is parallel with the horizontal cross, while the $y$ axis is parall
 The color feedback display was identical to the baseline design in every way, but also had visual concurrent bandwidth feedback on the $z$ axis.
 When the absolute value of the error on the $z$ axis grew over a fixed bandwidth of 0.2 units, the color of both the spherical indicator and the cylindrical rod changed from green to red.
 When the absolute value of the error on the $z$ axis was lowered back below this fixed bandwidth, the indicator changed back to a green color.
-The rotated display was identical to the baseline design, but the relative attitude of the display was rotated about the $y$ axis by 30 degrees.
+The rotated display was identical to the baseline design, but the relative attitude of the display was rotated about the $y$ axis by 30 degrees, see Figure~\ref{designdiagram}.
 
 Before entering the study, subjects were randomly placed in a display group (either the LCD monitor or HoloLens), and were then randomly placed into an order group (which consisted of Baseline-Feedback-Rotated, Feedback-Rotated-Baseline, and Rotated-Baseline-Feedback).
 This order group was created to remove any order effects that might arise due to training on a given display, and follows a standard Latin squares design.
@@ -509,25 +510,12 @@ This indicates that even a brief exposure to the concurrent bandwidth feedback w
 Additionally, this also suggests that well trained subjects could perform better using the stereoscopic display compared with the traditional display, but that subjects who were still learning the task could not take advantage of the additional depth cues provided by the display.
 Finally, there were no significant effects found for the NASA-TLX measurements, and there were significant effects found between the designs for reaction time, though this difference was very small at less than 100ms.
 
-% Returning to our hypotheses, we find that:
-% \begin{description}[align=left]
-% \item [Hypothesis 1] Concurrent bandwidth feedback will improve performance in the depth ($z$) axis for both display types, and will decrease workload.
-% \item [Hypothesis 2] Stereoscopic augmented reality displays improve performance in the depth ($z$) axis, but do not affect workload.
-% \item [Hypothesis 3] Rotating the display improves performance in the depth ($z$) axis for both display types, and will decrease workload.
-% % \item [Hypothesis 4] The performance along the $x$ and $y$ axes will be the same for all three designs.
-% \end{description}
-
 In summary, we find partial agreement with all of our hypotheses in respect to the performance aspects of our experiment, while the workload was essentially unaffected by all of our experimental factors.
-% For Hypothesis 1, ``Concurrent bandwidth feedback will improve performance in the depth ($z$) axis for both display types, and will decrease workload,'' we find partial agreement.
 For Hypothesis 1, subjects that completed the baseline design before the CBF design performed better in the CBF design, while subjects that completed the CBF design before the baseline performed approximately the same in both designs.
 This indicates that CBF can both improve performance compared to a baseline design, and better train subjects such that, even after brief exposure, the feedback is no longer required.
 Workload was unaffected by the CBF.
-%
-% Addressing Hypothesis 2, ``Stereoscopic augmented reality displays improve performance in the depth ($z$) axis, but do not affect workload,'' we also find partial agreement.
 For Hypothesis 2, subjects that started in the CBF design appear to have better learned the task and used the CBF to learn to interpret the depth cue provided by the stereoscopic display.
 Subjects that were not initially exposed to this feedback were unable to take advantage of the display, and did not perform significantly better than subjects without the display.
-%
-% In response to Hypothesis 3, ``Rotating the display improves performance in the depth ($z$) axis for both display types, and will decrease workload,''
 For Hypothesis 3, subjects in the rotated design did perform better than those in the baseline design, and appeared to be able to use this view to better interpret the depth of the target.
 An unexpected side effect of angling the display, however, was that subjects performed worse in the $x$ axis tracking task, which was rotated out of parallel with the display.
 
@@ -540,6 +528,7 @@ An unexpected side effect of angling the display, however, was that subjects per
     \end{center}
 \end{figure}
 
+The second Aim of the proposal is addressed by Experiment Two.
 Experiment Two will investigate if concurrent bandwidth feedback can decrease the required learning time to peak performance in a simulated robotic arm track and capture task.
 We will compare task performance and workload between two groups: a control group, which receives no feedback, and a treatment group, which receives concurrent bandwidth feedback on one or more sensor readouts.
 Subjects in both groups will complete the same task, and it is hypothesized that subjects in the treatment group will perform the task better and require less training time to reach peak performance.
@@ -556,6 +545,25 @@ ROBoT is a package of simulation software which includes a dynamic model of the 
 In addition to these displays, ROBoT also includes the two hand controllers required to control the arm.
 NASA trainers at Johnson Space Center developed metrics which are included in ROBoT, and include the time to capture, alignment measurements during approach, the amount of wobble in the arm, the number of times the grapple fixture contacted the structure, the overall path efficiency, and the number of capture attempts.
 This presents a list of candidate metrics from which we may observe human performance.
+
+\subsubsection{Hypotheses}
+This study will assess the influence of concurrent bandwidth feedback (with vs. without) on performance and workload.
+Objective performance data will be measured using time to capture, alignment error metrics, and other metrics available by the ROBoT system.
+Subjective workload will be measured using the NASA-TLX at several points throughout the experiment.
+It is hypothesized that:
+\begin{description}[align=left]
+\item [Hypothesis 1] Concurrent bandwidth feedback will improve performance in the track-and-capture task.
+\item [Hypothesis 2] Concurrent bandwidth feedback will cause subjects to more quickly reach their peak performance in the track-and-capture task.
+\item [Hypothesis 3] Concurrent bandwidth feedback will decrease workload in the track-and-capture task.
+\end{description}
+
+\subsubsection{Previous Work}
+I have previously taken part in another study using the ROBoT simulation software.
+While at NASA Ames last summer, I participated a study investigating the effects of sleep loss and circadian misalignment on performance on the ROBoT simulator~\cite{robotreport}.
+In this study, subjects trained during one-hour long sessions each day for five days, then spent a twenty four hour period in the lab while they continued to perform robotic tasks.
+We did not find evidence of performance loss during sleep deprivation or circadian misalignment on any of the ROBoT performance metrics.
+In fact, participants continued to show improvement over time, which indicated that they had continued to learn the task despite the sleep loss~\cite{robotreport}.
+This finding reinforces the need for enhanced learning techniques, as the current training strategy requires a tremendous amount of time to reach peak performance.
 
 % \begin{figure}[tb!]
 %     \begin{center}
@@ -589,19 +597,48 @@ This presents a list of candidate metrics from which we may observe human perfor
 %     \end{center}
 % \end{figure}
 
-\subsubsection{Hypotheses}
-This study will assess the influence of concurrent bandwidth feedback (with vs. without) on performance and workload.
-Objective performance data will be measured using time to capture, alignment error metrics, and other metrics available by the ROBoT system.
-Subjective workload will be measured using the NASA-TLX at several points throughout the experiment.
-It is hypothesized that:
-\begin{description}[align=left]
-\item [Hypothesis 1] Concurrent bandwidth feedback will improve performance in the track-and-capture task.
-\item [Hypothesis 2] Concurrent bandwidth feedback will cause subjects to more quickly reach their peak performance in the track-and-capture task.
-\item [Hypothesis 3] Concurrent bandwidth feedback will decrease workload in the track-and-capture task.
-\end{description}
-
 \subsection{Model Extension}
+The third and final Aim of the proposal is addressed by developing a model of the human pilot which includes the effects of concurrent bandwidth feedback.
 The Model will extend Professor Hess’ structural model of the human pilot to include the effects of concurrent bandwidth feedback.
-The outputs of this model will be compared to the results of Experiment One and Two.
+% The outputs of this model will be compared to the results of Experiment One and Two.
+The Structural Model has been extremely successful in predicting human performance through a variety of system dynamics, and can predict how performance changes during a pilot's adaptation to changing dynamics.
+Hess has developed adaptive logic for the human pilot in a pursuit task which triggers when the pilot notices that vehicle dynamics have changed~\cite{Hess2009}.
+This logic is based off several criteria, which include ``the logic driving the adjustments... must be predicated upon information available to the human'' and ``the postadapated pilot models must follow the dictates of the crossover model of the human pilot~\cite{Hess2009}.''
+The primary result of the adaptive logic is to increase the resulting crossover frequency of the pilot, effectively making them more aggressive or implying more focus on the task.
+Our initial approach to adding concurrent bandwidth feedback into the Structural Model will be based off of Hess' approach to modeling human adaptation in pursuit tasks, which is currently ad-hoc in nature, see Figure~\ref{figure:hesspursuit}.
+
+\begin{figure}[tb]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{./../img/Screen Shot 2018-08-09 at 4.15.24 PM.png}
+        \caption{Hess' model of the adaptive human pilot, from~\cite{Hess2009}}
+        \label{figure:hesspursuit}
+    \end{center}
+\end{figure}
+
+While this model of the adaptive pilot has been successful in predicting changes in performance for a well trained subject, it does not consider how a pilot would behave when they are still in the early stages of training.
+Our modified model will include two major changes to Hess' current model:
+\begin{itemize}
+\item The adaptation logic will be changed to focus on concurrent bandwidth feedback
+\item The timescale of the adaptation will be significantly longer
+% \item We plan to use the full structural model presented in Figure~\ref{figure:structuralmodel}, rather than the simplified pursuit model presented in Figure~\ref{figure:hesspursuit}
+\end{itemize}
+
+We propose to modify the adaptive logic to trigger when the pilot is receiving concurrent bandwidth feedback, rather than when a change in system dynamics occurs.
+This will require the addition of a feedback loop onto the Structural Model which triggers when the bandwidth feedback is activated.
+This loop will likely be based around the $K_e$ gain, which is currently the primary way of setting the crossover frequency in the Structural Model.
+This implies that the subjects in our experiments do their primary learning when they are receiving qualitative feedback that their current level of aggressiveness is not sufficient to complete the task.
+While there a separate loop that adjusts the crossover frequency as learning progresses over the course of several hours clearly exists, the change in performance we see when subjects use the concurrent bandwidth feedback happens relatively rapidly, within a few minutes.
+This is reflected in the delta of performance between subjects in the different groups of our SAFER experiment, even on the first trial, see Figure~\ref{figure:saferdistance}.
+This relates to the second required change, the amount the required adaptation time.
+Professor Hess' model requires that pilots adapt within a very short time period, on the order of 5 seconds~\cite{weir1966}.
+The results of our experiment with SAFER and the three-axis tracking task also suggest relatively short adaptation times, though they are on the order of a few minutes, again see Figure~\ref{figure:saferdistance}.
+
+% Finally, there are many advantages to using the full structural model over the simplified pursuit model.
+% While we have only shown subjects visual concurrent bandwidth feedback, we could also provide haptic feedback on the stick or seat.
+% While all of our experiments have taken place in fixed based simulators, it is tempting to consider how the effects of our feedback interact with the effects of motion based simulators.
+
+While it should be noted that this work is in very preliminary stages and not scheduled to begin until the Fall Quarter, some early work has been started in preparation for the qualifying examination.
+An effort has been made to begin to replicate some of Hess' results.
+Working with Professor Hess, I have been able to replicate some of the existing adaptation logic for a two-axis tracking task, and begun exploratory research into modifying the model.
 
 \end{document}
