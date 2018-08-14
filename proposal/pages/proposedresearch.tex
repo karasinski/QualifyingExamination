@@ -87,16 +87,15 @@ The performance improving effects of this feedback, seen throughout the literatu
 % We can also use this to create our model and validate the predictions of the model
 
 \subsection{Experiment One}
-Experiment One investigated the effects of concurrent bandwidth feedback on performance (CBF) and augmented reality displays in a three-axis manual tracking task.
+Experiment One investigated the effects of concurrent bandwidth feedback (CBF) and augmented reality displays on performance and workload in a three-axis manual tracking task.
 In our experiment, subjects were responsible for simultaneously completing three tracking tasks and a two-choice task.
-Each axis of the tracking task was disturbed by a sum-of-sines, resulting in a random appearing signal that was difficult for the subjects to predict.
-The two-choice task appeared on a screen next to the tracking task, and asked subjects to respond to either a ``LEFT'' or ``RIGHT'' command.
+Each axis of the tracking task was disturbed by a sum-of-sines, resulting in an appearingly random signal that was difficult for the subjects to predict.
+The two-choice task appeared on a screen next to the tracking task and prompted subjects to respond to either a ``LEFT'' or ``RIGHT'' command.
 Subjects controlled the three-axes and responded to the two-choice task by using a Microsoft Xbox controller.
 The subjects used the left joystick on the controller to control the $x$ and $y$ axis tracking tasks.
 Subjects moved this joystick left and right to control the $x$ axis, and up and down to control the $y$ axis.
-The subjects used the right joystick on the joystick to control the $z$ axis.
-Subjects moved this joystick up and down to control the $z$ axis.
-Subjects used the left and right triggers on the controller to respond to the two-choice task, using the left trigger to indicate ``LEFT'' on the two-choice task, and the right trigger to indicate ``RIGHT'' on the two-choice task.
+The subjects controlled the $z$ axis by moving the right joystick up and down.
+Subjects used the left and right triggers on the controller to respond to the two-choice task, using the left trigger to indicate ``LEFT'', and the right trigger to indicate ``RIGHT''.
 
 \subsubsection{Stereoscopic Displays}
 Stereoscopic displays are systems ``in which two slightly different views of a scene are provided to a viewer, one image for each eye... allow[ing] the viewer's binocular visual system to extract depth information in a scene using this disparate information''~\cite{McIntire2014}.
@@ -109,7 +108,7 @@ In their review, tasks involving finding/identifying/classifying objects and tas
 
 Kim et al. also performed a quantitative evaluation of perspective and stereoscopic displays in three-axis manual tracking task~\cite{Kim1987}.
 They investigated the differences between perspective and stereoscopic displays, the elevation angle, azimuth angle, and the effects of two visual enhancements: a grid and a reference line.
-They found very strong relationships between elevation and azimuth angles and tracking performance, with the best performance occurring with an elevation angle of 45 degrees and an azimuth angle of 0 degrees.
+They found very strong relationships between elevation and azimuth angles and tracking performance, with the best performance occurring at an elevation angle of 45 degrees and an azimuth angle of 0 degrees.
 Tracking performance decreased rapidly as the azimuth angle varied, and decreased less rapidly as the elevation angle varied.
 In general, they found that the stereoscopic display allowed for better tracking performance, though the inclusion of the reference line visual enhancement greatly decreased the benefit over the perspective display.
 Using only two subjects, they provided some insight into intrasubject and intersubject variability.
@@ -120,11 +119,11 @@ They found similar results in this second study, suggesting that their results c
 Smallman at al. similarly investigated the effect of visual enhancements and 2D vs 3D displays for the development of a naval air warfare console~\cite{Smallman2000}.
 Participants viewed naval and aircraft tracks in either a conventional 2D top-down display or a 3D display, and then attempted to reconstruct track positions.
 They investigated the effectiveness of drop-lines and drop-shadows, and found that they significantly improved subjects ability to localize aircraft compared to when the enhancements were not present.
-Furthermore, in the absence of either visual enhancement subjects performed better with the 2D display than the 3D display.
+Furthermore, in the absence of either visual enhancement, subjects performed better with the 2D display than the 3D display.
 Similar to Kim et al., they ultimately recommended that 3D stereoscopic displays include the use of a reference or drop-line for optimal performance.
 
 \subsubsection{Hypotheses}
-This study assessed the influence of display (perspective vs. stereoscopic), relative display attitude (zero degrees vs. thirty degrees), and concurrent bandwidth feedback (with vs. without) on performance and workload.
+This study assessed the influence of display type (perspective vs. stereoscopic), relative display attitude (zero degrees vs. thirty degrees), and concurrent bandwidth feedback (with vs. without) on performance and workload.
 Objective performance was measured using the root-mean-square error (RMSE) of each of the three axes individually and combined, and subjective performance was measured with the use of a questionnaire.
 Objective workload was measured using the response time to the secondary task, and subjective workload was measured using the NASA-TLX.
 It was hypothesized that:
@@ -137,22 +136,21 @@ It was hypothesized that:
 
 \subsubsection{Procedure}
 % \subsubsection{Participants}
-A total of 24 subjects (19 males, 5 females) were recruited in accordance with the University of California, Davis Internal Review Board (IRB).
-There were 12 subjects in the LCD group, and 12 subjects in the HoloLens group.
+A total of 24 subjects (19 males, 5 females) were recruited in accordance with the University of California, Davis Internal Review Board (IRB), and subjects signed a consent form and were not compensated.
+There were 12 subjects in the 2D group, and 12 subjects in the 3D group.
 Subjects were undergraduate and graduate students in the University of California, Davis College of Engineering.
-%, and had a mean age of $XX \pm XX$.
-This experiment was approved by the Institutional Review Board at the University of California, Davis, and subjects signed a consent form and were not compensated.
+All participating subjects had normal vision (no colorblindness, eyesight correctable to 20/20 vision) and full motor control of their hands. 
 
 % \subsubsection{Apparatus}
 \begin{figure}[tb!]
     \begin{center}
         \begin{subfigure}{0.49\textwidth}
             \includegraphics[width=\linewidth]{../img/DSC_0801.JPG}
-            \caption{LCD Group}
+            \caption{2D Group}
         \end{subfigure}\hfill
         \begin{subfigure}{0.49\textwidth}
             \includegraphics[width=\linewidth]{../img/DSC_0803.JPG}
-            \caption{HoloLens Group}
+            \caption{3D Group}
         \end{subfigure}
     \caption{The fixed-based simulator used by both groups.}%
     \label{fig:simulator}%
@@ -163,15 +161,15 @@ This experiment was approved by the Institutional Review Board at the University
 A human-in-the-loop simulation was conducted using a fixed-base simulator, see Figure~\ref{fig:simulator}.
 The simulator consisted of two 10.4 inch LCD displays.
 The tracking task was completed on the left display, while the right display showed the two-choice task.
-Subjects were seated for the duration of the experiment, and were placed one meter perpendicular from the center of the left display.
-For subjects in the HoloLens group, the left LCD monitor was turned off, and the tracking task was instead displayed on the HoloLens.
-For these subjects, the cross was placed at the same height as the subject's head, such that it was viewed directly on in the baseline condition.
+Subjects were seated for the duration of the experiment and were placed one meter perpendicular from the center of the left display.
+For subjects in the 3D group, the left LCD monitor was turned off, and the tracking task was instead displayed on the HoloLens.
+For these subjects, the cross was placed at the same height as the subject's head, such that it was viewed with no relative attitude in the baseline condition.
 % different height subjects -> tracking cross was at different heights
 % no way to avoid this AND keep the relative view angle the same between groups
-% The cross was rendered at 800x480 pixels for the LCD group, and at 1268x720 pixels for the HoloLens group.
+% The cross was rendered at 800x480 pixels for the LCD group, and at 1268x720 pixels for the 3D group.
 Both groups viewed the guidance cross of a width and height of 5 inches by 5 inches.
 For subjects in the HoloLen's group, the $z$ motion of the cross also could move up to 5 inches in either direction away from the center of the guidance cross.
-Subjects in both groups used the same Microsoft Xbox controller and control scheme to complete the task.
+% Subjects in both groups used the same Microsoft Xbox controller and control scheme to complete the task.
 
 % \paragraph{Selection of Disturbance}
 The disturbance function was a sum of 13 sinusoids approximating a rectangular spectrum with a 2.0 rad/s cutoff frequency.
@@ -180,10 +178,10 @@ The disturbing force, as a function of time, $d(t)$, was
 d(t) = \sum_{i=1}^{13} A_i \sin \left( w_i t + \phi_i \right)
 \label{eq:disturbance}
 \end{align}
-The sine wave amplitude, frequency, and phase offset for each sine wave in the disturbance force was borrowed from a similar experiment~\cite{hess1984effects}.
+Each sine wave amplitude, frequency, and phase offset was borrowed from a similar experiment~\cite{hess1984effects}.
 % Table~\ref{sine-table} lists the sine wave amplitude, frequency, number of cycles in a 60 second run, and phase offset for each sine wave in the disturbance force.
 This disturbance was the same for all subjects and trials, though the subjects were naive to this.
-The $x$, $y$ and $z$ axes all experienced the same disturbance force generating function, but the $y$ axis was temporally offset by 60 seconds and the $z$ axis was offset by 120 seconds.
+The $x$, $y$, and $z$ axes all experienced the same disturbance force generating function, but the $y$ axis was temporally offset by 60 seconds and the $z$ axis was offset by 120 seconds.
 This allowed for a very similar generation of disturbance forces for each axis.
 The RMSE of the disturbance force was normalized along each axis such that all three were the same.
 
@@ -308,19 +306,19 @@ The three designs were very similar, having only minor differences between each 
 Compared to the baseline, the color feedback and rotated displays were expected to produce superior performance along the $z$ axis tracking task.
 
 The baseline design consists of a flat cross with a center target point and a green sphere error indicator.
-This indicator also casts a green rod perpendicular to the plane of the cross, which allows for a visual estimation of the error in the $z$ axis.
+This indicator also casts a green, variable-length rod perpendicular to the plane of the cross, which allows for a visual estimation of the error in the $z$ axis.
 The $x$ axis is parallel with the horizontal cross, while the $y$ axis is parallel with the vertical cross.
-The color feedback display was identical to the baseline design in every way, but also had visual concurrent bandwidth feedback on the $z$ axis.
-When the absolute value of the error on the $z$ axis grew over a fixed bandwidth of 0.2 units, the color of both the spherical indicator and the cylindrical rod changed from green to red.
+The color feedback display was identical to the baseline design in every way, with the additional of visual concurrent bandwidth feedback on the $z$ axis.
+When the absolute value of the error on the $z$ axis exceeded a fixed bandwidth of 0.2 units, the color of both the spherical indicator and the cylindrical rod changed from green to red.
 When the absolute value of the error on the $z$ axis was lowered back below this fixed bandwidth, the indicator changed back to a green color.
 The rotated display was identical to the baseline design, but the relative attitude of the display was rotated about the $y$ axis by 30 degrees, see Figure~\ref{designdiagram}.
 
 Before entering the study, subjects were randomly placed in a display group (either the LCD monitor or HoloLens), and were then randomly placed into an order group (which consisted of Baseline-Feedback-Rotated, Feedback-Rotated-Baseline, and Rotated-Baseline-Feedback).
 This order group was created to remove any order effects that might arise due to training on a given display, and follows a standard Latin squares design.
-(The order of the designs was initially considered to be insignificant, but we will later discuss how this is not the case.)
+(The order of the designs was initially thought to be insignificant, but we will later discuss how this is not the case.)
 % Subjects were naive to this order, and were only told which design they were evaluating directly before they began.
-After entering the experiment room, the subjects signed a consent form, and then sat through a twenty minute training session which familiarized them with the task, the three designs, the NASA-TLX, and the controller.
-Subjects were instructed that they were evaluating three different display designs. %: a baseline display, a color feedback display, and and rotated display.
+After entering the experiment room, the subjects were familiarized with the task, three designs, NASA-TLX, and the controller through a twenty minute training session.
+Subjects were instructed that they would be evaluating three different display designs. %: a baseline display, a color feedback display, and and rotated display.
 They were further instructed that they had two tasks.
 They were told to:
 \begin{itemize}
@@ -329,23 +327,23 @@ They were told to:
 \end{itemize}
 
 After the training, subjects were seated in front of the simulator.
-Subjects in the HoloLens group then completed a short calibration program that adjusted the display to their interpupillary distance.
-After this, they were instructed how to align the guidance cross with the center of the left display monitor.
+Subjects in the 3D group then completed a short calibration program that adjusted the display to their interpupillary distance.
+After this, they were instructed on how to align the guidance cross with the center of the left display monitor.
 All subjects were then allowed to complete two familiarization trials, during which time they could ask questions about how the controls worked, or any other aspects of the task.
-The proctor also used this time to ensure that subjects had a basic grasp of the task, and were responding to both the tracking and two-choice tasks appropriately.
+The proctor also used this time to ensure that subjects showed basic competency with the task by responding to both the tracking and two-choice tasks appropriately.
 All familiarizations were done with the baseline design, regardless of which design the subjects evaluated first.
 
-After this familiarization process, subjects completed ten trials in their first design.
-Finishing this, they then completed a brief survey which asked them if the design was adequate to complete the task.
+After this familiarization process, subjects completed ten trials with their first design.
+After completing these trials, they answered a brief survey which asked them if the design was adequate to complete the task.
 Subjects were also asked to subjectively rate their performance in a questionnaire after evaluating each design.
-Subjects were asked ``I found the tracking display adequate to complete the task.'', and were asked to respond on a five point scale where 1 indicated ``Strongly Disagree'' and 5 indicated ``Strongly Agree''.
+Subjects were asked to rate ``I found the tracking display adequate to complete the task.'' on a five point scale where 1 indicated ``Strongly Disagree'' and 5 indicated ``Strongly Agree''.
 After this survey, subjects then completed a NASA-TLX workload survey.
-Subjects then repeated this process for their second and third designs.
-After completing this process for their third design, subjects were also asked to complete a preference survey which inquired into what design the subjects believed to be the best.
+Subjects then repeated this process with their second and third designs.
+After completing this process with their third design, subjects were also asked to complete a preference survey which inquired into what design the subjects believed to be the best.
 
 \subsubsection{Results}
-We conducted three-way mixed ANOVAs between device (HoloLens or LCD), design (Baseline, Feedback, or Rotated), and starting design (Baseline, Feedback, or Rotated) with repeated measures on the design factor.
-When significant effects were observed, post hoc comparisons using the Tukey HSD test with a Bonferroni adjustment were completed to investigate which pairs of the factor were significant.
+We conducted three-way mixed ANOVAs between display (2D or 3D), design (Baseline, Feedback, or Rotated), and starting design (Baseline, Feedback, or Rotated) with repeated measures on the design factor.
+When significant effects were observed, post hoc comparisons using the Tukey Honest Significance Difference (HSD) test with a Bonferroni adjustment were completed to investigate which pairs of the factor were significant.
 In order to remove learning and fatigue effects, each subject's best performing five trials in each design were averaged together to produce one average score for each subject and design.
 Additionally, the first ten seconds of each sixty second trial were not included in the analysis to remove initial transient effects.
 
@@ -357,13 +355,13 @@ The root-mean-square error (RMSE) of each axis was analyzed individually and com
 % \end{align}
 % where $i_j$ is an observed value at time $j$ and $\hat{i}_j$ is a targeted, predicted, or otherwise desired value.
 % As this is a regulation task, however, $\hat{i}_j = 0$ for all $j$.
-The RMS of the disturbance signal was calculated along each axis, and used to normalize the RMSE.
-As such, an RMSE of 1 indicates performance that is just as equivalent as inserting no input, and an RMSE greater than 1 indicates quite poor performance.
+The RMS of the disturbance signal was calculated along each axis and used to normalize the RMSE.
+Under this definition, an RMSE of 1 indicates performance equivalent to a no-input response, and an RMSE greater than 1 indicates quite poor performance.
 % The RMSE along the $i^{th}$ axis, RMSE$_i$, was calculated for the $x$, $y$, and $z$ axes via
 % \begin{align}
 % \text{RMSE}_i = \sqrt{\dfrac{1}{n} \sum_{j=1}^{n} \left(i_j\right)^{2}}
 % \end{align}
-It was expected that the baseline design would lead to the worst performance in the $z$ axis, while the color feedback and rotated designs would have better performance in the $z$ axis.
+It was expected that the baseline design would lead to the worst performance in the $z$ axis than the color feedback and rotated designs.
 It was also expected that, due to the stereoscopic nature of the display, the HoloLens would allow for better performance than the LCD monitor along $z$ axis.
 
 % \begin{table}[tb]
@@ -427,14 +425,14 @@ It was also expected that, due to the stereoscopic nature of the display, the Ho
     \begin{center}
         \includegraphics[width=\linewidth]{./../img/x_design_y_zrmse_col_startdesign_hue_device.pdf}
         % \includegraphics[width=\linewidth]{./../img/x_design_y_zrmse_hue_startdesign_col_device.pdf}
-        \caption{Three-way ANOVA $z$-axis RMSE. Additional formatting required.}
+        \caption{Three-way ANOVA $z$-axis RMSE.}
         \label{fig:zrmseanovas}
     \end{center}
 \end{figure}
 
 Results of the ANOVA on the $z$-axis RMSE showed significant effects for design ($F(2, 36)=84.9, p<.001$), device ($F(1, 18)= 7.2, p<0.015$), and start design ($F(2, 18)=4.8, p<0.021$).
 The ANOVA also showed a significant interaction effect between design and starting design ($F(4, 36)=8.5499, p<0.0001$), and a three way interaction between design, device, and starting design ($F(4, 36)=5.5672, p<0.0014$).
-Further investigating the effect of starting design, a Tukey Honest Significance Difference (HSD) comparison with a Bonferroni correction shows significance differences between subjects that started in the concurrent bandwidth feedback group and those in the baseline ($p<0.001$) or rotated ($p<0.001$) designs, but no difference between subjects that started in the baseline and rotated designs ($p>.38$).
+Further investigation into the effect of starting design using a Tukey HSD comparison with a Bonferroni correction showed significance differences between subjects that started in the concurrent bandwidth feedback group and those in the baseline ($p<0.001$) or rotated ($p<0.001$) designs, but no difference between subjects that started in the baseline and rotated designs ($p>.38$).
 The difference in performance along the depth axis between design, device, and starting design can be seen in Figure~\ref{fig:zrmseanovas}.
 
 % >     y = lme(Zrmse ~ design*device, data=data, random=~1|subject/design, subset=startdesign==2)
@@ -456,14 +454,16 @@ The difference in performance along the depth axis between design, device, and s
 % design:device     2    28    0.0263  0.9741
 
 Due to the presence of interaction effects in the starting design factor, the remainder of the analysis is split between subjects who started with the concurrent bandwidth feedback design and those that did not (e.g., those that started in the baseline or rotated design).
-For subjects that started in the CBF design, there was a significant effect of design ($F(2, 12)= 21.6481, p <.0001$), a significant effect or display ($F(1, 6)=  36.7320, p <0.001$), and a significant interaction effect between design and device ($F(2, 12)=  5.4211, p <0.021$).
+For subjects that started in the CBF design, there was a significant effect of design ($F(2, 12)= 21.6481, p <.0001$), a significant effect of display ($F(1, 6)=  36.7320, p <0.001$), and a significant interaction effect between design and device ($F(2, 12)=  5.4211, p <0.021$).
 For subjects that did not start in the CBF design, there was a significant effect of design ($F(2, 28)= 38.6980, p <.0001$), no significant effect or display ($F(1, 14)=  1.0299, p >0.32$), and no interaction effect ($F(2, 12)=  0.0263, p >0.97$).
 The resulting difference between subjects who started in the CBF design and those that did not is presented in Figure~\ref{fig:zrmseanovas2}.
+For subjects that did not start in the CBF design, display had no significant effect, and subjects performed best in the rotated design, followed by the feedback design and finally the baseline design.
+Subjects that started in the CBF design performed significantly better in the 3D display than the 2D displays, and performed best in the rotated design, but comparably between the feedback and baseline designs.
 
 \begin{figure}[tb!]
     \begin{center}
-        \includegraphics[width=\linewidth]{./../img/x_design_y_zrmse_hue_device_col_cbf_first.pdf}
-        \caption{Three-way ANOVA $z$-axis RMSE. Additional formatting required. Difference between starting with/without CBF.}
+        \includegraphics[width=0.8\linewidth]{./../img/x_design_y_zrmse_hue_device_col_cbf_first.pdf}
+        \caption{Three-way ANOVA $z$-axis RMSE, grouping by subjects that started with or without feedback.}
         \label{fig:zrmseanovas2}
     \end{center}
 \end{figure}
@@ -495,31 +495,31 @@ The resulting difference between subjects who started in the CBF design and thos
 
 The NASA-TLX was used to measure differences in subjective workload, and the reaction time to the secondary task was used to measure differences in objective workload between design, device, and starting design.
 There were no significant effects, nor interaction effects, found in the ANOVA for design, device, or starting design for the NASA-TLX measurements.
-There was a significant effect of design ($F(2, 36)=  7.9333, p <0.0014$) for the reaction time to the secondary task, though the magnitude of this effect was very small between designs, less than 100ms difference, and was not significant during Tukey HSD tests.
+There was a significant effect of design ($F(2, 36)=  7.9333, p <0.0014$) for the reaction time to the secondary task, though the magnitude of this effect was very small between designs (less than 100 ms difference) and was not significant during Tukey HSD tests.
 In general, there were no significant effects found for workload measurements.
 
 To summarize these results, there were significant effects found in the $z$-axis RMSE for design, with subjects generally performing the best using the angled design, followed by the CBF design, and performing worst with the baseline design.
 There were significant effects found for the factors of device and starting design, though these must be interpreted carefully.
 Subjects that started in the design with concurrent bandwidth feedback performed better than subjects that did not.
-We believe that this result follows that found in our prior SAFER experiment, where subjects that were exposed to the CBF early on learned the task better than those that were not exposed.
+We believe that this result resembles that found in our prior SAFER experiment, where subjects that were exposed to the CBF early on learned the task better than those that were not exposed.
 An interesting effect of this exposure is that, after learning the task with CBF, subjects continued on to perform significantly better in the baseline condition than those subjects that did not start in the CBF design.
 
 Subjects that started in the CBF design and that were wearing the HoloLens appear to have used the CBF to better learn the depth cue presented in the stereoscopic display.
 These subjects continued to perform significantly better than subjects who started with the CBF design but without the stereoscopic display when they continued to the baseline design.
-This indicates that even a brief exposure to the concurrent bandwidth feedback was sufficient to induce improved performance.
+This indicates that even a brief exposure to the concurrent bandwidth feedback was sufficient to induce improved performance in the baseline design.
 Additionally, this also suggests that well trained subjects could perform better using the stereoscopic display compared with the traditional display, but that subjects who were still learning the task could not take advantage of the additional depth cues provided by the display.
-Finally, there were no significant effects found for the NASA-TLX measurements, and there were significant effects found between the designs for reaction time, though this difference was very small at less than 100ms.
+Finally, there were no significant effects found for the NASA-TLX measurements, and there were significant effects found between the designs for reaction time, though this difference was very small at less than 100 ms.
 
 In summary, we find partial agreement with all of our hypotheses in respect to the performance aspects of our experiment, while the workload was essentially unaffected by all of our experimental factors.
 For Hypothesis 1, subjects that completed the baseline design before the CBF design performed better in the CBF design, while subjects that completed the CBF design before the baseline performed approximately the same in both designs.
 This indicates that CBF can both improve performance compared to a baseline design, and better train subjects such that, even after brief exposure, the feedback is no longer required.
 Workload was unaffected by the CBF.
 For Hypothesis 2, subjects that started in the CBF design appear to have better learned the task and used the CBF to learn to interpret the depth cue provided by the stereoscopic display.
-Subjects that were not initially exposed to this feedback were unable to take advantage of the display, and did not perform significantly better than subjects without the display.
-For Hypothesis 3, subjects in the rotated design did perform better than those in the baseline design, and appeared to be able to use this view to better interpret the depth of the target.
+Subjects that were not initially exposed to this feedback were unable to exploit the display, and did not perform significantly better than subjects without the display.
+For Hypothesis 3, subjects in the rotated design did perform better than those in the baseline design and appeared to be able to use this view to better interpret the depth of the target.
 An unexpected side effect of angling the display, however, was that subjects performed worse in the $x$ axis tracking task, which was rotated out of parallel with the display.
 
-\subsection{Experiment 2}
+\subsection{Experiment Two}
 \begin{figure}[tb]
     \begin{center}
         \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{./../img/Screen Shot 2018-07-26 at 1.43.16 PM.png}
@@ -536,15 +536,15 @@ This hypothesis is based on the results of the SAFER experiment, as well as the 
 
 In this task, subjects will command a robotic arm to track an approaching vehicle and grapple with it.
 This is motivated by the primary use of the robot arm on the International Space Station, which grasps visiting vehicles when they arrive at the station and then attaches them to a separate fixed location on the station.
-Subjects will be trained on this task, and will then repeat the task for one to two hours through a variety of slightly different start and end conditions.
+Subjects will be trained on this task and will then repeat the task for one to two hours through a variety of slightly different start and end conditions.
 % While they are completing the robotics task, subjects will also be required to attend to a secondary task which will require them to look away from their primary flight display.
 % Subjects will also be asked to report their subjective workload after each trial.
 
 NASA’s Robotic On-board Trainer (ROBoT) will be used for this experiment.
-ROBoT is a package of simulation software which includes a dynamic model of the robotic arm on the space station, and presents the user with multiple camera angle views and the instrument panel required to operate effectively, see Figure~\ref{figure:robotinhera}.
+ROBoT is a package of simulation software which includes a dynamic model of the robotic arm on the space station and presents the user with multiple camera angle views and the instrument panel required to operate effectively, see Figure~\ref{figure:robotinhera}.
 In addition to these displays, ROBoT also includes the two hand controllers required to control the arm.
-NASA trainers at Johnson Space Center developed metrics which are included in ROBoT, and include the time to capture, alignment measurements during approach, the amount of wobble in the arm, the number of times the grapple fixture contacted the structure, the overall path efficiency, and the number of capture attempts.
-This presents a list of candidate metrics from which we may observe human performance.
+NASA trainers at Johnson Space Center developed metrics which are included in ROBoT and include the time to capture, the alignment measurements during approach, the amount of wobble in the arm, the number of times the grapple fixture contacted the structure, the overall path efficiency, and the number of capture attempts.
+The preceding list presents candidate metrics from which we may observe human performance.
 
 \subsubsection{Hypotheses}
 This study will assess the influence of concurrent bandwidth feedback (with vs. without) on performance and workload.
@@ -558,8 +558,7 @@ It is hypothesized that:
 \end{description}
 
 \subsubsection{Previous Work}
-I have previously taken part in another study using the ROBoT simulation software.
-While at NASA Ames last summer, I participated a study investigating the effects of sleep loss and circadian misalignment on performance on the ROBoT simulator~\cite{robotreport}.
+We have experience using the ROBoT simulation software from participating in a study investigating the effects of sleep loss and circadian misalignment on performance on the ROBoT simulator at NASA Ames~\cite{robotreport}.
 In this study, subjects trained during one-hour long sessions each day for five days, then spent a twenty four hour period in the lab while they continued to perform robotic tasks.
 We did not find evidence of performance loss during sleep deprivation or circadian misalignment on any of the ROBoT performance metrics.
 In fact, participants continued to show improvement over time, which indicated that they had continued to learn the task despite the sleep loss~\cite{robotreport}.
@@ -599,9 +598,9 @@ This finding reinforces the need for enhanced learning techniques, as the curren
 
 \subsection{Model Extension}
 The third and final Aim of the proposal is addressed by developing a model of the human pilot which includes the effects of concurrent bandwidth feedback.
-The Model will extend Professor Hess’ structural model of the human pilot to include the effects of concurrent bandwidth feedback.
+The proposed Model will extend Professor Hess’ structural model of the human pilot to include the effects of concurrent bandwidth feedback.
 % The outputs of this model will be compared to the results of Experiment One and Two.
-The Structural Model has been extremely successful in predicting human performance through a variety of system dynamics, and can predict how performance changes during a pilot's adaptation to changing dynamics.
+The Structural Model has been extremely successful in predicting human performance through a variety of system dynamics and can predict how performance changes during a pilot's adaptation to changing dynamics.
 Hess has developed adaptive logic for the human pilot in a pursuit task which triggers when the pilot notices that vehicle dynamics have changed~\cite{Hess2009}.
 This logic is based off several criteria, which include ``the logic driving the adjustments... must be predicated upon information available to the human'' and ``the postadapated pilot models must follow the dictates of the crossover model of the human pilot~\cite{Hess2009}.''
 The primary result of the adaptive logic is to increase the resulting crossover frequency of the pilot, effectively making them more aggressive or implying more focus on the task.
@@ -639,6 +638,6 @@ The results of our experiment with SAFER and the three-axis tracking task also s
 
 While it should be noted that this work is in very preliminary stages and not scheduled to begin until the Fall Quarter, some early work has been started in preparation for the qualifying examination.
 An effort has been made to begin to replicate some of Hess' results.
-Working with Professor Hess, I have been able to replicate some of the existing adaptation logic for a two-axis tracking task, and begun exploratory research into modifying the model.
+Working with Professor Hess, we have been able to replicate some of the existing adaptation logic for a two-axis tracking task, and begun exploratory research into modifying the model.
 
 \end{document}
