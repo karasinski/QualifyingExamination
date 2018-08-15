@@ -5,91 +5,31 @@
 \begin{document}
 
 \section{Proposed Research}
-% \subsection{Proposed Research}
 We propose to run human-in-the-loop subject testing experiments to understand the effects of concurrent bandwidth feedback, and to integrate the effects of this feedback into a human performance model.
 To investigate the three Aims outlined in the Problem Statement, we propose two experiments and the development of a model.
-%
-% \subsection{Strategy}
-% We will run human subject experiments to test our hypotheses.
-%
-% In addition to these experiments, I have also completed numerous user tests for several products developed at NASA Ames.
-%
-% The proposed research includes two human subject experiments and the development of a model to predict human performance.
-% Over the past few years at UC Davis and NASA Ames, I’ve spent over 300 hours subject testing with more than 100 subjects see Table~\ref{table:subjecttesting}.
+
 \begin{description}[align=left]
-\item [Experiment One] investigates if concurrent bandwidth feedback can be used to teach novice subjects to interpret depth cues in a three-axis manual tracking task.
+\item [Experiment One] investigates if concurrent bandwidth feedback can be used to teach novice subjects to improve performance in a three-axis manual tracking task.
 \item [Experiment Two] investigates if concurrent bandwidth feedback can decrease the required learning time to peak performance in a simulated robotic arm track and capture task.
 \item [The Model] will extend Professor Hess’ structural model of the human pilot to include the effects of concurrent bandwidth feedback.
-% The outputs of this model will be compared to the results of Experiment One and Two.
 \end{description}
-% Experiment One investigates if concurrent bandwidth feedback can be used to teach novice subjects to interpret depth cues in a three-axis manual tracking task.
-% Experiment Two investigates if concurrent bandwidth feedback can decrease the required learning time to peak performance in a simulated robotic arm track and capture task.
-% The Model will extend Professor Hess’ structural model of the human pilot to include the effects of concurrent bandwidth feedback.
-% The outputs of this model will be compared to the results of Experiment One and Two.
 
 Concurrent bandwidth feedback has been used in a large variety of motor control tasks, and has generally been found to improve performance.
 Until recently, however, only simple tasks such as physical movements or low-dimensional pursuit tasks have been investigated.
 More recent works, including the lane-keeping task by de Groot et al., and our previous work with the SAFER task, have indicated that concurrent bandwidth feedback can also be quite effective for complex tasks.
 Unlike simple tasks, in which the guidance hypothesis dominates when feedback is removed, there is some evidence that concurrent bandwidth feedback can be removed after training without a loss of performance.
 The decrease in required learning time, improved performance, and decreased workload seen in the SAFER task show that concurrent bandwidth feedback may prove to be most useful very early in training when subjects are first exposed to complex, highly dynamic tasks.
-% While visual concurrent bandwidth feedback has been used in a variety of tasks, no researchers have investigated its effects on a three-axis tracking task.
 As concurrent bandwidth feedback can improve performance without an increase in workload, it may prove a useful technique for training other robotics tasks.
-
-% Despite extensive previous research, to the authors' knowledge there exists no study in the literature addressing human performance or workload changes in manual tracking tasks between traditional computer monitors and mobile, augmented reality headsets.
-% If operator performance while using augmented reality displays is improved--or at the very least, not degraded--then these devices could prove especially valuable in scenarios where it is impractical or otherwise difficult to provide a traditional computer interface.
-% There are a variety of robotics tasks, such as pick-and-place tasks, for which performance may be improved by allowing an operator the mobility to move and view the scene from whatever position is convenient at a given time.
-% Traditional robotics stations require the operator to remain in a single position, and typically only allow for several camera angles.
-% Mobile augmented reality displays allow the operator to take advantage of their ability to move through the environment, without needing to manage external cameras.
 
 There has been considerable improvement in the field of pilot modeling since McRuer's crossover model, especially with models that incorporate human physiology.
 The Structural Model, in particular, has been very effective in predicting pilot performance, handling qualities, pilot-induced oscillation rating levels, and workload for a variety of system dynamics.
 None of these pilot models, however, are able to include the effects of concurrent bandwidth feedback.
 The performance improving effects of this feedback, seen throughout the literature, make this a compelling feature to be incorporated into a pilot model.
 
-% \begin{table}[tb]
-% \centering
-% \caption{Previous Subject Testing Campaigns}
-% \label{table:mcruer1974a}
-% \small
-% \begin{tabular}{lll}
-% \toprule
-% Experiment   & Subjects & Length \\
-% \midrule
-% Lunar Lander~\cite{Karasinski2016, Karasinski2016Masters} & 30       & 3 hours \\
-% 1D Tracking~\cite{Karasinski2016Masters} & 15       & 2.5 hours \\
-% SAFER~\cite{Karasinski2016Masters, Karasinski2017}         & 30       & 3 hours \\
-% 3D Tracking                        & 26       & 2 hours \\
-% \bottomrule
-% \end{tabular}
-% \label{table:subjecttesting}
-% \end{table}
-%
-% Cool things we could do with The Model:
-% \begin{itemize}
-% \item Predict the optimal bandwidth provided task and controller characteristics
-% \item Predict the effects of scheduled bandwidth changes across training
-% \end{itemize}
-
-% Hypotheses:
-% \begin{itemize}
-% \item Concurrent bandwidth feedback can improve performance in simple, yet difficult tasks.
-% \item The depth cue offered by 3D augmented reality displays can improve performance.
-% \item Concurrent bandwidth feedback can be used to teach depth cues.
-% \item Concurrent bandwidth feedback can improve performance in robotic arm pick and place task.
-% \item The effects of concurrent bandwidth feedback on human performance can be modeled.
-% \end{itemize}
-
-
-% Experiment 1 investigates CBF guidance display benefits (will be complete)
-% Experiment 2 uses simulation of robotic arm
-% Compare subjects with and without feedback in a track and capture task
-% We can use this to validate the results we find in following experiment
-% We can also use this to create our model and validate the predictions of the model
-
 \subsection{Experiment One}
 Experiment One investigated the effects of concurrent bandwidth feedback (CBF) and augmented reality displays on performance and workload in a three-axis manual tracking task.
-In our experiment, subjects were responsible for simultaneously completing three tracking tasks and a two-choice task.
-Each axis of the tracking task was disturbed by a sum-of-sines, resulting in an appearingly random signal that was difficult for the subjects to predict.
+In our experiment, subjects were responsible for simultaneously completing three tracking tasks and a two-choice secondary task for workload measurement.
+Each axis of the tracking task was disturbed by a sum-of-sines, resulting in an random appearing signal that was difficult for the subjects to predict.
 The two-choice task appeared on a screen next to the tracking task and prompted subjects to respond to either a ``LEFT'' or ``RIGHT'' command.
 Subjects controlled the three-axes and responded to the two-choice task by using a Microsoft Xbox controller.
 The subjects used the left joystick on the controller to control the $x$ and $y$ axis tracking tasks.
@@ -131,7 +71,6 @@ It was hypothesized that:
 \item [Hypothesis 1] Concurrent bandwidth feedback will improve performance in the depth ($z$) axis for both display types, and will decrease workload.
 \item [Hypothesis 2] Stereoscopic augmented reality displays improve performance in the depth ($z$) axis, but do not affect workload.
 \item [Hypothesis 3] Rotating the display improves performance in the depth ($z$) axis for both display types, and will decrease workload.
-% \item [Hypothesis 4] The performance along the $x$ and $y$ axes will be the same for all three designs.
 \end{description}
 
 \subsubsection{Procedure}
@@ -164,12 +103,9 @@ The tracking task was completed on the left display, while the right display sho
 Subjects were seated for the duration of the experiment and were placed one meter perpendicular from the center of the left display.
 For subjects in the 3D group, the left LCD monitor was turned off, and the tracking task was instead displayed on the HoloLens.
 For these subjects, the cross was placed at the same height as the subject's head, such that it was viewed with no relative attitude in the baseline condition.
-% different height subjects -> tracking cross was at different heights
-% no way to avoid this AND keep the relative view angle the same between groups
-% The cross was rendered at 800x480 pixels for the LCD group, and at 1268x720 pixels for the 3D group.
 Both groups viewed the guidance cross of a width and height of 5 inches by 5 inches.
 For subjects in the HoloLen's group, the $z$ motion of the cross also could move up to 5 inches in either direction away from the center of the guidance cross.
-% Subjects in both groups used the same Microsoft Xbox controller and control scheme to complete the task.
+Subjects in both groups used the same Microsoft Xbox controller and control scheme to complete the task.
 
 % \paragraph{Selection of Disturbance}
 The disturbance function was a sum of 13 sinusoids approximating a rectangular spectrum with a 2.0 rad/s cutoff frequency.
@@ -219,7 +155,7 @@ The RMSE of the disturbance force was normalized along each axis such that all t
         \end{subfigure}\hfill
         \begin{subfigure}{0.32\textwidth}
             \includegraphics[trim={5cm 0 5cm 0},clip,width=\linewidth]{../img/Color.png}
-            \caption{Color}
+            \caption{Color Feedback}
         \end{subfigure}\hfill
         \begin{subfigure}{0.32\textwidth}
             \includegraphics[trim={5cm 0 5cm 0},clip,width=\linewidth]{../img/Angled.png}
@@ -303,7 +239,7 @@ The RMSE of the disturbance force was normalized along each axis such that all t
 Three designs were presented to the subjects to evaluate: a baseline design, a color-based concurrent bandwidth feedback (CBF) design, and a rotated design.
 Figure~\ref{fig:designs} shows all three designs in the same error state.
 The three designs were very similar, having only minor differences between each other.
-Compared to the baseline, the color feedback and rotated displays were expected to produce superior performance along the $z$ axis tracking task.
+% Compared to the baseline, the color feedback and rotated displays were expected to produce superior performance along the $z$ axis tracking task.
 
 The baseline design consists of a flat cross with a center target point and a green sphere error indicator.
 This indicator also casts a green, variable-length rod perpendicular to the plane of the cross, which allows for a visual estimation of the error in the $z$ axis.
@@ -315,20 +251,20 @@ The rotated display was identical to the baseline design, but the relative attit
 
 Before entering the study, subjects were randomly placed in a display group (either the LCD monitor or HoloLens), and were then randomly placed into an order group (which consisted of Baseline-Feedback-Rotated, Feedback-Rotated-Baseline, and Rotated-Baseline-Feedback).
 This order group was created to remove any order effects that might arise due to training on a given display, and follows a standard Latin squares design.
-(The order of the designs was initially thought to be insignificant, but we will later discuss how this is not the case.)
+(The order of the designs was expected to be insignificant, but we will later discuss how this is not the case.)
 % Subjects were naive to this order, and were only told which design they were evaluating directly before they began.
 After entering the experiment room, the subjects were familiarized with the task, three designs, NASA-TLX, and the controller through a twenty minute training session.
-Subjects were instructed that they would be evaluating three different display designs. %: a baseline display, a color feedback display, and and rotated display.
-They were further instructed that they had two tasks.
-They were told to:
+% Subjects were instructed that they would be evaluating three different display designs. %: a baseline display, a color feedback display, and and rotated display.
+% They were further instructed that they had two tasks.
+They were instructed to:
 \begin{itemize}
     \item Minimize the displacement of their guidance target from the center
     \item Respond to the two choice task as accurately and quickly as possible
 \end{itemize}
 
-After the training, subjects were seated in front of the simulator.
-Subjects in the 3D group then completed a short calibration program that adjusted the display to their interpupillary distance.
-After this, they were instructed on how to align the guidance cross with the center of the left display monitor.
+% After the training, subjects were seated in front of the simulator.
+Subjects in the 3D group completed a short calibration program that adjusted the display to their interpupillary distance.
+% After this, they were instructed on how to align the guidance cross with the center of the left display monitor.
 All subjects were then allowed to complete two familiarization trials, during which time they could ask questions about how the controls worked, or any other aspects of the task.
 The proctor also used this time to ensure that subjects showed basic competency with the task by responding to both the tracking and two-choice tasks appropriately.
 All familiarizations were done with the baseline design, regardless of which design the subjects evaluated first.
@@ -339,7 +275,7 @@ Subjects were also asked to subjectively rate their performance in a questionnai
 Subjects were asked to rate ``I found the tracking display adequate to complete the task.'' on a five point scale where 1 indicated ``Strongly Disagree'' and 5 indicated ``Strongly Agree''.
 After this survey, subjects then completed a NASA-TLX workload survey.
 Subjects then repeated this process with their second and third designs.
-After completing this process with their third design, subjects were also asked to complete a preference survey which inquired into what design the subjects believed to be the best.
+At the conclusion of the three designs, subjects were also asked to complete a preference survey which inquired into what design the subjects preferred.
 
 \subsubsection{Results}
 We conducted three-way mixed ANOVAs between display (2D or 3D), design (Baseline, Feedback, or Rotated), and starting design (Baseline, Feedback, or Rotated) with repeated measures on the design factor.
@@ -349,18 +285,8 @@ Additionally, the first ten seconds of each sixty second trial were not included
 
 % \subsection{Tracking Performance}
 The root-mean-square error (RMSE) of each axis was analyzed individually and combined to understand the differences between the three designs and the two devices.
-% For a given variable, $i$, RMSE is calculated via
-% \begin{align}
-% \text{RMSE}_i = \sqrt{\dfrac{1}{n} \sum_{j=1}^{n} \left(i_j - \hat{i}_j\right)^{2}}
-% \end{align}
-% where $i_j$ is an observed value at time $j$ and $\hat{i}_j$ is a targeted, predicted, or otherwise desired value.
-% As this is a regulation task, however, $\hat{i}_j = 0$ for all $j$.
 The RMS of the disturbance signal was calculated along each axis and used to normalize the RMSE.
-Under this definition, an RMSE of 1 indicates performance equivalent to a no-input response, and an RMSE greater than 1 indicates quite poor performance.
-% The RMSE along the $i^{th}$ axis, RMSE$_i$, was calculated for the $x$, $y$, and $z$ axes via
-% \begin{align}
-% \text{RMSE}_i = \sqrt{\dfrac{1}{n} \sum_{j=1}^{n} \left(i_j\right)^{2}}
-% \end{align}
+Under this definition, an RMSE of 1 indicates performance no better than no input, and an RMSE greater than 1 indicates quite poor performance.
 It was expected that the baseline design would lead to the worst performance in the $z$ axis than the color feedback and rotated designs.
 It was also expected that, due to the stereoscopic nature of the display, the HoloLens would allow for better performance than the LCD monitor along $z$ axis.
 
@@ -425,7 +351,7 @@ It was also expected that, due to the stereoscopic nature of the display, the Ho
     \begin{center}
         \includegraphics[width=\linewidth]{./../img/x_design_y_zrmse_col_startdesign_hue_device.pdf}
         % \includegraphics[width=\linewidth]{./../img/x_design_y_zrmse_hue_startdesign_col_device.pdf}
-        \caption{Three-way ANOVA $z$-axis RMSE.}
+        \caption{The resulting normalized RMSE along the $z$-axis. Subjects started in either the Baseline (a), Feedback (b), or Rotated (c) design.}
         \label{fig:zrmseanovas}
     \end{center}
 \end{figure}
@@ -455,7 +381,7 @@ The difference in performance along the depth axis between design, device, and s
 
 Due to the presence of interaction effects in the starting design factor, the remainder of the analysis is split between subjects who started with the concurrent bandwidth feedback design and those that did not (e.g., those that started in the baseline or rotated design).
 For subjects that started in the CBF design, there was a significant effect of design ($F(2, 12)= 21.6481, p <.0001$), a significant effect of display ($F(1, 6)=  36.7320, p <0.001$), and a significant interaction effect between design and device ($F(2, 12)=  5.4211, p <0.021$).
-For subjects that did not start in the CBF design, there was a significant effect of design ($F(2, 28)= 38.6980, p <.0001$), no significant effect or display ($F(1, 14)=  1.0299, p >0.32$), and no interaction effect ($F(2, 12)=  0.0263, p >0.97$).
+For subjects that did not start in the CBF design, there was a significant effect of design ($F(2, 28)= 38.6980, p <.0001$), but no significant effect or display ($F(1, 14)=  1.0299, p >0.32$), and no interaction effect ($F(2, 12)=  0.0263, p >0.97$).
 The resulting difference between subjects who started in the CBF design and those that did not is presented in Figure~\ref{fig:zrmseanovas2}.
 For subjects that did not start in the CBF design, display had no significant effect, and subjects performed best in the rotated design, followed by the feedback design and finally the baseline design.
 Subjects that started in the CBF design performed significantly better in the 3D display than the 2D displays, and performed best in the rotated design, but comparably between the feedback and baseline designs.
@@ -463,7 +389,7 @@ Subjects that started in the CBF design performed significantly better in the 3D
 \begin{figure}[tb!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{./../img/x_design_y_zrmse_hue_device_col_cbf_first.pdf}
-        \caption{Three-way ANOVA $z$-axis RMSE, grouping by subjects that started with or without feedback.}
+        \caption{The resulting normalized RMSE along the $z$-axis, grouping by subjects that started without (a) or with (b) feedback.}
         \label{fig:zrmseanovas2}
     \end{center}
 \end{figure}
@@ -508,7 +434,7 @@ Subjects that started in the CBF design and that were wearing the HoloLens appea
 These subjects continued to perform significantly better than subjects who started with the CBF design but without the stereoscopic display when they continued to the baseline design.
 This indicates that even a brief exposure to the concurrent bandwidth feedback was sufficient to induce improved performance in the baseline design.
 Additionally, this also suggests that well trained subjects could perform better using the stereoscopic display compared with the traditional display, but that subjects who were still learning the task could not take advantage of the additional depth cues provided by the display.
-Finally, there were no significant effects found for the NASA-TLX measurements, and there were significant effects found between the designs for reaction time, though this difference was very small at less than 100 ms.
+Finally, there were no significant effects found for the NASA-TLX measurements, and there were significant effects found between the designs for reaction time.
 
 In summary, we find partial agreement with all of our hypotheses in respect to the performance aspects of our experiment, while the workload was essentially unaffected by all of our experimental factors.
 For Hypothesis 1, subjects that completed the baseline design before the CBF design performed better in the CBF design, while subjects that completed the CBF design before the baseline performed approximately the same in both designs.
@@ -517,7 +443,7 @@ Workload was unaffected by the CBF.
 For Hypothesis 2, subjects that started in the CBF design appear to have better learned the task and used the CBF to learn to interpret the depth cue provided by the stereoscopic display.
 Subjects that were not initially exposed to this feedback were unable to exploit the display, and did not perform significantly better than subjects without the display.
 For Hypothesis 3, subjects in the rotated design did perform better than those in the baseline design and appeared to be able to use this view to better interpret the depth of the target.
-An unexpected side effect of angling the display, however, was that subjects performed worse in the $x$ axis tracking task, which was rotated out of parallel with the display.
+% An unexpected side effect of angling the display, however, was that subjects performed worse in the $x$ axis tracking task, which was rotated out of parallel with the display.
 
 \subsection{Experiment Two}
 \begin{figure}[tb]
@@ -529,21 +455,19 @@ An unexpected side effect of angling the display, however, was that subjects per
 \end{figure}
 
 The second Aim of the proposal is addressed by Experiment Two.
-Experiment Two will investigate if concurrent bandwidth feedback can decrease the required learning time to peak performance in a simulated robotic arm track and capture task.
-We will compare task performance and workload between two groups: a control group, which receives no feedback, and a treatment group, which receives concurrent bandwidth feedback on one or more sensor readouts.
+Experiment Two will focus on if concurrent bandwidth feedback can decrease the required learning time to peak performance in a simulated robotic arm track and capture task.
+We will compare task performance throughout training and workload between two groups: a control group, which receives no feedback, and a treatment group, which receives concurrent bandwidth feedback on one or more sensor readouts.
 Subjects in both groups will complete the same task, and it is hypothesized that subjects in the treatment group will perform the task better and require less training time to reach peak performance.
 This hypothesis is based on the results of the SAFER experiment, as well as the results of Experiment One.
 
 In this task, subjects will command a robotic arm to track an approaching vehicle and grapple with it.
 This is motivated by the primary use of the robot arm on the International Space Station, which grasps visiting vehicles when they arrive at the station and then attaches them to a separate fixed location on the station.
 Subjects will be trained on this task and will then repeat the task for one to two hours through a variety of slightly different start and end conditions.
-% While they are completing the robotics task, subjects will also be required to attend to a secondary task which will require them to look away from their primary flight display.
-% Subjects will also be asked to report their subjective workload after each trial.
 
 NASA’s Robotic On-board Trainer (ROBoT) will be used for this experiment.
-ROBoT is a package of simulation software which includes a dynamic model of the robotic arm on the space station and presents the user with multiple camera angle views and the instrument panel required to operate effectively, see Figure~\ref{figure:robotinhera}.
+ROBoT is a package of simulation software which includes a dynamic model of the robotic arm on the space station and presents the user with multiple camera angle views and the instrument panel required to operate the robotic arm, see Figure~\ref{figure:robotinhera}.
 In addition to these displays, ROBoT also includes the two hand controllers required to control the arm.
-NASA trainers at Johnson Space Center developed metrics which are included in ROBoT and include the time to capture, the alignment measurements during approach, the amount of wobble in the arm, the number of times the grapple fixture contacted the structure, the overall path efficiency, and the number of capture attempts.
+NASA trainers at Johnson Space Center developed metrics for performance which are included in ROBoT and include the time to capture, the alignment measurements during approach, the amount of wobble in the arm, the number of times the grapple fixture contacted the structure, the overall path efficiency, and the number of capture attempts.
 The preceding list presents candidate metrics from which we may observe human performance.
 
 \subsubsection{Hypotheses}
@@ -599,11 +523,10 @@ This finding reinforces the need for enhanced learning techniques, as the curren
 \subsection{Model Extension}
 The third and final Aim of the proposal is addressed by developing a model of the human pilot which includes the effects of concurrent bandwidth feedback.
 The proposed Model will extend Professor Hess’ structural model of the human pilot to include the effects of concurrent bandwidth feedback.
-% The outputs of this model will be compared to the results of Experiment One and Two.
 The Structural Model has been extremely successful in predicting human performance through a variety of system dynamics and can predict how performance changes during a pilot's adaptation to changing dynamics.
 Hess has developed adaptive logic for the human pilot in a pursuit task which triggers when the pilot notices that vehicle dynamics have changed~\cite{Hess2009}.
-This logic is based off several criteria, which include ``the logic driving the adjustments... must be predicated upon information available to the human'' and ``the postadapated pilot models must follow the dictates of the crossover model of the human pilot~\cite{Hess2009}.''
-The primary result of the adaptive logic is to increase the resulting crossover frequency of the pilot, effectively making them more aggressive or implying more focus on the task.
+This logic is based off several criteria, which ``must be predicated upon information available to the human [and] the postadapated pilot models must follow the dictates of the crossover model of the human pilot~\cite{Hess2009}.''
+The primary result of the adaptive logic is to increase the resulting crossover frequency of the pilot, effectively making them more responsive, which could be interpreted as more focused on the task.
 Our initial approach to adding concurrent bandwidth feedback into the Structural Model will be based off of Hess' approach to modeling human adaptation in pursuit tasks, which is currently ad-hoc in nature, see Figure~\ref{figure:hesspursuit}.
 
 \begin{figure}[tb]
@@ -619,24 +542,19 @@ Our modified model will include two major changes to Hess' current model:
 \begin{itemize}
 \item The adaptation logic will be changed to focus on concurrent bandwidth feedback
 \item The timescale of the adaptation will be significantly longer
-% \item We plan to use the full structural model presented in Figure~\ref{figure:structuralmodel}, rather than the simplified pursuit model presented in Figure~\ref{figure:hesspursuit}
 \end{itemize}
 
 We propose to modify the adaptive logic to trigger when the pilot is receiving concurrent bandwidth feedback, rather than when a change in system dynamics occurs.
 This will require the addition of a feedback loop onto the Structural Model which triggers when the bandwidth feedback is activated.
 This loop will likely be based around the $K_e$ gain, which is currently the primary way of setting the crossover frequency in the Structural Model.
 This implies that the subjects in our experiments do their primary learning when they are receiving qualitative feedback that their current level of aggressiveness is not sufficient to complete the task.
-While there a separate loop that adjusts the crossover frequency as learning progresses over the course of several hours clearly exists, the change in performance we see when subjects use the concurrent bandwidth feedback happens relatively rapidly, within a few minutes.
+While there must be a separate loop that adjusts the crossover frequency as learning progresses over the course of several hours, the change in performance we see when subjects use the concurrent bandwidth feedback happens relatively rapidly, within a few minutes.
 This is reflected in the delta of performance between subjects in the different groups of our SAFER experiment, even on the first trial, see Figure~\ref{figure:saferdistance}.
-This relates to the second required change, the amount the required adaptation time.
+This relates to the second required change, the amount of required adaptation time.
 Professor Hess' model requires that pilots adapt within a very short time period, on the order of 5 seconds~\cite{weir1966}.
 The results of our experiment with SAFER and the three-axis tracking task also suggest relatively short adaptation times, though they are on the order of a few minutes, again see Figure~\ref{figure:saferdistance}.
 
-% Finally, there are many advantages to using the full structural model over the simplified pursuit model.
-% While we have only shown subjects visual concurrent bandwidth feedback, we could also provide haptic feedback on the stick or seat.
-% While all of our experiments have taken place in fixed based simulators, it is tempting to consider how the effects of our feedback interact with the effects of motion based simulators.
-
-While it should be noted that this work is in very preliminary stages and not scheduled to begin until the Fall Quarter, some early work has been started in preparation for the qualifying examination.
+While it should be noted that this work is in preliminary stages and not scheduled to begin until the Fall Quarter, some early work has been started in preparation for the qualifying examination.
 An effort has been made to begin to replicate some of Hess' results.
 Working with Professor Hess, we have been able to replicate some of the existing adaptation logic for a two-axis tracking task, and begun exploratory research into modifying the model.
 

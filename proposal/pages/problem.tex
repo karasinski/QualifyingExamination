@@ -5,38 +5,35 @@
 \section{Problem Statement}
 \subsection{Motivation}
 We aim to improve performance and decrease learning times for novice operators of highly complex motor control tasks.
-We are specifically interested improving and modeling human performance in robotic arm tasks, which generally require a large amount of training to master.
+We are specifically interested in modeling and improving human performance in robotic arm tasks, which generally require extensive training to master.
 The robotic arm on the International Space Station (ISS), for instance, requires hundreds of hours of training time for astronauts to reach proficiency.
-Being able to decrease this training time could lead to significant savings in cost, and the predictive ability provided by modeling allows for safer operation of the robotic arm.
-% Improving performance leads to a lower probability of critical errors in high risk environments in a near future with a larger number of potentially less trained actors in space.
+Being able to decrease this training time could lead to significant savings in cost, and the predictive ability provided by modeling human performance allows for safer operation of the robotic arm.
 
-Motor control tasks include a variety of skills such as playing tuba, pole jumping, and flying an aircraft.
-% These three examples have very little in common with each other, but it’s easy to recognize the difference between a novice and an expert in each task.
-An individual's performance in each of these skills can change dramatically as they transition from a novice to an expert through training.
+A variety of skills can be classified as motor control tasks, such as playing tuba, pole vaulting, or flying an aircraft.
+An individual's performance in any of these skills can change dramatically as they transition from a novice to an expert through training.
 We are interested in measuring and modeling this performance as it changes over the course of the training process.
-Humans rely on several kinds feedback during training to improve their performance motor control tasks.
-This feedback can be largely grouped into two types: internal, or intrinsic feedback and external, or extrinsic feedback.
-Intrinsic feedback is anything a person can infer using their senses: the feel of the valve’s of the tuba as you play, your sense of balance mid-jump, or the sound the aircraft engine makes during an ascent.
-Extrinsic feedback, on the other hand, is provided by an external source, often in the form of an expert instructor.
 
+Humans rely on several kinds of feedback during training to improve their performance in motor control tasks.
+Feedback can be largely grouped into two types: internal, or intrinsic feedback, and external, or extrinsic feedback.
+Intrinsic feedback is anything a person can infer using their senses: the feel of the valves of the tuba as you play, the sense of balance mid-jump, or the sound the aircraft engine makes during a climb.
+Extrinsic feedback, conversely, is provided by an external source, often in the form of an expert instructor.
 Extrinsic feedback comes in a variety of forms, and has a long history of improving performance in a large variety of motor control tasks.
-Anyone who's payed an expert for tuba lessons, for instance, already knows that extrinsic feedback works.
-We are willing to pay an expert for their time precisely due to their ability to provide this extrinsic feedback which we are otherwise unable to sense.
-This work will focus on a specific type of extrinsic feedback, which is known as concurrent bandwidth feedback (CBF).
-Concurrent feedback is provided in real-time, as an operator is completing a task.
-Bandwidth feedback is provided when a particular value deviates outside a designated range or bandwidth.
-Concurrent bandwidth feedback is feedback provided to an operator in real-time when a signal deviates out of a predefined range.
-This type of feedback has been shown to improve performance in many simple motor control tasks, but has not been investigated in high degree of freedom, complex tasks.
 
-It is important to note that this feedback should not be thought of as an additional form of quantitative guidance, but that it is actually qualitative feedback.
-We are not interested in adding additional displays or gauges to interfaces and displays, but prefer to modify existing indicators, during training, to better inform an operator as to how well they are performing a task.
+We will focus on a specific type of extrinsic feedback, which is known as concurrent bandwidth feedback (CBF).
+Concurrent feedback is provided in real-time, as an operator is completing a task.
+Bandwidth feedback is provided when a objective particular value deviates outside a designated range or bandwidth.
+Concurrent bandwidth feedback is, therefore, feedback provided to an operator in real-time when a signal deviates out of a predefined range.
+This type of feedback has been shown to improve performance in many simple motor control tasks, but has not been investigated in complex, high degree of freedom tasks.
+
+It is important to note that this feedback should be thought of as qualitative feedback, not as an additional form of quantitative guidance.
+We are not interested in adding additional displays or gauges to control interfaces, but would prefer to modify existing indicators, during training, to better inform an operator as to how well they are performing a task.
 Despite extensive evidence as to the effectiveness of this feedback, the mechanism by which performance is improved has yet to be explained, nor integrated into human performance models.
-We will attempt to explain why this feedback is effective in enhancing learning, and integrate this explanation into a model.
+We will attempt to explain why this feedback is effective in enhancing learning and integrate this explanation into a model.
 
 \subsection{Research Aims}
 We are interested in measuring, modeling, and predicting the effects of concurrent bandwidth feedback (CBF) on human performance in robotics manual control tasks.
 To this end, this proposed research includes three research aims.
-These aims build on each other, starting with a compensatory tracking task, transitioning to a robotics task, and finishing with a descriptive model which describes both.
+These aims build on each other, starting with a compensatory tracking task, extending to a robotics task, and finishing with a descriptive model describing both.
 The first aim is complete, and the second and third aims are in progress.
 \begin{description}[align=left]
 \item [Aim One] Investigate the effects of concurrent bandwidth feedback on human performance and workload effects in a three-axis manual tracking task.
@@ -44,18 +41,18 @@ The first aim is complete, and the second and third aims are in progress.
 \item [Aim Three] Extend the Hess Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
 \end{description}
 
-There are a number of research questions that we aim to answer by completing these aims, which include:
+There are a number of research questions that we intend to answer by completing these aims, which include:
 \begin{enumerate}
 \item Can concurrent bandwidth feedback improve human performance in a three-axis manual tracking task?
 \begin{enumerate}
-\item Can subjects use CBF to learn depth cues?
+% \item Can subjects use CBF to learn depth cues?
 \item Do 3D augmented reality displays show improved performance compared to traditional 2D displays?
 \item Can performance be increased without increasing workload?
 \end{enumerate}
 \item Can concurrent bandwidth feedback improve performance of simulated robotics tasks?
 \begin{enumerate}
 \item Can CBF reduce the required training time to peak performance?
-\item Can CBF be removed after reaching peak performance with reducing subject performance?
+\item Can CBF be removed after reaching peak performance without reducing subject performance?
 \item Can performance be increased without increasing workload?
 \end{enumerate}
 \item Can we develop a descriptive model of human performance which includes the effects of concurrent bandwidth feedback?
@@ -64,6 +61,6 @@ There are a number of research questions that we aim to answer by completing the
 \end{enumerate}
 \end{enumerate}
 
-The remainder of this proposal is split into three sections: a literature review, the proposed research, and a timeline.
+The remainder of this proposal is divided into three sections: a literature review, the proposed research, and a timeline.
 
 \end{document}

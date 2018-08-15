@@ -21,7 +21,7 @@ In our implementation, concurrent bandwidth feedback describes feedback conveyed
 
 Experimentation with bandwidth feedback traces its origins to Thorndike's 1927 line-drawing experiment~\cite{thorndike1927law}.
 In his experiment, subjects were seated and blindfolded at a table, then asked to draw lines of 3, 4, 5, or 6 inches.
-The experiment was divided into two groups of subjects, one group of subjects received no verbal feedback, while the other group was told ``right'' of they were within a bandwidth of 1/8th an inch of the desired length for the 3 inch line, or 1/4 of an inch for the other three line lengths, and ``wrong'' if they were outside this bandwidth.
+The experiment was divided into two groups of subjects, one group of subjects received no verbal feedback, while the other group was told ``right'' if they were within an 1/8th of an inch of the desired length for the 3 inch line, or 1/4 of an inch for the other three line lengths, and ``wrong'' if they were outside this bandwidth.
 Subjects that received the verbal bandwidth feedback improved from an initial median ``right'' percentage of 13\% to 54\% after several training sessions.
 The feedback was then removed after these training trials, during which time subjects dropped to a median percentage of 26\%.
 This is consistent with the guidance hypothesis (which was not formalized for another fifty years after this experiment was concluded), which states that consistent feedback during the acquisition phase of learning leads to a dependency on the feedback~\cite{salmoni1984knowledge}.
@@ -72,14 +72,14 @@ Subjects were tasked with flying a SAFER simulation to perform an inspection of 
 % An example side view of the task can be seen in Figure~\ref{fig:safer_demo}.
 Subjects were initially placed 40 feet away from the solar array and were asked to close to 30 feet and hold this distance for the remainder of the task.
 They could gauge their distance from the solar array using the indicator on the guidance display and the out-the-window display.
-Subjects were then asked to inspect four ``damaged'' points on the solar array, and were given a guidance display for navigation to the waypoints. %, see Figure~\ref{fig:displays}.
+Subjects were then asked to inspect four ``damaged'' waypoints on the solar array, and were given a guidance display for navigation to the waypoints. %, see Figure~\ref{fig:displays}.
 % We also implemented an unexpected waypoint redesignation during half the trials.
 % When this occurred, one of the waypoints would be updated to a new location while the subject was in mid-flight toward the original waypoint.
 % Subjects were notified of this change with an audible ``ding'', and the guidance display updated instantaneously.
 % If the trial had an waypoint redesignation on the second waypoint, for instance, the subject would: close from 40 feet to 30 feet, use the guidance to fly towards the first waypoint and inspect, use the guidance to fly towards the second waypoint, hear the audible ``ding'' and guidance display changes and readjust their trajectory, inspect the waypoint, fly to third waypoint and inspect, and fly to the fourth waypoint and inspect.
 Two vertically arranged displays in the simulator were available to complete the task, see Figure~\ref{figure:safersim}.
 The primary display contained an out-the-window view of the solar array and, depending on which group the subject was in, one of the guidance displays. % from Figure~\ref{fig:displays}.
-Subjects used the out-the-window view and guidance display to navigate their environment.
+% Subjects used the out-the-window view and guidance display to navigate their environment.
 The secondary display located directly below the primary display portrayed information about the subject's current mode, remaining fuel, and a ``comm light''.
 
 \begin{figure}[tb!]
@@ -102,11 +102,12 @@ The secondary display located directly below the primary display portrayed infor
 In our experiment, subjects were placed into one of three groups: a control, a high precision augmented feedback group, and a concurrent bandwidth feedback (CBF) group.
 Subjects in the high precision group were given an extra significant figure in their guidance display and an analog display which was scaled twice as large (but had half the maximum value) of their flight parameters.
 Subjects in the CBF group had two display elements which would change from a green to a red color when the subject's performance was outside a predefined range.
-Both treatment groups performed better than the control group, with the CBF group performing the best and having the least error, see Figure~\ref{figure:saferdistance}.
+Performance was measured as mean absolute error (MAE) and results across trials are shown in Figure~\ref{figure:saferdistance}.
+Both treatment groups performed better than the control group, with the CBF group performing the best and having the least error.
 The effects that the treatments had on workload was very different than performance, however.
 Subjects in the high precision group reported significantly more workload than the control group, while subjects in the CBF group reported significantly less workload than the control group, see Figure~\ref{figure:saferworkload}.
 The concurrent bandwidth feedback also had the added benefit of significantly reducing the amount of time required to train the subjects to their maximum skill level.
-Subjects in this group performed better on their first trial than subjects in the control group did on their last, after approximately two hours of practice.
+Subjects with the CBF performed better on their first trial than subjects in the control group did on their last, which was after approximately two hours on the task.
 
 \subsection{Workload Measurement}
 Improving performance, through some kind of feedback or other technique, usually comes at the cost of increased workload, which can lead to a loss of the ability to sustain improved performance.
@@ -161,7 +162,7 @@ The report concludes by describing a hypothetical transfer function of the human
 McRuer's early model of the complete pilot/vehicle system is presented in Figure~\ref{figure:mcruer1974}.
 McRuer revisited these results in 1974, after three decades of supporting engineering and experimental psychology experiments and was able to further generalize these results to a wide variety of system dynamics~\cite{McRuer1974}.
 In his study, McRuer completed a detailed analysis which included the human response to proportional, rate/velocity, and acceleration type controlled element dynamics, see Table~\ref{table:mcruer1974a}.
-The result of this report was the so called ``crossover model,'' which relates the operator and controlled element transfer characteristics by the equation
+The result of this report was the now famous ``crossover model,'' which relates the operator and controlled element transfer characteristics by the equation
 \begin{align}
 Y_c(jw) Y_p(jw) = \dfrac{w_c e^{-jw \tau_e}}{jw}
 \end{align}
@@ -182,7 +183,7 @@ Even today, the crossover model is used as the standard for describing pilot/veh
         \midrule
             $K_c$ & Attitude control with ACAH system & Speed control \\
             $\dfrac{K_c}{s}$ & Attitude control with a rate command system & Heading control at low to moderate speeds \\
-            $\dfrac{K_c}{s^2}$ & Attitude control with a spacecraft with damper off & Longitudinal position control \\
+            $\dfrac{K_c}{s^2}$ & Attitude control of a spacecraft with damper off & Longitudinal position control \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -207,6 +208,7 @@ Even today, the crossover model is used as the standard for describing pilot/veh
 The continued demand for human pilot models for use in informing vehicle design, as well predicting, preventing, and explaining accidents has led to a variety of more complex pilot models since the creation of the crossover model.
 A recent review by Xu et al. in 2017 surveyed the state of the art in human pilot modeling and grouped existing models into three classes of models based on: control theory, human physiology, and intelligence techniques~\cite{Xu2017}.
 Classical models based on control theory include the McRuer crossover model and optimal control models by Kleinman et al. developed in the early 1970s~\cite{Kleinman1970, Baron1970}.
+Of these three overarching sets of models, the models based on human physiology are of the greatest interest here.
 Models based on human physiology were developed to understand human pilot perception and control behavior, and include the Hess structural model~\cite{Hess1980, Hess1990, Hess1997}, Hosman's descriptive model~\cite{Hosman1996, Hosman1999}, and the biodynamic model~\cite{Griffin2001}.
 Recent intelligence models take advantage of techniques including fuzzy control and neural networks~\cite{Zaychik2006, Gestwa}.
 
@@ -218,7 +220,6 @@ Recent intelligence models take advantage of techniques including fuzzy control 
     \end{center}
 \end{figure}
 
-Of these three overarching sets of models, the models based on human physiology are of the greatest interest here.
 While the McRuer was very successful in predicting pilot behavior, it it did not attempt ``to describe the underlying structure which contributes to human pilot dynamics~\cite{Hess1980}.''
 % ``Despite their relative successes, neither the servo model nor the optimal control model attempts to describe the underlying structure which contributes to human pilot dynamics~\cite{Hess1980}.''
 For this reason, the Hess Structural Model is of particular interest due to the incorporation of multiple sensory channels and models of visual acuity and the time-varying human pilot~\cite{Hess2009}.

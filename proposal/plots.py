@@ -5,8 +5,9 @@ def threeway(sub_design):
 
 	colors = sns.color_palette()
 	agg = sub_design.groupby(('device', 'startdesign', 'order', 'design')).Zrmse.agg(['mean', 'sem']).reset_index()
+	agg['designlabels'] = agg.design.replace((1, 2, 3), ('Baseline', 'Feedback', 'Rotated'))
 
-	f, axes = plt.subplots(1, 3, sharex=True, sharey=True, figsize=(8,3))
+	f, axes = plt.subplots(1, 3, sharey=True, figsize=(8,3.5))
 	for i, ax in enumerate(axes):
 		startdesign = i + 1
 		for _, (device, linestyle) in enumerate(zip(['lcd', 'hololens'], ['-', '--'])):
@@ -25,13 +26,20 @@ def threeway(sub_design):
 				design = int(d['design']) - 1
 				ax.errorbar(x=offset + d['order'], y=d['mean'], yerr=d['sem'], color=colors[design])
 
-	for ax in axes:
+	for i, ax in enumerate(axes):
 		ax.set_xlabel('')
-		# ax.set_xticks([])
-		ax.set_xticklabels(['', '', ''])
 
-	axes[0].set_ylabel('Z RMSE')
-	axes[1].set_xlabel('Order')
+	axes[0].set_ylabel('Normalized RMSE ($z$-axis)')
+
+	axes[0].set_xticks([1, 2, 3])
+	axes[1].set_xticks([1, 2, 3])
+	axes[2].set_xticks([1, 2, 3])
+	axes[0].set_xticklabels(['Baseline', 'Feedback', 'Rotated'], rotation=45, ha='center')
+	axes[1].set_xticklabels(['Feedback', 'Rotated', 'Baseline'], rotation=45, ha='center')
+	axes[2].set_xticklabels(['Rotated', 'Baseline', 'Feedback'], rotation=45, ha='center')
+	axes[0].set_title('(a)')
+	axes[1].set_title('(b)')
+	axes[2].set_title('(c)')
 
 	display = [Line2D([0], [0], color='k', lw=1, ls='-'),
 	           Line2D([0], [0], color='k', lw=1, ls='--')]
@@ -40,18 +48,19 @@ def threeway(sub_design):
 	          Line2D([0], [0], color=colors[2], lw=1, ls='-')]
 
 	legend1 = ax.legend(display, ['2D', '3D           '], loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0, title='Display')
-	legend2 = ax.legend(designs, ['Baseline', 'Feedback', 'Angled'], loc='lower left', bbox_to_anchor=(1.05, 0), borderaxespad=0, title='Design')
+	legend2 = ax.legend(designs, ['Baseline', 'Feedback', 'Rotated'], loc='lower left', bbox_to_anchor=(1.05, 0), borderaxespad=0, title='Design')
 	plt.gca().add_artist(legend1)
 	plt.gca().add_artist(legend2)
 
 	plt.tight_layout()
+	plt.savefig('/Users/jkarasin/Desktop/3way.pdf')
 	plt.show()
 
 def twoway(sub_design):
 	sub_design['ff'] = sub_design.startdesign == 2
 	agg = sub_design.groupby(('device', 'ff', 'design')).Zrmse.agg(['mean', 'sem']).reset_index()
 
-	f, axes = plt.subplots(1, 2, sharex=True, sharey=True, figsize=(6,3))
+	f, axes = plt.subplots(1, 2, sharex=True, sharey=True, figsize=(6,3.5))
 	for i, (ax, ff) in enumerate(zip(axes, [False, True])):
 		for _, (device, linestyle) in enumerate(zip(['lcd', 'hololens'], ['-', '--'])):
 			data = agg.query('ff == @ff and device == @device')
@@ -72,11 +81,11 @@ def twoway(sub_design):
 	for ax in axes:
 		ax.set_xlabel('')
 		ax.set_xticks([1, 2, 3])
-		ax.set_xticklabels(['', '', ''])
+		ax.set_xticklabels(['Baseline', 'Feedback', 'Rotated'], rotation=45, ha='center')
 
-	axes[0].set_ylabel('Z RMSE')
-	axes[0].set_title('Start without Feedback')
-	axes[1].set_title('Start with Feedback')
+	axes[0].set_ylabel('Normalized RMSE ($z$-axis)')
+	axes[0].set_title('(a)')
+	axes[1].set_title('(b)')
 
 	display = [Line2D([0], [0], color='k', lw=1, ls='-'),
 	           Line2D([0], [0], color='k', lw=1, ls='--')]
@@ -85,9 +94,10 @@ def twoway(sub_design):
 	          Line2D([0], [0], color=colors[2], lw=1, ls='-')]
 
 	legend1 = ax.legend(display, ['2D', '3D           '], loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0, title='Display')
-	legend2 = ax.legend(designs, ['Baseline', 'Feedback', 'Angled'], loc='lower left', bbox_to_anchor=(1.05, 0), borderaxespad=0, title='Design')
+	legend2 = ax.legend(designs, ['Baseline', 'Feedback', 'Rotated'], loc='lower left', bbox_to_anchor=(1.05, 0), borderaxespad=0, title='Design')
 	plt.gca().add_artist(legend1)
 	plt.gca().add_artist(legend2)
 
 	plt.tight_layout()
+	plt.savefig('/Users/jkarasin/Desktop/2way.pdf')
 	plt.show()
