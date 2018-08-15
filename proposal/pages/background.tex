@@ -64,22 +64,14 @@ de Groot et al. also measured response time to a secondary task as an estimate o
     \end{center}
 \end{figure}
 
-% We have previously shown that concurrent bandwidth feedback can improve task performance and decrease workload for a 4DoF analog spacecraft task.
-% Would be good to say that we have submitted journal article for review.
 Our recent work includes investigations into concurrent bandwidth feedback in a four degree of freedom Simplified Aid for EVA Rescue (SAFER) task~\cite{Karasinski2016Masters, Karasinski2017, Karasinski2016}.
 SAFER is a small propulsive jet pack worn during spacewalks for self-rescue~\cite{Vassigh1998}.
 Subjects were tasked with flying a SAFER simulation to perform an inspection of the International Space Station's (ISS) solar arrays.
-% An example side view of the task can be seen in Figure~\ref{fig:safer_demo}.
 Subjects were initially placed 40 feet away from the solar array and were asked to close to 30 feet and hold this distance for the remainder of the task.
 They could gauge their distance from the solar array using the indicator on the guidance display and the out-the-window display.
 Subjects were then asked to inspect four ``damaged'' waypoints on the solar array, and were given a guidance display for navigation to the waypoints. %, see Figure~\ref{fig:displays}.
-% We also implemented an unexpected waypoint redesignation during half the trials.
-% When this occurred, one of the waypoints would be updated to a new location while the subject was in mid-flight toward the original waypoint.
-% Subjects were notified of this change with an audible ``ding'', and the guidance display updated instantaneously.
-% If the trial had an waypoint redesignation on the second waypoint, for instance, the subject would: close from 40 feet to 30 feet, use the guidance to fly towards the first waypoint and inspect, use the guidance to fly towards the second waypoint, hear the audible ``ding'' and guidance display changes and readjust their trajectory, inspect the waypoint, fly to third waypoint and inspect, and fly to the fourth waypoint and inspect.
 Two vertically arranged displays in the simulator were available to complete the task, see Figure~\ref{figure:safersim}.
 The primary display contained an out-the-window view of the solar array and, depending on which group the subject was in, one of the guidance displays. % from Figure~\ref{fig:displays}.
-% Subjects used the out-the-window view and guidance display to navigate their environment.
 The secondary display located directly below the primary display portrayed information about the subject's current mode, remaining fuel, and a ``comm light''.
 
 \begin{figure}[tb!]
@@ -95,7 +87,6 @@ The secondary display located directly below the primary display portrayed infor
             \label{figure:saferworkload}
         \end{subfigure}
         \caption{Group 1 was the control group, while Group 3 experienced CBF. Subjects with CBF performed the best (a) and reported the lowest workload (b). Errors are the standard error of the mean~\cite{Karasinski2016Masters}.}
-        % \label{fig:designs}%
     \end{center}
 \end{figure}
 
@@ -122,7 +113,6 @@ Each of these scales is rated from a 0 (Very Low) to 100 (Very High) scale, with
 After marking a value for each of these subscales, subjects then make fifteen pairwise weightings, allowing them to rate each pair of subscales based on its perceived contribution to their overall workload.
 A final, overall workload score is computed by multiplying each subscale's score by the number of times it was chosen in the pairwise weightings, adding these values, and dividing by fifteen.
 As certain subscales may be more or less important than others, depending on the task being evaluated, some researchers can drop subscales or simply not compute the overall score.
-% There has been some argument in the literature that the raw scales, rather than the overall scale, may be more valid~\cite{bustamante2008measurement}.
 
 In addition to subjective measures of workload, there are a variety of techniques which aim to estimate objective workload.
 One of the most common objective measurement techniques is the secondary task, which requires subjects to complete the primary task, then use any spare workload to respond to an additional task~\cite{gawron2008human}.
@@ -132,11 +122,6 @@ In our previous studies, we have used a multiple choice reaction time task as an
 In this secondary task, subjects are presented with several different stimuli, each of which requires a different response~\cite{lysaght1989operator}.
 A subject's objective workload can then be inferred by either the percentage of secondary tasks which were correctly responded to within a given time, the number of secondary tasks which were correctly responded to in a trial, or both.
 We have previously found this type of task to be accurately tied to subjective workload scales in the aforementioned SAFER task~\cite{Karasinski2017}.
-
-% \subsection{Robotics Performance}
-% 1 page\\
-% There are limited examples of spacecraft robotic arm tasks in human literature\\
-% Robotic laparoscopic surgery examples
 
 \subsection{Pilot Modeling}
 \begin{figure}[tb]
@@ -152,7 +137,6 @@ At the time, new weapons were being created for World War 2 which could only be 
 While it was thought that a human could be viewed as a unique kind of servomechanism in the control feedback loop, it was still unclear what factors affected human performance.
 Early work by Tustin and others extended the control theory framework and applied these theories to actual human operators~\cite{tustininvestigation}.
 Particular interest was focused on ``attempt[ing] to find the laws of relationship of movement and error. In particular, it was hoped that this relationship [would] be approximately linear and so permit well developed theory of `linear servomechanisms' to be applied to manual control in the same way as it applies to automatic following~\cite{tustininvestigation}.''
-% ``The object of the series of tests was to investigate the nature of the layer's response in a number of particular cases and to attempt to find the laws of relationship of movement and error. In particular, it was hoped that this relationship be found (within the range of practical requirements) to be approximately linear and so permit well developed theory of `linear servomechanisms' to be applied to manual control in the same way as it applies to automatic following.''
 This would allow for the prediction of human performance and the ability to predict the limits of human control.
 
 These early works were summarized in McRuer's 1957 report, ``Dynamic Response of Human Operators''~\cite{McRuer1957}.
@@ -221,12 +205,10 @@ Recent intelligence models take advantage of techniques including fuzzy control 
 \end{figure}
 
 While the McRuer was very successful in predicting pilot behavior, it it did not attempt ``to describe the underlying structure which contributes to human pilot dynamics~\cite{Hess1980}.''
-% ``Despite their relative successes, neither the servo model nor the optimal control model attempts to describe the underlying structure which contributes to human pilot dynamics~\cite{Hess1980}.''
 For this reason, the Hess Structural Model is of particular interest due to the incorporation of multiple sensory channels and models of visual acuity and the time-varying human pilot~\cite{Hess2009}.
 The Structural Model includes the effects of the neuromuscular system, the force-feel characteristics of the input device, and the contributions of proprioceptive, vestibular, and visual feedback, see Figure~\ref{figure:structuralmodel}.
 One of the key strengths of the Structural Model is the relatively few number of free parameters that need to be set to predict pilot performance.
 The model has been used in predicting and evaluating handling qualities and pilot-induced oscillation rating levels for helicopters, Boeing 747, Lockheed C-5A, and twin ducted-fan aircraft~\cite{Hess2013, Andreea-Irina2014, Grant2015}.
-% It has also been useful in a variety of applications including assessing flight simulator fidelity
 Hess has also investigated how pilot control characteristics change with time due to flight anomalies, changing flight dynamics, and sudden increases in task demand~\cite{Hess2009, Hess2016}.
 The results of this model have been compared to the results of a human-in-the-loop simulation for a well trained subject, and showed good comparison~\cite{Hess2016}.
 Recent work from Bachelder et al. has included modifications to the Structural Model to link pilot performance and workload and to enable the modeling of pulsive pilot behavior~\cite{Bachelder2017, Bachelder2018}.

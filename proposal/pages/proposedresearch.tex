@@ -74,13 +74,11 @@ It was hypothesized that:
 \end{description}
 
 \subsubsection{Procedure}
-% \subsubsection{Participants}
 A total of 24 subjects (19 males, 5 females) were recruited in accordance with the University of California, Davis Internal Review Board (IRB), and subjects signed a consent form and were not compensated.
 There were 12 subjects in the 2D group, and 12 subjects in the 3D group.
 Subjects were undergraduate and graduate students in the University of California, Davis College of Engineering.
 All participating subjects had normal vision (no colorblindness, eyesight correctable to 20/20 vision) and full motor control of their hands. 
 
-% \subsubsection{Apparatus}
 \begin{figure}[tb!]
     \begin{center}
         \begin{subfigure}{0.49\textwidth}
@@ -96,7 +94,6 @@ All participating subjects had normal vision (no colorblindness, eyesight correc
     \end{center}
 \end{figure}
 
-% \paragraph{Equipment}
 A human-in-the-loop simulation was conducted using a fixed-base simulator, see Figure~\ref{fig:simulator}.
 The simulator consisted of two 10.4 inch LCD displays.
 The tracking task was completed on the left display, while the right display showed the two-choice task.
@@ -107,7 +104,6 @@ Both groups viewed the guidance cross of a width and height of 5 inches by 5 inc
 For subjects in the HoloLen's group, the $z$ motion of the cross also could move up to 5 inches in either direction away from the center of the guidance cross.
 Subjects in both groups used the same Microsoft Xbox controller and control scheme to complete the task.
 
-% \paragraph{Selection of Disturbance}
 The disturbance function was a sum of 13 sinusoids approximating a rectangular spectrum with a 2.0 rad/s cutoff frequency.
 The disturbing force, as a function of time, $d(t)$, was
 \begin{align}
@@ -239,7 +235,6 @@ The RMSE of the disturbance force was normalized along each axis such that all t
 Three designs were presented to the subjects to evaluate: a baseline design, a color-based concurrent bandwidth feedback (CBF) design, and a rotated design.
 Figure~\ref{fig:designs} shows all three designs in the same error state.
 The three designs were very similar, having only minor differences between each other.
-% Compared to the baseline, the color feedback and rotated displays were expected to produce superior performance along the $z$ axis tracking task.
 
 The baseline design consists of a flat cross with a center target point and a green sphere error indicator.
 This indicator also casts a green, variable-length rod perpendicular to the plane of the cross, which allows for a visual estimation of the error in the $z$ axis.
@@ -252,19 +247,14 @@ The rotated display was identical to the baseline design, but the relative attit
 Before entering the study, subjects were randomly placed in a display group (either the LCD monitor or HoloLens), and were then randomly placed into an order group (which consisted of Baseline-Feedback-Rotated, Feedback-Rotated-Baseline, and Rotated-Baseline-Feedback).
 This order group was created to remove any order effects that might arise due to training on a given display, and follows a standard Latin squares design.
 (The order of the designs was expected to be insignificant, but we will later discuss how this is not the case.)
-% Subjects were naive to this order, and were only told which design they were evaluating directly before they began.
 After entering the experiment room, the subjects were familiarized with the task, three designs, NASA-TLX, and the controller through a twenty minute training session.
-% Subjects were instructed that they would be evaluating three different display designs. %: a baseline display, a color feedback display, and and rotated display.
-% They were further instructed that they had two tasks.
 They were instructed to:
 \begin{itemize}
     \item Minimize the displacement of their guidance target from the center
     \item Respond to the two choice task as accurately and quickly as possible
 \end{itemize}
 
-% After the training, subjects were seated in front of the simulator.
 Subjects in the 3D group completed a short calibration program that adjusted the display to their interpupillary distance.
-% After this, they were instructed on how to align the guidance cross with the center of the left display monitor.
 All subjects were then allowed to complete two familiarization trials, during which time they could ask questions about how the controls worked, or any other aspects of the task.
 The proctor also used this time to ensure that subjects showed basic competency with the task by responding to both the tracking and two-choice tasks appropriately.
 All familiarizations were done with the baseline design, regardless of which design the subjects evaluated first.
@@ -283,7 +273,6 @@ When significant effects were observed, post hoc comparisons using the Tukey Hon
 In order to remove learning and fatigue effects, each subject's best performing five trials in each design were averaged together to produce one average score for each subject and design.
 Additionally, the first ten seconds of each sixty second trial were not included in the analysis to remove initial transient effects.
 
-% \subsection{Tracking Performance}
 The root-mean-square error (RMSE) of each axis was analyzed individually and combined to understand the differences between the three designs and the two devices.
 The RMS of the disturbance signal was calculated along each axis and used to normalize the RMSE.
 Under this definition, an RMSE of 1 indicates performance no better than no input, and an RMSE greater than 1 indicates quite poor performance.
@@ -350,7 +339,6 @@ It was also expected that, due to the stereoscopic nature of the display, the Ho
 \begin{figure}[tb!]
     \begin{center}
         \includegraphics[width=\linewidth]{./../img/x_design_y_zrmse_col_startdesign_hue_device.pdf}
-        % \includegraphics[width=\linewidth]{./../img/x_design_y_zrmse_hue_startdesign_col_device.pdf}
         \caption{The resulting normalized RMSE along the $z$-axis. Subjects started in either the Baseline (a), Feedback (b), or Rotated (c) design.}
         \label{fig:zrmseanovas}
     \end{center}
@@ -443,7 +431,6 @@ Workload was unaffected by the CBF.
 For Hypothesis 2, subjects that started in the CBF design appear to have better learned the task and used the CBF to learn to interpret the depth cue provided by the stereoscopic display.
 Subjects that were not initially exposed to this feedback were unable to exploit the display, and did not perform significantly better than subjects without the display.
 For Hypothesis 3, subjects in the rotated design did perform better than those in the baseline design and appeared to be able to use this view to better interpret the depth of the target.
-% An unexpected side effect of angling the display, however, was that subjects performed worse in the $x$ axis tracking task, which was rotated out of parallel with the display.
 
 \subsection{Experiment Two}
 \begin{figure}[tb]
