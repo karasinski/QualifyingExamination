@@ -1,5 +1,5 @@
 %!TEX program = xelatex
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 % --importing files packages
 \usepackage[subpreambles=true]{standalone}
 \usepackage{pdfpages}
@@ -15,16 +15,19 @@
 %% ---
 \inputencoding{utf8}
 % \includepdf{./pages/titlePage}
-\includepdf{./pages/titlePageSigned}
+\includepdf[angle=90]{./pages/titlePageSigned}
 \newpage \pagenumbering{roman}
 \tableofcontents
 \newpage \pagenumbering{arabic} \setcounter{page}{1}
 \import{pages/}{problem}
-\newpage
+\vspace{1em}
+% \newpage
 \import{pages/}{background}
-\newpage
+\vspace{1em}
+% \newpage
 \import{pages/}{proposedresearch}
-\newpage
+\vspace{1em}
+% \newpage
 \import{pages/}{risks}
 
 \newpage
