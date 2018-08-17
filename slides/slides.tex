@@ -14,8 +14,11 @@
 \newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
 \usepackage{subcaption}
 % \setbeamertemplate{note page}[plain]
-
 \usepackage{media9}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
+\usepackage{graphicx}
+\usepackage[space]{grffile}
 
 \title{The Effects of Concurrent Bandwidth Feedback on Robotics Manual Control Tasks}
 \subtitle{An Experimental and Modeling Study}
@@ -34,20 +37,18 @@
 
 \section{Introduction}
 
-\newcommand\topsp{-0.25in} %standard spacing to remove between title and body
-
 \begin{frame}[fragile]{About Me}
   \begin{columns}[T]
     \begin{column}{.6\textwidth}
       \begin{description}[align=right]
         \setlength\itemsep{1em}
         \item [2012] B.S. Physics, UCSC\\
-                     Software Engineer, MV
+              Software Engineer, MV
         \item [2013] Start at UC Davis
         \item [2016] M.S. MAE, UCD\\
-                     Intern, ARC
+              Intern, ARC
         \item [2017] Link Fellowship\\
-                     Pathways Intern, ARC
+              Pathways Intern, ARC
       \end{description}
     \end{column}
     \begin{column}{.4\textwidth}
@@ -64,6 +65,7 @@
 
 \begin{frame}[fragile]{Research Aims}
   \begin{description}[align=right]
+    \setlength\itemsep{1em}
     \item [Aim One] Feedback effects in a three-axis manual tracking task
     \item [Aim Two] Feedback effects in a robotics track and capture task
     \item [Aim Three] Extend Structural Model to include feedback effects
@@ -72,10 +74,7 @@
 
 \section{Background}
 
-% \subsection{Augmented Feedback}
-
 \begin{frame}[fragile]{What is feedback?}
-  % \metroset{block=fill}
   \begin{columns}[T]
     \begin{column}{.8\textwidth}
       \begin{block}{}
@@ -97,22 +96,12 @@
 %   In our implementation, concurrent bandwidth feedback describes feedback conveyed to the operator when their real-time performance drifts outside of an acceptable tolerance limit.
 % \end{frame}
 
-% \begin{frame}[fragile]{Thorndike}
-% \begin{figure}[h!]
-%     \begin{center}
-%         \includegraphics[height=8cm]{../img/thorndike.png}
-%         % \caption{}
-%         % \label{}
-%     \end{center}
-% \end{figure}
-% \end{frame}
-
 \begin{frame}[fragile]{Thorndike, 1927~\cite{thorndike1927law}}
   \begin{columns}[T]
     \begin{column}{.6\textwidth}
       \begin{itemize}
         \setlength\itemsep{1em}
-        % \item Thorndike's line-drawing experiment, 1927~\cite{thorndike1927law}
+        \item Blindfolded line-drawing experiment
         \item Two groups of subjects:\\ \quad With, without bandwidth feedback
         \item Bandwidth feedback resulted\\ in better performance, but was\\ lost in retention
         \item Results consistent with\\ guidance hypothesis
@@ -128,17 +117,17 @@
   \metroset{block=fill}
   \begin{columns}[T]
     \begin{column}{.8\textwidth}
-        % Consistent feedback during the acquisition phase of learning leads to a dependency on the feedback.
-        If consistent feedback during the acquisition phase of learning is provided, ``the subject comes to rely on that source of error information to maintain performance, and thus does not deal effectively with the other cues in the task that are important''.\\
-        -Salmoni et al., 1984~\cite{salmoni1984knowledge}
+      % Consistent feedback during the acquisition phase of learning leads to a dependency on the feedback.
+      If consistent feedback during the acquisition phase of learning is provided, ``the subject comes to rely on that source of error information to maintain performance, and thus does not deal effectively with the other cues in the task that are important''.\\
+      -Salmoni et al., 1984~\cite{salmoni1984knowledge}
     \end{column}
   \end{columns}
 \end{frame}
 
 \note[itemize]{
-\item How do we defeat the guidance hypothesis?
-\item Provide feedback which is complementary to other available information, but sufficient in itself to complete the task
-\item Feedback should also fade with time as the subjects perform better
+  \item How do we defeat the guidance hypothesis?
+  \item Provide feedback which is complementary to other available information, but sufficient in itself to complete the task
+  \item Feedback should also fade with time as the subjects perform better
 }
 
 \begin{frame}[fragile]{Payne and Hauty, 1955~\cite{payne1955effect}}
@@ -187,11 +176,12 @@
 }
 
 \begin{frame}[fragile]{SAFER Experiment}
-\begin{itemize}
-\item We investigated feedback strategies in my Masters thesis
-\item Simplified Aid for EVA Rescue (SAFER)
-\item 4 degree of freedom task with two-choice secondary task
-\end{itemize}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item We investigated feedback strategies in my Masters thesis
+    \item Simplified Aid for EVA Rescue (SAFER)
+    \item 4 degree of freedom task with two-choice secondary task
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{SAFER}
@@ -208,59 +198,59 @@
 
 \begin{frame}[fragile]{International Space Station}
   \begin{figure} \centering
-  \begin{tikzpicture}[      
-          every node/.style={anchor=south west,inner sep=0pt},
-          x=1mm, y=1mm,
-        ]   
-       \onslide<1-> \node (fig1) at (0,0)
-         {\includegraphics[scale=0.3]{../img/International_Space_Station_after_undocking_of_STS-132.jpg}};
-       \onslide<2->\node (fig2) at (3,3)
-         {\includegraphics[scale=0.08]{../img/STS120SolarPanel.jpg}};  
-       \onslide<3->\node (fig2) at (70,2.8)
-         {\includegraphics[scale=0.3,angle=90]{../img/waypoints.jpeg}};  
-  \end{tikzpicture}
+    \begin{tikzpicture}[
+        every node/.style={anchor=south west,inner sep=0pt},
+        x=1mm, y=1mm,
+      ]
+      \only<1-> \node (fig1) at (0,0)
+      {\includegraphics[scale=0.3]{../img/International_Space_Station_after_undocking_of_STS-132.jpg}};
+      \only<2->{\node (fig2) at (3,3)
+      {\includegraphics[scale=0.08]{../img/STS120SolarPanel.jpg}};}
+      \only<3->{\node (fig2) at (70,2.8)
+      {\includegraphics[scale=0.3,angle=90]{../img/waypoints.jpeg}};}
+    \end{tikzpicture}
   \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{Flying SAFER}
   \begin{center}
-\newcommand\vidname{videos/Flying_SAFER.mp4}   %path to video (must be subdir)
-\newcommand\thumbname{../img/SAFER_DangerChris.jpg} %path to thumbnail
-\newcommand\moviewidth{1.0\textwidth}
-\includemedia[
-  width=\moviewidth,
-  % totalheight=0.225\linewidth,
-  activate=pageopen,
-  passcontext,  %show VPlayer's right-click menu
-  addresource=\vidname,
-  flashvars={
-    source=\vidname %important: same path as in `addresource'
-    % &autoPlay=true
-    % &scaleMode=letterbox
-    &loop=true
-  }
-]{\includegraphics[width=\moviewidth]{\thumbname}}{VPlayer.swf}
+    \newcommand\vidname{videos/Flying_SAFER.mp4}   %path to video (must be subdir)
+    \newcommand\thumbname{../img/SAFER_DangerChris.jpg} %path to thumbnail
+    \newcommand\moviewidth{1.0\textwidth}
+    \includemedia[
+      width=\moviewidth,
+      % totalheight=0.225\linewidth,
+      activate=pageopen,
+      passcontext,  %show VPlayer's right-click menu
+      addresource=\vidname,
+      flashvars={
+          source=\vidname %important: same path as in `addresource'
+          % &autoPlay=true
+          % &scaleMode=letterbox
+          &loop=true
+        }
+    ]{\includegraphics[width=\moviewidth]{\thumbname}}{VPlayer.swf}
   \end{center}
 \end{frame}
 
 \begin{frame}[fragile]{SAFER Guidance Display}
   \begin{center}
-\newcommand\vidname{videos/SAFER_Guidance_Display.mp4}   %path to video (must be subdir)
-\newcommand\thumbname{../img/otw.jpeg} %path to thumbnail
-\newcommand\moviewidth{1.0\textwidth}
-\includemedia[
-  width=\moviewidth,
-  % totalheight=0.225\linewidth,
-  activate=pageopen,
-  passcontext,  %show VPlayer's right-click menu
-  addresource=\vidname,
-  flashvars={
-    source=\vidname %important: same path as in `addresource'
-    % &autoPlay=true
-    % &scaleMode=letterbox
-    &loop=true
-  }
-]{\includegraphics[width=\moviewidth]{\thumbname}}{VPlayer.swf}
+    \newcommand\vidname{videos/SAFER_Guidance_Display.mp4}   %path to video (must be subdir)
+    \newcommand\thumbname{../img/otw.jpeg} %path to thumbnail
+    \newcommand\moviewidth{1.0\textwidth}
+    \includemedia[
+      width=\moviewidth,
+      % totalheight=0.225\linewidth,
+      activate=pageopen,
+      passcontext,  %show VPlayer's right-click menu
+      addresource=\vidname,
+      flashvars={
+          source=\vidname %important: same path as in `addresource'
+          % &autoPlay=true
+          % &scaleMode=letterbox
+          &loop=true
+        }
+    ]{\includegraphics[width=\moviewidth]{\thumbname}}{VPlayer.swf}
   \end{center}
 \end{frame}
 
@@ -284,15 +274,19 @@
 
 \section{Proposed Research}
 
+\subsection{Experiment One}
+
 \begin{frame}[fragile]{Motivation}
   \begin{itemize}
-    
+    \setlength\itemsep{1em}
+    \item Link Foundation Modeling, Simulation, and Training Fellowship
+    \item Measure the effects of augmented reality on performance and workload in robotics training
+    \item Hypothesize that AR would improve performance
   \end{itemize}
 \end{frame}
 
-\subsection{Experiment One}
 \begin{frame}[fragile]{Three-axis tracking groups}
-  \begin{figure}[tb!]
+  \begin{figure}
     \begin{center}
       \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\linewidth]{../img/DSC_0801.JPG}
@@ -308,13 +302,116 @@
   \end{figure}
 \end{frame}
 
+\begin{frame}[fragile]{Performance Analysis}
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{../img/x_design_y_zrmse_col_startdesign_hue_device.pdf}
+  \end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Performance Analysis}
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{../img/x_design_y_zrmse_hue_device_col_cbf_first.pdf}
+  \end{center}
+\end{figure}
+\end{frame}
+
 \subsection{Experiment Two}
 
-\begin{frame}[fragile]{Solar Array Repair}
+\begin{frame}[fragile]{Canadarm2}
+  \begin{columns}[T]
+    \begin{column}{.4\textwidth}
+      \begin{itemize}
+        \setlength\itemsep{1em}
+        \item <1->Launched 2001, 7~DoF, 60~feet long, 4000~lb
+        \item <2->Astronaut EVA Assist
+        \item <3->Grappling visiting vehicles
+      \end{itemize}
+    \end{column}
+    \begin{column}{.6\textwidth}
+      \begin{tikzpicture}
+        \node<1> (img1) {\includegraphics[width=\textwidth]{../img/canadarm2.jpg}};
+        \node<2> (img2) {\includegraphics[width=\textwidth]{../img/STS-114_Steve_Robinson_on_Canadarm2.jpg}};
+        \node<3> (img3) {\includegraphics[width=\textwidth]{../img/Cygnus_7_captured_by_Canadarm2.jpg}};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{RWS on ISS}
+  \begin{figure}
+    \begin{center}
+      \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{../img/iss036e017589.JPG}
+        \caption{Node Module}
+      \end{subfigure}\hfill
+      \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{../img/iss036e029229.JPG}
+        \caption{Cupola}
+      \end{subfigure}
+      % \caption{The fixed-based simulator used by both groups.}%
+      % \label{fig:simulator}%
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Cupola Provides an Extra View}
   \begin{center}
-    \includegraphics[width=\textwidth]{../img/Astronaut_Scott_Parazynski_repairs_a_damaged_ISS_solar_panel.jpg}
+    \includegraphics[width=\textwidth]{../img/12085915275_c7f77c537e_k.jpg}
   \end{center}
 \end{frame}
+
+\begin{frame}[fragile]{ROBoT Workstation}
+\begin{figure}
+  \begin{center}
+    \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.16_PM.png}
+    % \caption{The Robotic On-board Trainer (ROBoT) station set up in the NASA HERA Analog, from~\cite{robottalk}.}
+    % \label{figure:robotinhera}
+  \end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{ROBoT Visualization}
+\begin{figure}
+  \begin{center}
+    \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.02_PM.png}
+    % \caption{ROBoT visualization laptop, showing four camera views.}
+    % \label{}
+  \end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{ROBoT End Effector View}
+\begin{figure}
+  \begin{center}
+    \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.05_PM.png}
+    % \caption{The camera attached to the end effector of the robotic arm, showing the grapple fixture.}
+    % \label{}
+  \end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{ROBoT Performance Reports}
+\begin{figure}
+  \begin{center}
+    \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.07_PM.png}
+    % \caption{Example performance score report shown to the user after each trial.}
+    % \label{}
+  \end{center}
+\end{figure}
+\end{frame}
+
+% \begin{frame}[fragile]{ROBoT Data Output}
+% \begin{figure}
+%   \begin{center}
+%     \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.10_PM.png}
+%     % \caption{The hand controller inputs and position and angular errors are also logged throughout the trial.}
+%     % \label{}
+%   \end{center}
+% \end{figure}
+% \end{frame}
 
 \subsection{Modeling}
 
@@ -323,9 +420,9 @@
 \begin{frame}[fragile]{Timeline}
   \begin{figure}[h!]
     \begin{center}
-      \includegraphics[width=\linewidth]{./../img/image1.png}
-      \caption{The proposed timeline for this research.}
-      \label{timeline}
+      \includegraphics[width=\linewidth]{../img/image1.png}
+      % \caption{The proposed timeline for this research.}
+      % \label{timeline}
     \end{center}
   \end{figure}
 \end{frame}
