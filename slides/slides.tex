@@ -1,7 +1,10 @@
 % !TEX TS-program = LuaLaTeX
 \documentclass[10pt]{beamer}
+\usepackage{pgfpages}
+% \setbeameroption{show notes on second screen}
 
-\usetheme{metropolis}
+\usetheme[subsectionpage=progressbar]{metropolis}
+% \usetheme[]{metropolis}
 \usepackage{appendixnumberbeamer}
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
@@ -9,302 +12,334 @@
 \usepgfplotslibrary{dateplot}
 \usepackage{xspace}
 \newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+\usepackage{subcaption}
+% \setbeamertemplate{note page}[plain]
+
+\usepackage{media9}
 
 \title{The Effects of Concurrent Bandwidth Feedback on Robotics Manual Control Tasks}
 \subtitle{An Experimental and Modeling Study}
 \date{August 29th, 2018}
 \author{John Austin Karasinski}
 \institute{Qualifying Examination}
-% \titlegraphic{\hfill\includegraphics[height=1.5cm]{../img/davis.png}\includegraphics[height=1.5cm]{../img/nasa.png}\includegraphics[height=1.5cm]{../img/hrvip.png}}
 
 \begin{document}
 
 \maketitle
 
-\begin{frame}{Table of contents}
+\begin{frame}{Outline}
   \setbeamertemplate{section in toc}[sections numbered]
-  \tableofcontents[hideallsubsections]
+  \tableofcontents[]
 \end{frame}
 
 \section{Introduction}
 
-\begin{frame}[fragile]{Metropolis}
+\newcommand\topsp{-0.25in} %standard spacing to remove between title and body
 
-  The \themename theme is a Beamer theme with minimal visual noise
-  inspired by the \href{https://github.com/hsrmbeamertheme/hsrmbeamertheme}{\textsc{hsrm} Beamer
-  Theme} by Benjamin Weiss.
-
-  Enable the theme by loading
-
-  \begin{verbatim}    \documentclass{beamer}
-    \usetheme{metropolis}\end{verbatim}
-
-  Note, that you have to have Mozilla's \emph{Fira Sans} font and XeTeX
-  installed to enjoy this wonderful typography.
-\end{frame}
-\begin{frame}[fragile]{Sections}
-  Sections group slides of the same topic
-
-  \begin{verbatim}    \section{Elements}\end{verbatim}
-
-  for which \themename provides a nice progress indicator \ldots
-\end{frame}
-
-\section{Title formats}
-
-\begin{frame}{Metropolis title formats}
-	\themename supports 4 different title formats:
-	\begin{itemize}
-		\item Regular
-		\item \textsc{Small caps}
-		\item \textsc{all small caps}
-		\item ALL CAPS
-	\end{itemize}
-	They can either be set at once for every title type or individually.
-\end{frame}
-
-{
-    \metroset{titleformat frame=smallcaps}
-\begin{frame}{Small caps}
-	This frame uses the \texttt{smallcaps} title format.
-
-	\begin{alertblock}{Potential Problems}
-		Be aware that not every font supports small caps. If for example you typeset your presentation with pdfTeX and the Computer Modern Sans Serif font, every text in small caps will be typeset with the Computer Modern Serif font instead.
-	\end{alertblock}
-\end{frame}
-}
-
-{
-\metroset{titleformat frame=allsmallcaps}
-\begin{frame}{All small caps}
-	This frame uses the \texttt{allsmallcaps} title format.
-
-	\begin{alertblock}{Potential problems}
-		As this title format also uses small caps you face the same problems as with the \texttt{smallcaps} title format. Additionally this format can cause some other problems. Please refer to the documentation if you consider using it.
-
-		As a rule of thumb: just use it for plaintext-only titles.
-	\end{alertblock}
-\end{frame}
-}
-
-{
-\metroset{titleformat frame=allcaps}
-\begin{frame}{All caps}
-	This frame uses the \texttt{allcaps} title format.
-
-	\begin{alertblock}{Potential Problems}
-		This title format is not as problematic as the \texttt{allsmallcaps} format, but basically suffers from the same deficiencies. So please have a look at the documentation if you want to use it.
-	\end{alertblock}
-\end{frame}
-}
-
-\section{Elements}
-
-\begin{frame}[fragile]{Typography}
-      \begin{verbatim}The theme provides sensible defaults to
-\emph{emphasize} text, \alert{accent} parts
-or show \textbf{bold} results.\end{verbatim}
-
-  \begin{center}becomes\end{center}
-
-  The theme provides sensible defaults to \emph{emphasize} text,
-  \alert{accent} parts or show \textbf{bold} results.
-\end{frame}
-
-\begin{frame}{Font feature test}
-  \begin{itemize}
-    \item Regular
-    \item \textit{Italic}
-    \item \textsc{Small Caps}
-    \item \textbf{Bold}
-    \item \textbf{\textit{Bold Italic}}
-    \item \textbf{\textsc{Bold Small Caps}}
-    \item \texttt{Monospace}
-    \item \texttt{\textit{Monospace Italic}}
-    \item \texttt{\textbf{Monospace Bold}}
-    \item \texttt{\textbf{\textit{Monospace Bold Italic}}}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Lists}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.33\textwidth}
-      Items
-      \begin{itemize}
-        \item Milk \item Eggs \item Potatoes
-      \end{itemize}
-
-    \column{0.33\textwidth}
-      Enumerations
-      \begin{enumerate}
-        \item First, \item Second and \item Last.
-      \end{enumerate}
-
-    \column{0.33\textwidth}
-      Descriptions
-      \begin{description}
-        \item[PowerPoint] Meeh. \item[Beamer] Yeeeha.
+\begin{frame}[fragile]{About Me}
+  \begin{columns}[T]
+    \begin{column}{.6\textwidth}
+      \begin{description}[align=right]
+        \setlength\itemsep{1em}
+        \item [2012] B.S. Physics, UCSC\\
+                     Software Engineer, MV
+        \item [2013] Start at UC Davis
+        \item [2016] M.S. MAE, UCD\\
+                     Intern, ARC
+        \item [2017] Link Fellowship\\
+                     Pathways Intern, ARC
       \end{description}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \includegraphics[width=\textwidth]{../img/california.png}
+    \end{column}
   \end{columns}
 \end{frame}
-\begin{frame}{Animation}
-  \begin{itemize}[<+- | alert@+>]
-    \item \alert<4>{This is\only<4>{ really} important}
-    \item Now this
-    \item And now this
-  \end{itemize}
-\end{frame}
-\begin{frame}{Figures}
-  \begin{figure}
-    \newcounter{density}
-    \setcounter{density}{20}
-    \begin{tikzpicture}
-      \def\couleur{alerted text.fg}
-      \path[coordinate] (0,0)  coordinate(A)
-                  ++( 90:5cm) coordinate(B)
-                  ++(0:5cm) coordinate(C)
-                  ++(-90:5cm) coordinate(D);
-      \draw[fill=\couleur!\thedensity] (A) -- (B) -- (C) --(D) -- cycle;
-      \foreach \x in {1,...,40}{%
-          \pgfmathsetcounter{density}{\thedensity+20}
-          \setcounter{density}{\thedensity}
-          \path[coordinate] coordinate(X) at (A){};
-          \path[coordinate] (A) -- (B) coordinate[pos=.10](A)
-                              -- (C) coordinate[pos=.10](B)
-                              -- (D) coordinate[pos=.10](C)
-                              -- (X) coordinate[pos=.10](D);
-          \draw[fill=\couleur!\thedensity] (A)--(B)--(C)-- (D) -- cycle;
-      }
-    \end{tikzpicture}
-    \caption{Rotated square from
-    \href{http://www.texample.net/tikz/examples/rotated-polygons/}{texample.net}.}
-  \end{figure}
-\end{frame}
-\begin{frame}{Tables}
-  \begin{table}
-    \caption{Largest cities in the world (source: Wikipedia)}
-    \begin{tabular}{@{} lr @{}}
-      \toprule
-      City & Population\\
-      \midrule
-      Mexico City & 20,116,842\\
-      Shanghai & 19,210,000\\
-      Peking & 15,796,450\\
-      Istanbul & 14,160,467\\
-      \bottomrule
-    \end{tabular}
-  \end{table}
-\end{frame}
-\begin{frame}{Blocks}
-  Three different block environments are pre-defined and may be styled with an
-  optional background color.
 
-  \begin{columns}[T,onlytextwidth]
-    \column{0.5\textwidth}
-      \begin{block}{Default}
-        Block content.
+\begin{frame}[fragile]{Goal}
+  Measure, model, and predict the effects of concurrent bandwidth feedback (CBF) on human performance in robotics manual control tasks.
+\end{frame}
+
+\section{Research Aims}
+
+\begin{frame}[fragile]{Research Aims}
+  \begin{description}[align=right]
+    \item [Aim One] Feedback effects in a three-axis manual tracking task
+    \item [Aim Two] Feedback effects in a robotics track and capture task
+    \item [Aim Three] Extend Structural Model to include feedback effects
+  \end{description}
+\end{frame}
+
+\section{Background}
+
+% \subsection{Augmented Feedback}
+
+\begin{frame}[fragile]{What is feedback?}
+  % \metroset{block=fill}
+  \begin{columns}[T]
+    \begin{column}{.8\textwidth}
+      \begin{block}{}
+        ``Feedback is information about the gap between\\ the actual level and the reference level of a system parameter which is used to alter the gap in some way.'' - Ramaprasad~\cite{Ramaprasad1983}
       \end{block}
+    \end{column}
+  \end{columns}
+  % Feedback can be broadly classified into two types: intrinsic, feedback which is generated from within the context of the action itself, and extrinsic, feedback which is given from an external source~\cite{laurillard1993rethinking}.
+\end{frame}
 
-      \begin{alertblock}{Alert}
-        Block content.
-      \end{alertblock}
+% \begin{frame}[fragile]{Extrinsic Feedback}
+%   Extrinsic feedback, which is also known as augmented feedback, has been extensively studied in the field motor learning~\cite{Sigrist2013}.
+%   In their 2013 review, Sigrist et al. write ``[i]t is generally accepted that augmented feedback, provided by a human expert or a technical display, effectively enhances motor learning~\cite{Sigrist2013}.''
+%   There are a variety of different forms of augmented feedback, that can be further classified by how, when, and by what form the feedback is provided.
+%   For this work, however, we sought to evaluate a type of feedback which was both conceptually simple and could be tied to operational requirements.
+%   With these requirements in mind, we will investigate the effects of concurrent bandwidth feedback.
+%   Concurrent, or real-time, feedback is displayed to the operator while the task is being executed, in contrast to terminal feedback, which is displayed after the task is complete.
+%   Bandwidth feedback is displayed to the operator when some parameter is inside (on-track feedback) or outside (off-track feedback) of an acceptable, predefined tolerance limit.
+%   In our implementation, concurrent bandwidth feedback describes feedback conveyed to the operator when their real-time performance drifts outside of an acceptable tolerance limit.
+% \end{frame}
 
-      \begin{exampleblock}{Example}
-        Block content.
-      \end{exampleblock}
+% \begin{frame}[fragile]{Thorndike}
+% \begin{figure}[h!]
+%     \begin{center}
+%         \includegraphics[height=8cm]{../img/thorndike.png}
+%         % \caption{}
+%         % \label{}
+%     \end{center}
+% \end{figure}
+% \end{frame}
 
-    \column{0.5\textwidth}
-
-      \metroset{block=fill}
-
-      \begin{block}{Default}
-        Block content.
-      \end{block}
-
-      \begin{alertblock}{Alert}
-        Block content.
-      \end{alertblock}
-
-      \begin{exampleblock}{Example}
-        Block content.
-      \end{exampleblock}
-
+\begin{frame}[fragile]{Thorndike, 1927~\cite{thorndike1927law}}
+  \begin{columns}[T]
+    \begin{column}{.6\textwidth}
+      \begin{itemize}
+        \setlength\itemsep{1em}
+        % \item Thorndike's line-drawing experiment, 1927~\cite{thorndike1927law}
+        \item Two groups of subjects:\\ \quad With, without bandwidth feedback
+        \item Bandwidth feedback resulted\\ in better performance, but was\\ lost in retention
+        \item Results consistent with\\ guidance hypothesis
+      \end{itemize}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \includegraphics[width=\textwidth]{../img/thorndike.png}
+    \end{column}
   \end{columns}
 \end{frame}
-\begin{frame}{Math}
-  \begin{equation*}
-    e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
-  \end{equation*}
-\end{frame}
-\begin{frame}{Line plots}
-  \begin{figure}
-    \begin{tikzpicture}
-      \begin{axis}[
-        mlineplot,
-        width=0.9\textwidth,
-        height=6cm,
-      ]
 
-        \addplot {sin(deg(x))};
-        \addplot+[samples=100] {sin(deg(2*x))};
-
-      \end{axis}
-    \end{tikzpicture}
-  \end{figure}
-\end{frame}
-\begin{frame}{Bar charts}
-  \begin{figure}
-    \begin{tikzpicture}
-      \begin{axis}[
-        mbarplot,
-        xlabel={Foo},
-        ylabel={Bar},
-        width=0.9\textwidth,
-        height=6cm,
-      ]
-
-      \addplot plot coordinates {(1, 20) (2, 25) (3, 22.4) (4, 12.4)};
-      \addplot plot coordinates {(1, 18) (2, 24) (3, 23.5) (4, 13.2)};
-      \addplot plot coordinates {(1, 10) (2, 19) (3, 25) (4, 15.2)};
-
-      \legend{lorem, ipsum, dolor}
-
-      \end{axis}
-    \end{tikzpicture}
-  \end{figure}
-\end{frame}
-\begin{frame}{Quotes}
-  \begin{quote}
-    Veni, Vidi, Vici
-  \end{quote}
+\begin{frame}[fragile]{Guidance Hypothesis}
+  \metroset{block=fill}
+  \begin{columns}[T]
+    \begin{column}{.8\textwidth}
+        % Consistent feedback during the acquisition phase of learning leads to a dependency on the feedback.
+        If consistent feedback during the acquisition phase of learning is provided, ``the subject comes to rely on that source of error information to maintain performance, and thus does not deal effectively with the other cues in the task that are important''.\\
+        -Salmoni et al., 1984~\cite{salmoni1984knowledge}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-{%
-\setbeamertemplate{frame footer}{My custom footer}
-\begin{frame}[fragile]{Frame footer}
-    \themename defines a custom beamer template to add a text to the footer. It can be set via
-    \begin{verbatim}\setbeamertemplate{frame footer}{My custom footer}\end{verbatim}
-\end{frame}
+\note[itemize]{
+\item How do we defeat the guidance hypothesis?
+\item Provide feedback which is complementary to other available information, but sufficient in itself to complete the task
+\item Feedback should also fade with time as the subjects perform better
 }
 
-\begin{frame}{References}
-  Some references to showcase [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
+\begin{frame}[fragile]{Payne and Hauty, 1955~\cite{payne1955effect}}
+  \includegraphics[width=\textwidth]{../img/payneandhauty.png} \\
+  \hspace{3em} Training \hspace{1em} Start\hfill 4 hours
 \end{frame}
 
-\section{Conclusion}
+\note[itemize]{
+  \item Subjects were placed into one of three feedback groups
+  \item a control level, where no feedback was provided
+  \item a second level, which included a single peripheral visual signal when a deviation in one of the displays occurred, but did not specify which instrument
+  \item a third level, which provided individual indicators for each of the four instruments, and noted the locus of the deviation.
+  \item They concluded by stating that ``the increment is a positive function of the specificity of the information supplied, it can be ascribed largely to the directive properties of the cues, i.e., the cues impose a more efficient temporal and spatial organization upon [the subject's] scanning behavior~\cite{payne1955effect}.''
+}
 
-\begin{frame}{Summary}
+\begin{frame}[fragile]{Gordon and Gottlieb, 1967~\cite{Gordon1967}}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{../img/gordonandgottlieb.png}
+  \end{center}
+\end{frame}
 
-  Get the source of this theme and the demo presentation from
+\note[itemize]{
+  \item Subjects were placed into one of three feedback groups
+  \item Control and off-track and on-track feedback groups
+  \item Both treatment groups performed better than control, even during retention when feedback was removed
+}
 
-  \begin{center}\url{github.com/matze/mtheme}\end{center}
+\begin{frame}[fragile]{de Groot et al., 2011~\cite{DeGroot2011}}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{../img/degrootdriving.png}
+  \end{center}
+\end{frame}
 
-  The theme \emph{itself} is licensed under a
-  \href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons
-  Attribution-ShareAlike 4.0 International License}.
+\begin{frame}[fragile]{de Groot et al., 2011~\cite{DeGroot2011}}
+  \begin{center}
+    \includegraphics[width=\textwidth]{../img/degrootresults.png}
+  \end{center}
+\end{frame}
 
-  \begin{center}\ccbysa\end{center}
+\note[itemize]{
+  \item investigated the effects of on-track and off-track feedback compared to a control group
+  \item Instead of using a visual indicator, used haptic feedback in the form of a vibrating chair
+  \item Retention trials, showed majority of improvement lost during when the feedback was removed
+  \item The off-target group, though, did still retain some minor performance improvement, onset advantage~\cite{fischer2008differential}.
+  \item ``suggests that the sudden onset of a stimulus is a more powerful perceptual event than a stimulus offset, facilitating low-level perceptual processing and resulting in faster reaction times~\cite{DeGroot2011}.''
+}
 
+\begin{frame}[fragile]{SAFER Experiment}
+\begin{itemize}
+\item We investigated feedback strategies in my Masters thesis
+\item Simplified Aid for EVA Rescue (SAFER)
+\item 4 degree of freedom task with two-choice secondary task
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{SAFER}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \hfill
+      \includegraphics[height=1.3\textwidth]{../img/SAFER_-_Simplified_Aid_for_EVA_Rescue_2.jpg}
+    \end{column}%
+    \begin{column}{.5\textwidth}
+      \includegraphics[width=1.3\textwidth,angle=-90]{../img/SAFER_-_Simplified_Aid_for_EVA_Rescue.jpg}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{International Space Station}
+  \begin{figure} \centering
+  \begin{tikzpicture}[      
+          every node/.style={anchor=south west,inner sep=0pt},
+          x=1mm, y=1mm,
+        ]   
+       \onslide<1-> \node (fig1) at (0,0)
+         {\includegraphics[scale=0.3]{../img/International_Space_Station_after_undocking_of_STS-132.jpg}};
+       \onslide<2->\node (fig2) at (3,3)
+         {\includegraphics[scale=0.08]{../img/STS120SolarPanel.jpg}};  
+       \onslide<3->\node (fig2) at (70,2.8)
+         {\includegraphics[scale=0.3,angle=90]{../img/waypoints.jpeg}};  
+  \end{tikzpicture}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Flying SAFER}
+  \begin{center}
+\newcommand\vidname{videos/Flying_SAFER.mp4}   %path to video (must be subdir)
+\newcommand\thumbname{../img/SAFER_DangerChris.jpg} %path to thumbnail
+\newcommand\moviewidth{1.0\textwidth}
+\includemedia[
+  width=\moviewidth,
+  % totalheight=0.225\linewidth,
+  activate=pageopen,
+  passcontext,  %show VPlayer's right-click menu
+  addresource=\vidname,
+  flashvars={
+    source=\vidname %important: same path as in `addresource'
+    % &autoPlay=true
+    % &scaleMode=letterbox
+    &loop=true
+  }
+]{\includegraphics[width=\moviewidth]{\thumbname}}{VPlayer.swf}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{SAFER Guidance Display}
+  \begin{center}
+\newcommand\vidname{videos/SAFER_Guidance_Display.mp4}   %path to video (must be subdir)
+\newcommand\thumbname{../img/otw.jpeg} %path to thumbnail
+\newcommand\moviewidth{1.0\textwidth}
+\includemedia[
+  width=\moviewidth,
+  % totalheight=0.225\linewidth,
+  activate=pageopen,
+  passcontext,  %show VPlayer's right-click menu
+  addresource=\vidname,
+  flashvars={
+    source=\vidname %important: same path as in `addresource'
+    % &autoPlay=true
+    % &scaleMode=letterbox
+    &loop=true
+  }
+]{\includegraphics[width=\moviewidth]{\thumbname}}{VPlayer.swf}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{SAFER Performance}
+  \begin{center}
+    \includegraphics[width=\textwidth]{../img/Group_absDistErr_clean_fit_30.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{SAFER Workload}
+  \begin{center}
+    \includegraphics[width=\textwidth]{../img/Group_Workload_fit_30.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Sigrist et al., 2013~\cite{Sigrist2013}}
+  \begin{center}
+    \includegraphics[width=\textwidth]{../img/sigrist.png}
+  \end{center}
+\end{frame}
+
+\section{Proposed Research}
+
+\begin{frame}[fragile]{Motivation}
+  \begin{itemize}
+    
+  \end{itemize}
+\end{frame}
+
+\subsection{Experiment One}
+\begin{frame}[fragile]{Three-axis tracking groups}
+  \begin{figure}[tb!]
+    \begin{center}
+      \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{../img/DSC_0801.JPG}
+        \caption{2D Group}
+      \end{subfigure}\hfill
+      \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{../img/DSC_0803.JPG}
+        \caption{3D Group}
+      \end{subfigure}
+      % \caption{The fixed-based simulator used by both groups.}%
+      % \label{fig:simulator}%
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\subsection{Experiment Two}
+
+\begin{frame}[fragile]{Solar Array Repair}
+  \begin{center}
+    \includegraphics[width=\textwidth]{../img/Astronaut_Scott_Parazynski_repairs_a_damaged_ISS_solar_panel.jpg}
+  \end{center}
+\end{frame}
+
+\subsection{Modeling}
+
+\section{Timeline and Risks}
+
+\begin{frame}[fragile]{Timeline}
+  \begin{figure}[h!]
+    \begin{center}
+      \includegraphics[width=\linewidth]{./../img/image1.png}
+      \caption{The proposed timeline for this research.}
+      \label{timeline}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Acknowledgments}
+  Thank you to
+  \begin{itemize}
+    \item Link Foundation Modeling, Simulation, and Training Fellowship
+    \item Human/Robotics/Vehicle Integration and Performance Lab
+    \item NASA Ames Human Systems Integration Division
+    \item Qualifying Examination Committee
+    \item Professor Robinson
+  \end{itemize}
+  \hfill\includegraphics[height=1.5cm]{../img/linkfoundation.png}\includegraphics[height=1.5cm]{../img/hrvip.png}\includegraphics[height=1.5cm]{../img/nasa.png}
 \end{frame}
 
 \begin{frame}[standout]
@@ -313,20 +348,20 @@ or show \textbf{bold} results.\end{verbatim}
 
 \appendix
 
-\begin{frame}[fragile]{Backup slides}
-  Sometimes, it is useful to add slides at the end of your presentation to
-  refer to during audience questions.
+% \begin{frame}[fragile]{Backup slides}
+%   Sometimes, it is useful to add slides at the end of your presentation to
+%   refer to during audience questions.
 
-  The best way to do this is to include the \verb|appendixnumberbeamer|
-  package in your preamble and call \verb|\appendix| before your backup slides.
+%   The best way to do this is to include the \verb|appendixnumberbeamer|
+%   package in your preamble and call \verb|\appendix| before your backup slides.
 
-  \themename will automatically turn off slide numbering and progress bars for
-  slides in the appendix.
-\end{frame}
+%   \themename will automatically turn off slide numbering and progress bars for
+%   slides in the appendix.
+% \end{frame}
 
 \begin{frame}[allowframebreaks]{References}
 
-  \bibliography{demo}
+  \bibliography{../proposal/bib}
   \bibliographystyle{ieeetr}
 
 \end{frame}
