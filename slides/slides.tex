@@ -20,6 +20,12 @@
 \usepackage{graphicx}
 \usepackage[space]{grffile}
 
+\usepackage{makecell}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{flexisym}
+\usepackage[numbers,sort&compress]{natbib}
+
 \title{The Effects of Concurrent Bandwidth Feedback on Robotics Manual Control Tasks}
 \subtitle{An Experimental and Modeling Study}
 \date{August 29th, 2018}
@@ -285,6 +291,27 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Three-axis tracking task designs}
+  \begin{figure}
+    \begin{center}
+      \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{../img/Baseline.png}
+        \caption{Baseline}
+      \end{subfigure}\hfill
+      \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{../img/Color.png}
+        \caption{Feedback}
+      \end{subfigure}\hfill
+      \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{../img/Angled.png}
+        \caption{Rotated}
+      \end{subfigure}
+      % \caption{The fixed-based simulator used by both groups.}%
+      % \label{fig:simulator}%
+    \end{center}
+  \end{figure}
+\end{frame}
+
 \begin{frame}[fragile]{Three-axis tracking groups}
   \begin{figure}
     \begin{center}
@@ -302,20 +329,50 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}[fragile]{Performance Analysis}
-\begin{figure}
+\begin{frame}[fragile]{Three-axis tracking}
   \begin{center}
-    \includegraphics[width=\linewidth]{../img/x_design_y_zrmse_col_startdesign_hue_device.pdf}
+    \newcommand\vidname{videos/tracking.mp4}   %path to video (must be subdir)
+    \newcommand\thumbname{../img/DSC_0811.JPG} %path to thumbnail
+    \newcommand\moviewidth{1.0\textwidth}
+    \includemedia[
+      width=\moviewidth,
+      % totalheight=0.225\linewidth,
+      activate=pageopen,
+      passcontext,  %show VPlayer's right-click menu
+      addresource=\vidname,
+      flashvars={
+          source=\vidname %important: same path as in `addresource'
+          % &autoPlay=true
+          % &scaleMode=letterbox
+          &loop=true
+        }
+    ]{\includegraphics[width=\moviewidth]{\thumbname}}{VPlayer.swf}
   \end{center}
-\end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{Performance Analysis}
 \begin{figure}
   \begin{center}
-    \includegraphics[width=\linewidth]{../img/x_design_y_zrmse_hue_device_col_cbf_first.pdf}
+    \includegraphics[width=\linewidth]{../img/2way.pdf}
   \end{center}
 \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Workload Analysis}
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{../img/2way-work.pdf}
+  \end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Result Summary}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item Feedback improves performance
+    \item Better performance in 3D, but only when starting with feedback
+    \item No changes in workload
+  \end{itemize}
 \end{frame}
 
 \subsection{Experiment Two}
@@ -332,9 +389,9 @@
     \end{column}
     \begin{column}{.6\textwidth}
       \begin{tikzpicture}
-        \node<1> (img1) {\includegraphics[width=\textwidth]{../img/canadarm2.jpg}};
-        \node<2> (img2) {\includegraphics[width=\textwidth]{../img/STS-114_Steve_Robinson_on_Canadarm2.jpg}};
-        \node<3> (img3) {\includegraphics[width=\textwidth]{../img/Cygnus_7_captured_by_Canadarm2.jpg}};
+        \node<1> (img1) {\includegraphics[height=0.7\linewidth, width=\textwidth]{../img/canadarm2.jpg}};
+        \node<2> (img2) {\includegraphics[height=0.7\linewidth, width=\textwidth]{../img/STS-114_Steve_Robinson_on_Canadarm2.jpg}};
+        \node<3> (img3) {\includegraphics[height=0.7\linewidth, width=\textwidth]{../img/Cygnus_7_captured_by_Canadarm2.jpg}};
       \end{tikzpicture}
     \end{column}
   \end{columns}
@@ -363,6 +420,31 @@
   \end{center}
 \end{frame}
 
+\begin{frame}[fragile]{Track and Capture Scenario}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item Vehicle arrives at capture point
+    \item ISS and vehicle in two separate, nearby orbits
+    \item Operators must capture a vehicle drifting in six dimensions
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{The Task}
+  \begin{columns}[T]
+    \begin{column}{\textwidth}
+      \begin{tikzpicture}
+        \node<1> (img1) {\includegraphics[width=\textwidth]{../img/grab1.jpg}};
+        \node<2> (img2) {\includegraphics[width=\textwidth]{../img/grab2.jpg}};
+        \node<3> (img3) {\includegraphics[width=\textwidth]{../img/grab3.jpg}};
+        \node<4> (img4) {\includegraphics[width=\textwidth]{../img/grab4.jpg}};
+        \node<5> (img5) {\includegraphics[width=\textwidth]{../img/grab5.jpg}};
+        % \node<6> (img6) {\includegraphics[width=\textwidth]{../img/grab6.jpg}};
+        % \node<7> (img7) {\includegraphics[width=\textwidth]{../img/grab7.jpg}};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 \begin{frame}[fragile]{ROBoT Workstation}
 \begin{figure}
   \begin{center}
@@ -383,15 +465,15 @@
 \end{figure}
 \end{frame}
 
-\begin{frame}[fragile]{ROBoT End Effector View}
-\begin{figure}
-  \begin{center}
-    \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.05_PM.png}
-    % \caption{The camera attached to the end effector of the robotic arm, showing the grapple fixture.}
-    % \label{}
-  \end{center}
-\end{figure}
-\end{frame}
+% \begin{frame}[fragile]{ROBoT End Effector View}
+% \begin{figure}
+%   \begin{center}
+%     \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.05_PM.png}
+%     % \caption{The camera attached to the end effector of the robotic arm, showing the grapple fixture.}
+%     % \label{}
+%   \end{center}
+% \end{figure}
+% \end{frame}
 
 \begin{frame}[fragile]{ROBoT Performance Reports}
 \begin{figure}
@@ -412,6 +494,51 @@
 %   \end{center}
 % \end{figure}
 % \end{frame}
+
+\begin{frame}[fragile]{Experiment Two}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item Only terminal feedback is currently available without a trainer
+    \item Terminal feedback is ineffective for complex tasks
+    \item Provide feedback concurrently with task execution
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{ROBoT Treatment Group}
+\begin{figure}
+  \begin{center}
+
+  \begin{tikzpicture}
+    \node<1-> (img1) {\includegraphics[width=\textwidth]{../img/robot_edit.png}};
+    % \draw<2-> (0,0) ellipse (2cm and 1cm);
+    \draw<2-> [red,ultra thick] (4,1.5) ellipse (1cm and 2cm);
+  \end{tikzpicture}
+
+  \end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Experiment Two Flowchart}
+  \begin{center}
+    \includegraphics[width=0.75\textwidth]{../img/robot_flow.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Experiment Two Estimates}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item 10-15 subjects in each group
+    \item 30 minutes of context and training
+    \item 1-2 hours of trials
+    \item 1-2 months from recruitment to end of subject testing
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Experiment Two Flowchart}
+  \begin{center}
+    \includegraphics[width=0.75\textwidth]{../img/robot_estimate.pdf}
+  \end{center}
+\end{frame}
 
 \subsection{Modeling}
 
@@ -456,11 +583,71 @@
 %   slides in the appendix.
 % \end{frame}
 
-\begin{frame}[allowframebreaks]{References}
 
+\begin{frame}[allowframebreaks]{References}
   \bibliography{../proposal/bib}
   \bibliographystyle{ieeetr}
-
 \end{frame}
+
+\begin{frame}[fragile]{Performance Analysis by Starting Design}
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{../img/x_design_y_zrmse_col_startdesign_hue_device.pdf}
+  \end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Three-axis tracking rotated design}
+  \begin{figure}
+    \begin{center}
+      \newcommand{\rotateRPY}[3]% roll, pitch, yaw
+      {   \pgfmathsetmacro{\rollangle}{#1}
+          \pgfmathsetmacro{\pitchangle}{#2}
+          \pgfmathsetmacro{\yawangle}{#3}
+
+          % to what vector is the x unit vector transformed, and which 2D vector is this?
+          \pgfmathsetmacro{\newxx}{cos(\yawangle)*cos(\pitchangle)}
+          \pgfmathsetmacro{\newxy}{sin(\yawangle)*cos(\pitchangle)}
+          \pgfmathsetmacro{\newxz}{-sin(\pitchangle)}
+          \path (\newxx,\newxy,\newxz);
+          \pgfgetlastxy{\nxx}{\nxy};
+
+          % to what vector is the y unit vector transformed, and which 2D vector is this?
+          \pgfmathsetmacro{\newyx}{cos(\yawangle)*sin(\pitchangle)*sin(\rollangle)-sin(\yawangle)*cos(\rollangle)}
+          \pgfmathsetmacro{\newyy}{sin(\yawangle)*sin(\pitchangle)*sin(\rollangle)+ cos(\yawangle)*cos(\rollangle)}
+          \pgfmathsetmacro{\newyz}{cos(\pitchangle)*sin(\rollangle)}
+          \path (\newyx,\newyy,\newyz);
+          \pgfgetlastxy{\nyx}{\nyy};
+
+          % to what vector is the z unit vector transformed, and which 2D vector is this?
+          \pgfmathsetmacro{\newzx}{cos(\yawangle)*sin(\pitchangle)*cos(\rollangle)+ sin(\yawangle)*sin(\rollangle)}
+          \pgfmathsetmacro{\newzy}{sin(\yawangle)*sin(\pitchangle)*cos(\rollangle)-cos(\yawangle)*sin(\rollangle)}
+          \pgfmathsetmacro{\newzz}{cos(\pitchangle)*cos(\rollangle)}
+          \path (\newzx,\newzy,\newzz);
+          \pgfgetlastxy{\nzx}{\nzy};
+      }
+
+      \tikzset{RPY/.style={x={(\nxx,\nxy)},y={(\nyx,\nyy)},z={(\nzx,\nzy)}}}
+
+      \begin{tikzpicture}
+          \draw[-] node at (3.5,0,0) {x} (-3,0,0) -- (3,0,0);
+          \draw[-] node at (0,3.5,0) {y, {\color{red} y\textprime}} (0,-3,0) -- (0,3,0);
+          \draw[-] node at (0,0,3.5) {z} (0,0,-3) -- (0,0,3);
+
+          \rotateRPY{0}{-30}{0}
+          \begin{scope}[draw=red, text=red,fill=red,densely dashed,RPY]
+              \draw[-] node at (3.5,0,0) {x\textprime} (-3,0,0) -- (3,0,0);
+              %\draw[-] node at (0,3.5,0) {} (0,0,0) -- (0,3,0);
+              \draw[-] node at (0,0,3.5) {z\textprime} (0,0,-3) -- (0,0,3);
+          \end{scope}
+          \draw [->] (0:1.5) arc (0:-15:1.5);
+          \draw[-] node at (1.7,-.2,0) {$\theta$};
+      \end{tikzpicture}
+      % \caption{Perspective display of the coordinate frame for the tracking tasks, with the $x$, $y$, and $z$ axes labeled. After rotating by $\theta$ around the y axis, the resulting reference frame of $x\textprime y\textprime z\textprime$ is also labeled.}
+      % \label{designdiagram}
+    \end{center}
+  \end{figure}
+\end{frame}
+
 
 \end{document}

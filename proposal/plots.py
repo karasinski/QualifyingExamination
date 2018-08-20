@@ -1,8 +1,8 @@
-def threeway(sub_design):
-	import matplotlib
-	from matplotlib.lines import Line2D
-	matplotlib.rcParams.update({'errorbar.capsize': 2})
+import matplotlib
+from matplotlib.lines import Line2D
+matplotlib.rcParams.update({'errorbar.capsize': 2})
 
+def threeway(sub_design):
 	colors = sns.color_palette()
 	agg = sub_design.groupby(('device', 'startdesign', 'order', 'design')).Zrmse.agg(['mean', 'sem']).reset_index()
 	agg['designlabels'] = agg.design.replace((1, 2, 3), ('Baseline', 'Feedback', 'Rotated'))
@@ -62,21 +62,16 @@ def twoway(sub_design):
 
 	f, axes = plt.subplots(1, 2, sharex=True, sharey=True, figsize=(6,3.5))
 	for i, (ax, ff) in enumerate(zip(axes, [False, True])):
-		for _, (device, linestyle) in enumerate(zip(['lcd', 'hololens'], ['-', '--'])):
+		for _, (device, markerstyle) in enumerate(zip(['lcd', 'hololens'], ['x', 'o'])):
 			data = agg.query('ff == @ff and device == @device')
 			offset = -0.1
 			if device == 'hololens':
 				offset = 0.1
 
-			data['design'] += offset
-			data.plot(x='design', y='mean', color='k', linestyle=linestyle, ax=ax, legend=False, alpha=0.5)
-			data['design'] -= offset
-
-			ax.plot(x=(offset + data['design']).values, y=data['mean'].values, color='k', linestyle=linestyle)
 			for design in [1, 2, 3]:
 				d = data.query('design == @design')
 				design = int(d['design']) - 1
-				ax.errorbar(x=offset + d['design'], y=d['mean'], yerr=d['sem'], color=colors[design])
+				ax.errorbar(x=offset + d['design'], y=d['mean'], yerr=d['sem'], color=colors[design], marker=markerstyle)
 
 	for ax in axes:
 		ax.set_xlabel('')
@@ -87,8 +82,8 @@ def twoway(sub_design):
 	axes[0].set_title('(a)')
 	axes[1].set_title('(b)')
 
-	display = [Line2D([0], [0], color='k', lw=1, ls='-'),
-	           Line2D([0], [0], color='k', lw=1, ls='--')]
+	display = [Line2D([0], [0], color='k', lw=1, ls='None',marker='x'),
+	           Line2D([0], [0], color='k', lw=1, ls='None', marker='o')]
 	designs =[Line2D([0], [0], color=colors[0], lw=1, ls='-'),
 	          Line2D([0], [0], color=colors[1], lw=1, ls='-'),
 	          Line2D([0], [0], color=colors[2], lw=1, ls='-')]
