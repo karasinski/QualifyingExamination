@@ -632,6 +632,48 @@ Compared to existing terminal feedback techniques, concurrent bandwidth feedback
   \end{figure}
 \end{frame}
 
+\begin{frame}[fragile]{Current Adaptation}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item Current model adapts when performance drops significantly
+    \item Sudden change of vehicle dynamics
+    \begin{itemize}
+      \item $\dfrac{1}{s} \rightarrow \dfrac{e^{-0.065s}}{s^2}$
+    \end{itemize}
+    \item Compare performance without, with adaptation
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Effects of Adaptation}
+  \begin{columns}[T]
+    \begin{column}{\textwidth}
+      \begin{tikzpicture}
+        \node<1> (img1) {\includegraphics[width=\textwidth]{../img/hess_model1.pdf}};
+        \node<2> (img2) {\includegraphics[width=\textwidth]{../img/hess_model2.pdf}};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Proposed Modification}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item Respond to feedback instead of a change in vehicle dynamics
+    \item First approach to place adaptation logic around $K_e$
+    \item Trigger adaptation when feedback is active
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Using the Modified Model}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item Identify boundaries of human performance
+    \item Predict which tasks can be improved
+    \item Identify the optimal bandwidth for peak performance
+    \item Customize the feedback to the individual
+  \end{itemize}
+\end{frame}
+
 \section{Timeline and Risks}
 
 \begin{frame}[fragile]{Timeline}

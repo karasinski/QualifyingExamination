@@ -1,3 +1,4 @@
+import pandas as pd
 from matplotlib import pyplot as plt
 import numpy as np
 
@@ -43,3 +44,58 @@ with plt.xkcd():
 	plt.legend()
 	plt.savefig('/Users/jkarasin/Desktop/robot_estimate.pdf')
 	plt.close('all')
+
+
+
+alp = pd.read_excel('adaptive_limited_pilot.xlsx')
+ulp = pd.read_excel('unadaptive_limited_pilot.xlsx')
+
+colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
+
+f, ax = plt.subplots(2, sharex=True)
+ulp.plot(x='t', y=['c1'], ax=ax[0], color=colors[0], legend=False, label=['$c$'])
+ulp.plot(x='t', y=['m1'], ax=ax[0], color=colors[1], legend=False, label=['$m$'])
+
+ulp.plot(x='t', y=['kr1'], ax=ax[1], color=colors[2], legend=False, label=['$k_{r}$'])
+ulp.plot(x='t', y=['kp1'], ax=ax[1], color=colors[3], legend=False, label=['$k_{p}$'])
+
+# alp.plot(x='t', y=['c1'], ax=ax[0], color=colors[0], legend=False, label=['$c$'])
+# ulp.plot(x='t', y=['m1'], ax=ax[0], color=colors[1], legend=False, ls='--', alpha=0.5, label=['$m$'])
+# alp.plot(x='t', y=['m1'], ax=ax[0], color=colors[1], legend=False, label=['$m$'])
+
+# ulp.plot(x='t', y=['kr1'], ax=ax[1], color=colors[2], legend=False, ls='--', alpha=0.5, label=['$k_{r}$'])
+# alp.plot(x='t', y=['kr1'], ax=ax[1], color=colors[2], legend=False, label=['$k_{r}$'])
+# ulp.plot(x='t', y=['kp1'], ax=ax[1], color=colors[3], legend=False, ls='--', alpha=0.5, label=['$k_{p}$'])
+# alp.plot(x='t', y=['kp1'], ax=ax[1], color=colors[3], legend=False, label=['$k_{p}$'])
+
+ax[0].axvline(x=50, ls='--', color='k')
+ax[1].axvline(x=50, ls='--', color='k')
+plt.xlim(40, 80)
+plt.xticks([])
+ax[0].set_yticks([])
+ax[1].set_yticks([])
+plt.xlabel('Time')
+ax[0].legend(loc='center left', bbox_to_anchor=(1, 0.5))
+ax[1].legend(loc='center left', bbox_to_anchor=(1, 0.5))
+ax[0].set_title('Performance without Adaptation')
+plt.tight_layout()
+plt.savefig('/Users/jkarasin/Desktop/hess_model1.pdf')
+plt.show()
+
+
+
+f, ax = plt.subplots(2, sharex=True, sharey=True)
+ax[0].axvline(x=50, ls='--', color='k')
+ax[1].axvline(x=50, ls='--', color='k')
+plt.xlim(40, 80)
+plt.xticks([])
+plt.yticks([])
+plt.xlabel('Time')
+plt.tight_layout()
+plt.show()
+
+
+# alp.plot(x='t', y=['del1'])
+# alp.plot(x='t', y=['kr1', 'kp1'])
+# plt.show()
+# ulp.plot(x='t', y=['del1'])
