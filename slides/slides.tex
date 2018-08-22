@@ -45,7 +45,7 @@
 
 \begin{frame}[fragile]{About Me}
   \begin{columns}[T]
-    \begin{column}{.6\textwidth}
+    \begin{column}{.5\textwidth}
       \begin{description}[align=right]
         \setlength\itemsep{1em}
         \item [2012] B.S. Physics, UCSC\\
@@ -57,14 +57,18 @@
               Pathways Intern, ARC
       \end{description}
     \end{column}
-    \begin{column}{.4\textwidth}
+    \begin{column}{.5\textwidth}
       \includegraphics[width=\textwidth]{../img/california.png}
     \end{column}
   \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Goal}
-  Measure, model, and predict the effects of concurrent bandwidth feedback (CBF) on human performance in robotics manual control tasks.
+  Measure, model, and predict the effects of concurrent bandwidth feedback on human performance in robotics manual control tasks.
+\end{frame}
+
+\begin{frame}[fragile]{Concurrent bandwidth feedback}
+  Concurrent bandwidth feedback is provided to an operator in real-time when a signal deviates out of a predefined range.
 \end{frame}
 
 \section{Research Aims}
@@ -120,7 +124,6 @@
 \end{frame}
 
 \begin{frame}[fragile]{Guidance Hypothesis}
-  \metroset{block=fill}
   \begin{columns}[T]
     \begin{column}{.8\textwidth}
       % Consistent feedback during the acquisition phase of learning leads to a dependency on the feedback.
@@ -149,17 +152,17 @@
   \item They concluded by stating that ``the increment is a positive function of the specificity of the information supplied, it can be ascribed largely to the directive properties of the cues, i.e., the cues impose a more efficient temporal and spatial organization upon [the subject's] scanning behavior~\cite{payne1955effect}.''
 }
 
-\begin{frame}[fragile]{Gordon and Gottlieb, 1967~\cite{Gordon1967}}
-  \begin{center}
-    \includegraphics[width=0.8\textwidth]{../img/gordonandgottlieb.png}
-  \end{center}
-\end{frame}
+% \begin{frame}[fragile]{Gordon and Gottlieb, 1967~\cite{Gordon1967}}
+%   \begin{center}
+%     \includegraphics[width=0.8\textwidth]{../img/gordonandgottlieb.png}
+%   \end{center}
+% \end{frame}
 
-\note[itemize]{
-  \item Subjects were placed into one of three feedback groups
-  \item Control and off-track and on-track feedback groups
-  \item Both treatment groups performed better than control, even during retention when feedback was removed
-}
+% \note[itemize]{
+%   \item Subjects were placed into one of three feedback groups
+%   \item Control and off-track and on-track feedback groups
+%   \item Both treatment groups performed better than control, even during retention when feedback was removed
+% }
 
 \begin{frame}[fragile]{de Groot et al., 2011~\cite{DeGroot2011}}
   \begin{center}
@@ -287,7 +290,42 @@
     \setlength\itemsep{1em}
     \item Link Foundation Modeling, Simulation, and Training Fellowship
     \item Measure the effects of augmented reality on performance and workload in robotics training
-    \item Hypothesize that AR would improve performance
+    \item Investigate the effects of feedback for conceptually simple task
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Microsoft HoloLens}
+  \begin{center}
+    \includegraphics[width=\textwidth]{../img/Hololens.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Augmented Reality Assistance}
+  \begin{center}
+    \includegraphics[width=\textwidth]{../img/sink.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{The Task}
+  \begin{columns}[T]
+    \begin{column}{.8\textwidth}
+      We developed a three-axis compensatory tracking task as a analog to a robotic arm track and capture task.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Experiment Design}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item 24 subjects
+    \item Three design orders (Start in Baseline, Feedback, or Rotated)
+    \begin{itemize}
+      \item Each subject evaluated each design
+    \end{itemize}
+    \item Two groups (2D vs 3D)
+    \begin{itemize}
+      \item Each subject in only one display group
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -329,6 +367,16 @@
   \end{figure}
 \end{frame}
 
+\begin{frame}[fragile]{Controller}
+  \begin{figure}[h!]
+    \begin{center}
+      \includegraphics[width=0.75\linewidth]{../img/Xbox_Controller.pdf}
+      % \caption{The proposed timeline for this research.}
+      % \label{timeline}
+    \end{center}
+  \end{figure}
+\end{frame}
+
 \begin{frame}[fragile]{Three-axis tracking}
   \begin{center}
     \newcommand\vidname{videos/tracking.mp4}   %path to video (must be subdir)
@@ -350,10 +398,19 @@
   \end{center}
 \end{frame}
 
+\begin{frame}[fragile]{Hypotheses}
+  \begin{description}[align=left]
+    \item [H1] Feedback will improve performance in the $z$ axis for both display types, and decrease workload.
+    \item [H2] AR will improve performance in the $z$ axis, but not affect workload.
+    \item [H3] Rotating the display improves performance in the $z$ axis for both display types, and decrease workload.
+  \end{description}
+\end{frame}
+
 \begin{frame}[fragile]{Performance Analysis}
 \begin{figure}
   \begin{center}
-    \includegraphics[width=\linewidth]{../img/2way.pdf}
+    \includegraphics[width=\linewidth]{../img/2way.pdf}\\
+    (a) Started without Feedback, (b) Started with Feedback
   \end{center}
 \end{figure}
 \end{frame}
@@ -361,18 +418,20 @@
 \begin{frame}[fragile]{Workload Analysis}
 \begin{figure}
   \begin{center}
-    \includegraphics[width=\linewidth]{../img/2way-work.pdf}
+    \includegraphics[width=\linewidth]{../img/2way-work.pdf}\\
+    (a) Started without Feedback, (b) Started with Feedback
   \end{center}
 \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{Result Summary}
-  \begin{itemize}
+  \begin{description}[align=right]
     \setlength\itemsep{1em}
-    \item Feedback improves performance
-    \item Better performance in 3D, but only when starting with feedback
-    \item No changes in workload
-  \end{itemize}
+    \item [Significant effect of design] Angled > Feedback > Baseline
+    \item [Significant effect of device] 3D > 2D for well trained subjects
+    \item [Significant effect of order] Early feedback \rightarrow \hspace{0.1em} Better performance
+    \item [No significant effect of workload]
+  \end{description}
 \end{frame}
 
 \subsection{Experiment Two}
@@ -438,8 +497,6 @@
         \node<3> (img3) {\includegraphics[width=\textwidth]{../img/grab3.jpg}};
         \node<4> (img4) {\includegraphics[width=\textwidth]{../img/grab4.jpg}};
         \node<5> (img5) {\includegraphics[width=\textwidth]{../img/grab5.jpg}};
-        % \node<6> (img6) {\includegraphics[width=\textwidth]{../img/grab6.jpg}};
-        % \node<7> (img7) {\includegraphics[width=\textwidth]{../img/grab7.jpg}};
       \end{tikzpicture}
     \end{column}
   \end{columns}
@@ -534,7 +591,16 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Experiment Two Flowchart}
+\begin{frame}[fragile]{Experiment Two Hypotheses}
+Compared to existing terminal feedback techniques, concurrent bandwidth feedback will
+  \begin{itemize}
+  \item improve performance.
+  \item cause subjects to more quickly reach their peak performance.
+  \item decrease workload.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Predicted Results}
   \begin{center}
     \includegraphics[width=0.75\textwidth]{../img/robot_estimate.pdf}
   \end{center}
@@ -542,14 +608,36 @@
 
 \subsection{Modeling}
 
+\begin{frame}[fragile]{McRuer's Pilot/Vehicle System, 1974~\cite{McRuer1974}}
+  \begin{figure}[h!]
+    \begin{center}
+      \includegraphics[width=\linewidth]{../img/Screen_Shot_2018-07-25_at_10.37.08_AM.png}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Hess Structural Model, 1997~\cite{Hess1997}}
+  \begin{figure}[h!]
+    \begin{center}
+      \includegraphics[width=\linewidth]{../img/Screen_Shot_2018-07-31_at_11.21.44_AM.png}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Hess Simplified Pursuit Model, 2009~\cite{Hess2009}}
+  \begin{figure}[h!]
+    \begin{center}
+      \includegraphics[width=\linewidth]{./../img/Screen_Shot_2018-08-09_at_4.15.24_PM.png}
+    \end{center}
+  \end{figure}
+\end{frame}
+
 \section{Timeline and Risks}
 
 \begin{frame}[fragile]{Timeline}
   \begin{figure}[h!]
     \begin{center}
       \includegraphics[width=\linewidth]{../img/image1.png}
-      % \caption{The proposed timeline for this research.}
-      % \label{timeline}
     \end{center}
   \end{figure}
 \end{frame}
@@ -571,18 +659,6 @@
 \end{frame}
 
 \appendix
-
-% \begin{frame}[fragile]{Backup slides}
-%   Sometimes, it is useful to add slides at the end of your presentation to
-%   refer to during audience questions.
-
-%   The best way to do this is to include the \verb|appendixnumberbeamer|
-%   package in your preamble and call \verb|\appendix| before your backup slides.
-
-%   \themename will automatically turn off slide numbering and progress bars for
-%   slides in the appendix.
-% \end{frame}
-
 
 \begin{frame}[allowframebreaks]{References}
   \bibliography{../proposal/bib}
@@ -648,6 +724,5 @@
     \end{center}
   \end{figure}
 \end{frame}
-
 
 \end{document}

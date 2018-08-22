@@ -3,24 +3,24 @@ import numpy as np
 
 with plt.xkcd():
 
-	plt.rcParams.update({
-	    # "lines.color": "black",
-	    # "patch.edgecolor": "black",
-	    "text.color": "#FAFAFA",
-	    # "axes.facecolor": "black",
-	    "axes.edgecolor": "lightgray",
-	    # "axes.labelcolor": "black",
-	    # "xtick.color": "black",
-	    # "ytick.color": "black",
-	    "grid.color": "lightgray",
-	    "figure.facecolor": "#FAFAFA",
-	    "figure.edgecolor": "#FAFAFA",
-	    "savefig.facecolor": "#FAFAFA",
-	    "savefig.edgecolor": "#FAFAFA"})
+	# plt.rcParams.update({
+	#     # "lines.color": "black",
+	#     # "patch.edgecolor": "black",
+	#     "text.color": "#FAFAFA",
+	#     # "axes.facecolor": "black",
+	#     "axes.edgecolor": "lightgray",
+	#     # "axes.labelcolor": "black",
+	#     # "xtick.color": "black",
+	#     # "ytick.color": "black",
+	#     "grid.color": "lightgray",
+	#     "figure.facecolor": "#FAFAFA",
+	#     "figure.edgecolor": "#FAFAFA",
+	#     "savefig.facecolor": "#FAFAFA",
+	#     "savefig.edgecolor": "#FAFAFA"})
 
 	f, ax = plt.subplots()
-	f.set_facecolor('#FAFAFA')
-	ax.set_facecolor('#FAFAFA')
+	# f.set_facecolor('#FAFAFA')
+	# ax.set_facecolor('#FAFAFA')
 	ax.spines['right'].set_color('none')
 	ax.spines['top'].set_color('none')
 	plt.xticks([])
@@ -38,7 +38,7 @@ with plt.xkcd():
 
 	plt.xlim(0, 30)
 
-	plt.ylabel('performance')
+	plt.ylabel('time/error')
 	plt.xlabel('time')
 	plt.legend()
 	plt.savefig('/Users/jkarasin/Desktop/robot_estimate.pdf')

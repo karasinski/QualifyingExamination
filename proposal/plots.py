@@ -59,6 +59,7 @@ def threeway(sub_design):
 def twoway(sub_design):
 	sub_design['ff'] = sub_design.startdesign == 2
 	agg = sub_design.groupby(('device', 'ff', 'design')).Zrmse.agg(['mean', 'sem']).reset_index()
+	# agg = sub_design.groupby(('device', 'ff', 'design')).Score.agg(['mean', 'sem']).reset_index()
 
 	f, axes = plt.subplots(1, 2, sharex=True, sharey=True, figsize=(6,3.5))
 	for i, (ax, ff) in enumerate(zip(axes, [False, True])):
@@ -79,6 +80,7 @@ def twoway(sub_design):
 		ax.set_xticklabels(['Baseline', 'Feedback', 'Rotated'], rotation=45, ha='center')
 
 	axes[0].set_ylabel('Normalized RMSE ($z$-axis)')
+	# axes[0].set_ylabel('NASA-TLX Workload')
 	axes[0].set_title('(a)')
 	axes[1].set_title('(b)')
 
@@ -93,6 +95,8 @@ def twoway(sub_design):
 	plt.gca().add_artist(legend1)
 	plt.gca().add_artist(legend2)
 
-	plt.tight_layout()
+	plt.gcf().subplots_adjust(bottom=0.2)
+	plt.gcf().subplots_adjust(right=0.75)
 	plt.savefig('/Users/jkarasin/Desktop/2way.pdf')
+	# plt.savefig('/Users/jkarasin/Desktop/2way-work.pdf')
 	plt.show()
