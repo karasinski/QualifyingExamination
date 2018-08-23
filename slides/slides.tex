@@ -92,19 +92,7 @@
       \end{block}
     \end{column}
   \end{columns}
-  % Feedback can be broadly classified into two types: intrinsic, feedback which is generated from within the context of the action itself, and extrinsic, feedback which is given from an external source~\cite{laurillard1993rethinking}.
 \end{frame}
-
-% \begin{frame}[fragile]{Extrinsic Feedback}
-%   Extrinsic feedback, which is also known as augmented feedback, has been extensively studied in the field motor learning~\cite{Sigrist2013}.
-%   In their 2013 review, Sigrist et al. write ``[i]t is generally accepted that augmented feedback, provided by a human expert or a technical display, effectively enhances motor learning~\cite{Sigrist2013}.''
-%   There are a variety of different forms of augmented feedback, that can be further classified by how, when, and by what form the feedback is provided.
-%   For this work, however, we sought to evaluate a type of feedback which was both conceptually simple and could be tied to operational requirements.
-%   With these requirements in mind, we will investigate the effects of concurrent bandwidth feedback.
-%   Concurrent, or real-time, feedback is displayed to the operator while the task is being executed, in contrast to terminal feedback, which is displayed after the task is complete.
-%   Bandwidth feedback is displayed to the operator when some parameter is inside (on-track feedback) or outside (off-track feedback) of an acceptable, predefined tolerance limit.
-%   In our implementation, concurrent bandwidth feedback describes feedback conveyed to the operator when their real-time performance drifts outside of an acceptable tolerance limit.
-% \end{frame}
 
 \begin{frame}[fragile]{Thorndike, 1927~\cite{thorndike1927law}}
   \begin{columns}[T]
@@ -126,7 +114,6 @@
 \begin{frame}[fragile]{Guidance Hypothesis}
   \begin{columns}[T]
     \begin{column}{.8\textwidth}
-      % Consistent feedback during the acquisition phase of learning leads to a dependency on the feedback.
       If consistent feedback during the acquisition phase of learning is provided, ``the subject comes to rely on that source of error information to maintain performance, and thus does not deal effectively with the other cues in the task that are important''.\\
       -Salmoni et al., 1984~\cite{salmoni1984knowledge}
     \end{column}
@@ -151,18 +138,6 @@
   \item a third level, which provided individual indicators for each of the four instruments, and noted the locus of the deviation.
   \item They concluded by stating that ``the increment is a positive function of the specificity of the information supplied, it can be ascribed largely to the directive properties of the cues, i.e., the cues impose a more efficient temporal and spatial organization upon [the subject's] scanning behavior~\cite{payne1955effect}.''
 }
-
-% \begin{frame}[fragile]{Gordon and Gottlieb, 1967~\cite{Gordon1967}}
-%   \begin{center}
-%     \includegraphics[width=0.8\textwidth]{../img/gordonandgottlieb.png}
-%   \end{center}
-% \end{frame}
-
-% \note[itemize]{
-%   \item Subjects were placed into one of three feedback groups
-%   \item Control and off-track and on-track feedback groups
-%   \item Both treatment groups performed better than control, even during retention when feedback was removed
-% }
 
 \begin{frame}[fragile]{de Groot et al., 2011~\cite{DeGroot2011}}
   \begin{center}
@@ -189,7 +164,7 @@
     \setlength\itemsep{1em}
     \item We investigated feedback strategies in my Masters thesis
     \item Simplified Aid for EVA Rescue (SAFER)
-    \item 4 degree of freedom task with two-choice secondary task
+    \item Developed a novel, operationally relevant task
   \end{itemize}
 \end{frame}
 
@@ -236,7 +211,7 @@
           source=\vidname %important: same path as in `addresource'
           % &autoPlay=true
           % &scaleMode=letterbox
-          &loop=true
+          &loop=false
         }
     ]{\includegraphics[width=\moviewidth]{\thumbname}}{VPlayer.swf}
   \end{center}
@@ -257,7 +232,7 @@
           source=\vidname %important: same path as in `addresource'
           % &autoPlay=true
           % &scaleMode=letterbox
-          &loop=true
+          &loop=false
         }
     ]{\includegraphics[width=\moviewidth]{\thumbname}}{VPlayer.swf}
   \end{center}
@@ -289,7 +264,7 @@
   \begin{itemize}
     \setlength\itemsep{1em}
     \item Link Foundation Modeling, Simulation, and Training Fellowship
-    \item Measure the effects of augmented reality on performance and workload in robotics training
+    \item Measure the effects of 3D displays on performance and workload in robotics training
     \item Investigate the effects of feedback for conceptually simple task
   \end{itemize}
 \end{frame}
@@ -300,7 +275,7 @@
   \end{center}
 \end{frame}
 
-\begin{frame}[fragile]{Augmented Reality Assistance}
+\begin{frame}[fragile]{Augmented Reality Guidance}
   \begin{center}
     \includegraphics[width=\textwidth]{../img/sink.png}
   \end{center}
@@ -312,21 +287,6 @@
       We developed a three-axis compensatory tracking task as a analog to a robotic arm track and capture task.
     \end{column}
   \end{columns}
-\end{frame}
-
-\begin{frame}[fragile]{Experiment Design}
-  \begin{itemize}
-    \setlength\itemsep{1em}
-    \item 24 subjects
-    \item Three design orders (Start in Baseline, Feedback, or Rotated)
-    \begin{itemize}
-      \item Each subject evaluated each design
-    \end{itemize}
-    \item Two groups (2D vs 3D)
-    \begin{itemize}
-      \item Each subject in only one display group
-    \end{itemize}
-  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Three-axis tracking task designs}
@@ -344,8 +304,6 @@
         \includegraphics[width=\linewidth]{../img/Angled.png}
         \caption{Rotated}
       \end{subfigure}
-      % \caption{The fixed-based simulator used by both groups.}%
-      % \label{fig:simulator}%
     \end{center}
   \end{figure}
 \end{frame}
@@ -361,8 +319,6 @@
         \includegraphics[width=\linewidth]{../img/DSC_0803.JPG}
         \caption{3D Group}
       \end{subfigure}
-      % \caption{The fixed-based simulator used by both groups.}%
-      % \label{fig:simulator}%
     \end{center}
   \end{figure}
 \end{frame}
@@ -371,8 +327,6 @@
   \begin{figure}[h!]
     \begin{center}
       \includegraphics[width=0.75\linewidth]{../img/Xbox_Controller.pdf}
-      % \caption{The proposed timeline for this research.}
-      % \label{timeline}
     \end{center}
   \end{figure}
 \end{frame}
@@ -392,16 +346,31 @@
           source=\vidname %important: same path as in `addresource'
           % &autoPlay=true
           % &scaleMode=letterbox
-          &loop=true
+          &loop=false
         }
     ]{\includegraphics[width=\moviewidth]{\thumbname}}{VPlayer.swf}
   \end{center}
 \end{frame}
 
+\begin{frame}[fragile]{Experiment Design}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item 24 subjects
+    \item Three design orders (Start in Baseline, Feedback, or Rotated)
+    \begin{itemize}
+      \item Each subject evaluated each design
+    \end{itemize}
+    \item Two groups (2D vs 3D)
+    \begin{itemize}
+      \item Each subject in only one display group
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]{Hypotheses}
   \begin{description}[align=left]
     \item [H1] Feedback will improve performance in the $z$ axis for both display types, and decrease workload.
-    \item [H2] AR will improve performance in the $z$ axis, but not affect workload.
+    \item [H2] 3D will improve performance in the $z$ axis, but not affect workload.
     \item [H3] Rotating the display improves performance in the $z$ axis for both display types, and decrease workload.
   \end{description}
 \end{frame}
@@ -427,10 +396,10 @@
 \begin{frame}[fragile]{Result Summary}
   \begin{description}[align=right]
     \setlength\itemsep{1em}
-    \item [Significant effect of design] Angled > Feedback > Baseline
+    \item [Significant effect of design] Rotated > Feedback > Baseline
     \item [Significant effect of device] 3D > 2D for well trained subjects
     \item [Significant effect of order] Early feedback \rightarrow \hspace{0.1em} Better performance
-    \item [No significant effect of workload]
+    \item [No significant workload effects]
   \end{description}
 \end{frame}
 
@@ -467,8 +436,6 @@
         \includegraphics[width=\linewidth]{../img/iss036e029229.JPG}
         \caption{Cupola}
       \end{subfigure}
-      % \caption{The fixed-based simulator used by both groups.}%
-      % \label{fig:simulator}%
     \end{center}
   \end{figure}
 \end{frame}
@@ -494,9 +461,8 @@
       \begin{tikzpicture}
         \node<1> (img1) {\includegraphics[width=\textwidth]{../img/grab1.jpg}};
         \node<2> (img2) {\includegraphics[width=\textwidth]{../img/grab2.jpg}};
-        \node<3> (img3) {\includegraphics[width=\textwidth]{../img/grab3.jpg}};
-        \node<4> (img4) {\includegraphics[width=\textwidth]{../img/grab4.jpg}};
-        \node<5> (img5) {\includegraphics[width=\textwidth]{../img/grab5.jpg}};
+        \node<3> (img3) {\includegraphics[width=\textwidth]{../img/grab4.jpg}};
+        \node<4> (img4) {\includegraphics[width=\textwidth]{../img/grab5.jpg}};
       \end{tikzpicture}
     \end{column}
   \end{columns}
@@ -506,8 +472,6 @@
 \begin{figure}
   \begin{center}
     \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.16_PM.png}
-    % \caption{The Robotic On-board Trainer (ROBoT) station set up in the NASA HERA Analog, from~\cite{robottalk}.}
-    % \label{figure:robotinhera}
   \end{center}
 \end{figure}
 \end{frame}
@@ -516,41 +480,17 @@
 \begin{figure}
   \begin{center}
     \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.02_PM.png}
-    % \caption{ROBoT visualization laptop, showing four camera views.}
-    % \label{}
   \end{center}
 \end{figure}
 \end{frame}
-
-% \begin{frame}[fragile]{ROBoT End Effector View}
-% \begin{figure}
-%   \begin{center}
-%     \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.05_PM.png}
-%     % \caption{The camera attached to the end effector of the robotic arm, showing the grapple fixture.}
-%     % \label{}
-%   \end{center}
-% \end{figure}
-% \end{frame}
 
 \begin{frame}[fragile]{ROBoT Performance Reports}
 \begin{figure}
   \begin{center}
     \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.07_PM.png}
-    % \caption{Example performance score report shown to the user after each trial.}
-    % \label{}
   \end{center}
 \end{figure}
 \end{frame}
-
-% \begin{frame}[fragile]{ROBoT Data Output}
-% \begin{figure}
-%   \begin{center}
-%     \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.10_PM.png}
-%     % \caption{The hand controller inputs and position and angular errors are also logged throughout the trial.}
-%     % \label{}
-%   \end{center}
-% \end{figure}
-% \end{frame}
 
 \begin{frame}[fragile]{Experiment Two}
   \begin{itemize}
@@ -567,7 +507,6 @@
 
   \begin{tikzpicture}
     \node<1-> (img1) {\includegraphics[width=\textwidth]{../img/robot_edit.png}};
-    % \draw<2-> (0,0) ellipse (2cm and 1cm);
     \draw<2-> [red,ultra thick] (4,1.5) ellipse (1cm and 2cm);
   \end{tikzpicture}
 
@@ -761,8 +700,6 @@ Compared to existing terminal feedback techniques, concurrent bandwidth feedback
           \draw [->] (0:1.5) arc (0:-15:1.5);
           \draw[-] node at (1.7,-.2,0) {$\theta$};
       \end{tikzpicture}
-      % \caption{Perspective display of the coordinate frame for the tracking tasks, with the $x$, $y$, and $z$ axes labeled. After rotating by $\theta$ around the y axis, the resulting reference frame of $x\textprime y\textprime z\textprime$ is also labeled.}
-      % \label{designdiagram}
     \end{center}
   \end{figure}
 \end{frame}
