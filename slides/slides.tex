@@ -258,14 +258,23 @@
 
 \section{Proposed Research}
 
+\begin{frame}[fragile]{Research Aims}
+  \begin{description}[align=right]
+    \setlength\itemsep{1em}
+    \item [Aim One] Feedback effects in a three-axis manual tracking task
+    \item [Aim Two] Feedback effects in a robotics track and capture task
+    \item [Aim Three] Extend Structural Model to include feedback effects
+  \end{description}
+\end{frame}
+
 \subsection{Experiment One}
 
 \begin{frame}[fragile]{Motivation}
   \begin{itemize}
     \setlength\itemsep{1em}
+    \item Investigate the effects of feedback for conceptually simple task
     \item Link Foundation Modeling, Simulation, and Training Fellowship
     \item Measure the effects of 3D displays on performance and workload in robotics training
-    \item Investigate the effects of feedback for conceptually simple task
   \end{itemize}
 \end{frame}
 
@@ -516,7 +525,7 @@
 
 \begin{frame}[fragile]{Experiment Two Flowchart}
   \begin{center}
-    \includegraphics[width=0.75\textwidth]{../img/robot_flow.png}
+    \includegraphics[width=0.65\textwidth]{../img/robot_flow.pdf}
   \end{center}
 \end{frame}
 
@@ -555,14 +564,6 @@ Compared to existing terminal feedback techniques, concurrent bandwidth feedback
   \end{figure}
 \end{frame}
 
-\begin{frame}[fragile]{Hess Structural Model, 1997~\cite{Hess1997}}
-  \begin{figure}[h!]
-    \begin{center}
-      \includegraphics[width=\linewidth]{../img/Screen_Shot_2018-07-31_at_11.21.44_AM.png}
-    \end{center}
-  \end{figure}
-\end{frame}
-
 \begin{frame}[fragile]{Hess Simplified Pursuit Model, 2009~\cite{Hess2009}}
   \begin{figure}[h!]
     \begin{center}
@@ -587,11 +588,21 @@ Compared to existing terminal feedback techniques, concurrent bandwidth feedback
   \begin{columns}[T]
     \begin{column}{\textwidth}
       \begin{tikzpicture}
-        \node<1> (img1) {\includegraphics[width=\textwidth]{../img/hess_model1.pdf}};
-        \node<2> (img2) {\includegraphics[width=\textwidth]{../img/hess_model2.pdf}};
+        \node<1> (img1) {\includegraphics[width=\textwidth]{../img/hess_model0.pdf}};
+        \node<2> (img2) {\includegraphics[width=\textwidth]{../img/hess_model0.5.pdf}};
+        \node<3> (img3) {\includegraphics[width=\textwidth]{../img/hess_model1.pdf}};
+        \node<4> (img4) {\includegraphics[width=\textwidth]{../img/hess_model2.pdf}};
       \end{tikzpicture}
     \end{column}
   \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Hess Structural Model, 1997~\cite{Hess1997}}
+  \begin{figure}[h!]
+    \begin{center}
+      \includegraphics[width=\linewidth]{../img/Screen_Shot_2018-07-31_at_11.21.44_AM.png}
+    \end{center}
+  \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{Proposed Modification}
