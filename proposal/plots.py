@@ -48,9 +48,9 @@ def threeway(sub_design):
 	          Line2D([0], [0], color=colors[2], lw=1, ls='-')]
 
 	legend1 = ax.legend(display, ['2D', '3D           '], loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0, title='Display')
-	legend2 = ax.legend(designs, ['Baseline', 'Feedback', 'Rotated'], loc='lower left', bbox_to_anchor=(1.05, 0), borderaxespad=0, title='Design')
+	# legend2 = ax.legend(designs, ['Baseline', 'Feedback', 'Rotated'], loc='lower left', bbox_to_anchor=(1.05, 0), borderaxespad=0, title='Design')
 	plt.gca().add_artist(legend1)
-	plt.gca().add_artist(legend2)
+	# plt.gca().add_artist(legend2)
 
 	plt.tight_layout()
 	plt.savefig('/Users/jkarasin/Desktop/3way.pdf')
@@ -91,9 +91,9 @@ def twoway(sub_design):
 	          Line2D([0], [0], color=colors[2], lw=1, ls='-')]
 
 	legend1 = ax.legend(display, ['2D', '3D           '], loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0, title='Display')
-	legend2 = ax.legend(designs, ['Baseline', 'Feedback', 'Rotated'], loc='lower left', bbox_to_anchor=(1.05, 0), borderaxespad=0, title='Design')
+	# legend2 = ax.legend(designs, ['Baseline', 'Feedback', 'Rotated'], loc='lower left', bbox_to_anchor=(1.05, 0), borderaxespad=0, title='Design')
 	plt.gca().add_artist(legend1)
-	plt.gca().add_artist(legend2)
+	# plt.gca().add_artist(legend2)
 
 	plt.gcf().subplots_adjust(bottom=0.2)
 	plt.gcf().subplots_adjust(right=0.75)
