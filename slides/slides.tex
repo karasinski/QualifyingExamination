@@ -41,8 +41,6 @@
   \tableofcontents[]
 \end{frame}
 
-\section{Introduction}
-
 \begin{frame}[fragile]{About Me}
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
@@ -63,6 +61,19 @@
   \end{columns}
 \end{frame}
 
+\section{Introduction}
+
+{ % all template changes are local to this group.
+    \setbeamertemplate{navigation symbols}{}
+    \begin{frame}[plain]
+        \begin{tikzpicture}[remember picture,overlay]
+            \node[at=(current page.center)] {
+                \includegraphics[height=\paperheight]{../img/iss055e063934.jpg}
+            };
+        \end{tikzpicture}
+     \end{frame}
+}
+
 \begin{frame}[fragile]{Goal}
   Measure, model, and predict the effects of concurrent bandwidth feedback on human performance in robotics manual control tasks.
 \end{frame}
@@ -71,28 +82,7 @@
   Concurrent bandwidth feedback is provided to an operator in real-time when a signal deviates out of a predefined range.
 \end{frame}
 
-\section{Research Aims}
-
-\begin{frame}[fragile]{Research Aims}
-  \begin{description}[align=right]
-    \setlength\itemsep{1em}
-    \item [Aim One] Feedback effects in a three-axis manual tracking task
-    \item [Aim Two] Feedback effects in a robotics track and capture task
-    \item [Aim Three] Extend Structural Model to include feedback effects
-  \end{description}
-\end{frame}
-
 \section{Background}
-
-\begin{frame}[fragile]{What is feedback?}
-  \begin{columns}[T]
-    \begin{column}{.8\textwidth}
-      \begin{block}{}
-        ``Feedback is information about the gap between\\ the actual level and the reference level of a system parameter which is used to alter the gap in some way.'' - Ramaprasad~\cite{Ramaprasad1983}
-      \end{block}
-    \end{column}
-  \end{columns}
-\end{frame}
 
 \begin{frame}[fragile]{Thorndike, 1927~\cite{thorndike1927law}}
   \begin{columns}[T]
@@ -159,12 +149,12 @@
   \item ``suggests that the sudden onset of a stimulus is a more powerful perceptual event than a stimulus offset, facilitating low-level perceptual processing and resulting in faster reaction times~\cite{DeGroot2011}.''
 }
 
-\begin{frame}[fragile]{SAFER Experiment}
+\begin{frame}[fragile]{SAFER Experiment, 2016~\cite{Karasinski2016Masters}}
   \begin{itemize}
     \setlength\itemsep{1em}
-    \item We investigated feedback strategies in my Masters thesis
+    \item I investigated feedback strategies in my Masters thesis
     \item Simplified Aid for EVA Rescue (SAFER)
-    \item Developed a novel, operationally relevant task
+    \item I developed a novel, operationally relevant task
   \end{itemize}
 \end{frame}
 
@@ -198,28 +188,13 @@
 
 \begin{frame}[fragile]{Flying SAFER}
   \begin{center}
-    \newcommand\vidname{videos/Flying_SAFER.mp4}   %path to video (must be subdir)
-    \newcommand\thumbname{../img/SAFER_DangerChris.jpg} %path to thumbnail
-    \newcommand\moviewidth{1.0\textwidth}
-    \includemedia[
-      width=\moviewidth,
-      % totalheight=0.225\linewidth,
-      activate=pageopen,
-      passcontext,  %show VPlayer's right-click menu
-      addresource=\vidname,
-      flashvars={
-          source=\vidname %important: same path as in `addresource'
-          % &autoPlay=true
-          % &scaleMode=letterbox
-          &loop=false
-        }
-    ]{\includegraphics[width=\moviewidth]{\thumbname}}{VPlayer.swf}
+    \includegraphics[width=\textwidth]{../img/SAFER_DangerChris.jpg}
   \end{center}
 \end{frame}
 
 \begin{frame}[fragile]{SAFER Guidance Display}
   \begin{center}
-    \newcommand\vidname{videos/SAFER_Guidance_Display.mp4}   %path to video (must be subdir)
+    \newcommand\vidname{videos/SAFER_Guidance_Display.m4v}   %path to video (must be subdir)
     \newcommand\thumbname{../img/otw.jpeg} %path to thumbnail
     \newcommand\moviewidth{1.0\textwidth}
     \includemedia[
@@ -272,28 +247,16 @@
 \begin{frame}[fragile]{Motivation}
   \begin{itemize}
     \setlength\itemsep{1em}
-    \item Investigate the effects of feedback for conceptually simple task
     \item Link Foundation Modeling, Simulation, and Training Fellowship
-    \item Measure the effects of 3D displays on performance and workload in robotics training
+    \item Measure the effects of feedback, 3D displays on performance and workload in robotics training
+    \item Use a conceptually simple task, validate our modeling effort
   \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{Microsoft HoloLens}
-  \begin{center}
-    \includegraphics[width=\textwidth]{../img/Hololens.png}
-  \end{center}
-\end{frame}
-
-\begin{frame}[fragile]{Augmented Reality Guidance}
-  \begin{center}
-    \includegraphics[width=\textwidth]{../img/sink.png}
-  \end{center}
 \end{frame}
 
 \begin{frame}[fragile]{The Task}
   \begin{columns}[T]
     \begin{column}{.8\textwidth}
-      We developed a three-axis compensatory tracking task as a analog to a robotic arm track and capture task.
+      I developed a three-axis compensatory tracking task as an analog to a robotic arm track and capture task.
     \end{column}
   \end{columns}
 \end{frame}
@@ -332,17 +295,9 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}[fragile]{Controller}
-  \begin{figure}[h!]
-    \begin{center}
-      \includegraphics[width=0.75\linewidth]{../img/Xbox_Controller.pdf}
-    \end{center}
-  \end{figure}
-\end{frame}
-
 \begin{frame}[fragile]{Three-axis tracking}
   \begin{center}
-    \newcommand\vidname{videos/tracking.mp4}   %path to video (must be subdir)
+    \newcommand\vidname{videos/tracking.m4v}   %path to video (must be subdir)
     \newcommand\thumbname{../img/DSC_0811.JPG} %path to thumbnail
     \newcommand\moviewidth{1.0\textwidth}
     \includemedia[
@@ -449,12 +404,6 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}[fragile]{Cupola Provides an Extra View}
-  \begin{center}
-    \includegraphics[width=\textwidth]{../img/12085915275_c7f77c537e_k.jpg}
-  \end{center}
-\end{frame}
-
 \begin{frame}[fragile]{Track and Capture Scenario}
   \begin{itemize}
     \setlength\itemsep{1em}
@@ -529,40 +478,13 @@
   \end{center}
 \end{frame}
 
-\begin{frame}[fragile]{Experiment Two Estimates}
-  \begin{itemize}
-    \setlength\itemsep{1em}
-    \item 10-15 subjects in each group
-    \item 30 minutes of context and training
-    \item 1-2 hours of trials
-    \item 1-2 months from recruitment to end of subject testing
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{Experiment Two Hypotheses}
-Compared to existing terminal feedback techniques, concurrent bandwidth feedback will
-  \begin{itemize}
-  \item improve performance.
-  \item cause subjects to more quickly reach their peak performance.
-  \item decrease workload.
-  \end{itemize}
-\end{frame}
-
 \begin{frame}[fragile]{Predicted Results}
   \begin{center}
-    \includegraphics[width=0.75\textwidth]{../img/robot_estimate.pdf}
+    \includegraphics[width=\linewidth]{../img/robot_estimate.pdf}
   \end{center}
 \end{frame}
 
 \subsection{Modeling}
-
-\begin{frame}[fragile]{McRuer's Pilot/Vehicle System, 1974~\cite{McRuer1974}}
-  \begin{figure}[h!]
-    \begin{center}
-      \includegraphics[width=\linewidth]{../img/Screen_Shot_2018-07-25_at_10.37.08_AM.png}
-    \end{center}
-  \end{figure}
-\end{frame}
 
 \begin{frame}[fragile]{Hess Simplified Pursuit Model, 2009~\cite{Hess2009}}
   \begin{figure}[h!]
@@ -575,12 +497,12 @@ Compared to existing terminal feedback techniques, concurrent bandwidth feedback
 \begin{frame}[fragile]{Current Adaptation}
   \begin{itemize}
     \setlength\itemsep{1em}
-    \item Current model adapts when performance drops significantly
+    \item Current model adapts based on inner rate loop caused by changed vehicle dynamics
+    \item Preliminary replication results
     \item Sudden change of vehicle dynamics
     \begin{itemize}
       \item $\dfrac{1}{s} \rightarrow \dfrac{e^{-0.065s}}{s^2}$
     \end{itemize}
-    \item Compare performance without, with adaptation
   \end{itemize}
 \end{frame}
 
@@ -608,23 +530,22 @@ Compared to existing terminal feedback techniques, concurrent bandwidth feedback
 \begin{frame}[fragile]{Proposed Modification}
   \begin{itemize}
     \setlength\itemsep{1em}
-    \item Respond to feedback instead of a change in vehicle dynamics
-    \item First approach to place adaptation logic around $K_e$
+    \item Respond to concurrent bandwidth feedback
     \item Trigger adaptation when feedback is active
+    \item First approach to place adaptation logic around $K_e$
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Using the Modified Model}
   \begin{itemize}
     \setlength\itemsep{1em}
-    \item Identify boundaries of human performance
     \item Predict which tasks can be improved
     \item Identify the optimal bandwidth for peak performance
     \item Customize the feedback to the individual
   \end{itemize}
 \end{frame}
 
-\section{Timeline and Risks}
+\section{Timeline}
 
 \begin{frame}[fragile]{Timeline}
   \begin{figure}[h!]
@@ -646,8 +567,19 @@ Compared to existing terminal feedback techniques, concurrent bandwidth feedback
   \hfill\includegraphics[height=1.5cm]{../img/linkfoundation.png}\includegraphics[height=1.5cm]{../img/hrvip.png}\includegraphics[height=1.5cm]{../img/nasa.png}
 \end{frame}
 
+{ % all template changes are local to this group.
+    \setbeamertemplate{navigation symbols}{}
+    \begin{frame}[plain]
+        \begin{tikzpicture}[remember picture,overlay]
+            \node[at=(current page.center)] {
+                \includegraphics[height=\paperheight]{../img/iss055e063934.jpg}
+            };
+        \end{tikzpicture}
+     \end{frame}
+}
+
 \begin{frame}[standout]
-  Questions?
+  Backup Slides
 \end{frame}
 
 \appendix
@@ -655,6 +587,36 @@ Compared to existing terminal feedback techniques, concurrent bandwidth feedback
 \begin{frame}[allowframebreaks]{References}
   \bibliography{../proposal/bib}
   \bibliographystyle{ieeetr}
+\end{frame}
+
+\begin{frame}[fragile]{What is feedback?}
+  \begin{columns}[T]
+    \begin{column}{.8\textwidth}
+      \begin{block}{}
+        ``Feedback is information about the gap between\\ the actual level and the reference level of a system parameter which is used to alter the gap in some way.'' - Ramaprasad~\cite{Ramaprasad1983}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Controller}
+  \begin{figure}[h!]
+    \begin{center}
+      \includegraphics[width=0.75\linewidth]{../img/Xbox_Controller.pdf}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Microsoft HoloLens}
+  \begin{center}
+    \includegraphics[width=\textwidth]{../img/Hololens.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Augmented Reality Guidance}
+  \begin{center}
+    \includegraphics[width=\textwidth]{../img/sink.png}
+  \end{center}
 \end{frame}
 
 \begin{frame}[fragile]{Performance Analysis by Starting Design}
@@ -711,6 +673,39 @@ Compared to existing terminal feedback techniques, concurrent bandwidth feedback
           \draw [->] (0:1.5) arc (0:-15:1.5);
           \draw[-] node at (1.7,-.2,0) {$\theta$};
       \end{tikzpicture}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Cupola Provides an Extra View}
+  \begin{center}
+    \includegraphics[width=\textwidth]{../img/12085915275_c7f77c537e_k.jpg}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Experiment Two Hypotheses}
+Compared to existing terminal feedback techniques, concurrent bandwidth feedback will
+  \begin{itemize}
+  \item improve performance.
+  \item cause subjects to more quickly reach their peak performance.
+  \item decrease workload.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Experiment Two Estimates}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item 10-15 subjects in each group
+    \item 30 minutes of context and training
+    \item 1-2 hours of trials
+    \item 1-2 months from recruitment to end of subject testing
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{McRuer's Pilot/Vehicle System, 1974~\cite{McRuer1974}}
+  \begin{figure}[h!]
+    \begin{center}
+      \includegraphics[width=\linewidth]{../img/Screen_Shot_2018-07-25_at_10.37.08_AM.png}
     \end{center}
   \end{figure}
 \end{frame}
