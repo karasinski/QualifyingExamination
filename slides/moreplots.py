@@ -68,3 +68,55 @@ def hess_replication_plots():
     plt.gcf().subplots_adjust(right=0.85)
     plt.savefig('/Users/jkarasin/Desktop/hess_model2.pdf')
     plt.show()
+
+def feedback_plots():
+    alp = pd.read_excel('adaptive_limited_pilot.xlsx')
+
+    alp['e1'] = alp['c1'] - alp['m1']
+    alp[['c1', 'm1', 'e1']] *= 57
+    alp['cbf'] = (alp['e1'].abs() > 1.5).astype(int)
+    df = alp[['t', 'c1', 'm1', 'e1', 'cbf']].query('t < 40')
+    df.columns = ['t', 'c', 'm', 'e', 'cbf']
+    cbf_off = np.ma.masked_where(df.e.abs() <= 1.5, df.e)
+    cbf_on = np.ma.masked_where(df.e.abs() > 1.5, df.e)
+
+    f, ax = plt.subplots()
+    ax.plot(df.t, df.e, color='k')
+
+    plt.xticks([])
+    ax.set_yticks([])
+    plt.xlabel('Time')
+    ax.set_ylabel('Error')
+    plt.xlim([0, 40])
+
+    plt.savefig('/Users/jkarasin/Desktop/error_example1.pdf')
+    plt.show()
+
+    f, ax = plt.subplots()
+    ax.plot(df.t, df.e, color='k')
+    ax.axhline(y=1.5, color='k', alpha=0.5, ls='--')
+    ax.axhline(y=-1.5, color='k', alpha=0.5, ls='--')
+
+    plt.xticks([])
+    ax.set_yticks([])
+    plt.xlabel('Time')
+    ax.set_ylabel('Error')
+    plt.xlim([0, 40])
+
+    plt.savefig('/Users/jkarasin/Desktop/error_example2.pdf')
+    plt.show()
+
+    f, ax = plt.subplots()
+    ax.plot(df.t, cbf_off, color='red')
+    ax.plot(df.t, cbf_on, color='green')
+    ax.axhline(y=1.5, color='k', alpha=0.5, ls='--')
+    ax.axhline(y=-1.5, color='k', alpha=0.5, ls='--')
+
+    plt.xticks([])
+    ax.set_yticks([])
+    plt.xlabel('Time')
+    ax.set_ylabel('Error')
+    plt.xlim([0, 40])
+
+    plt.savefig('/Users/jkarasin/Desktop/error_example3.pdf')
+    plt.show()
