@@ -183,7 +183,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{International Space Station}
-  \begin{figure} \centering
+  \begin{center}
     \begin{tikzpicture}[
         every node/.style={anchor=south west,inner sep=0pt},
         x=1mm, y=1mm,
@@ -195,7 +195,7 @@
       \only<3->{\node (fig2) at (70,2.8)
       {\includegraphics[scale=0.3,angle=90]{../img/waypoints.jpeg}};}
     \end{tikzpicture}
-  \end{figure}
+  \end{center}
 \end{frame}
 
 \begin{frame}[fragile]{Flying SAFER}
@@ -223,6 +223,13 @@
         }
     ]{\includegraphics[width=\moviewidth]{\thumbname}}{VPlayer.swf}
   \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{SAFER Groups}
+    \begin{center}
+      \includegraphics[width=\linewidth]{../img/SAFERGroups.png}\\
+      \hspace{13.5em} Control \hfill Precise \hspace{2em} Feedback
+    \end{center}
 \end{frame}
 
 \begin{frame}[fragile]{SAFER Performance}
@@ -332,14 +339,15 @@
   \begin{itemize}
     \setlength\itemsep{1em}
     \item 24 subjects
-    \item Three design orders (Start in Baseline, Feedback, or Rotated)
-    \begin{itemize}
-      \item Each subject evaluated each design
-    \end{itemize}
     \item Two groups (2D vs 3D)
     \begin{itemize}
       \item Each subject in only one display group
     \end{itemize}
+    \item Three designs (Baseline, Feedback, or Rotated)
+    \begin{itemize}
+      \item Each subject evaluated each design
+    \end{itemize}
+    \item Three orders (Start in Baseline, Feedback, or Rotated)
   \end{itemize}
 \end{frame}
 
@@ -352,21 +360,17 @@
 \end{frame}
 
 \begin{frame}[fragile]{Performance Analysis}
-\begin{figure}
   \begin{center}
     \includegraphics[width=\linewidth]{../img/x_design_y_zrmse_hue_device_col_cbf_first.pdf}\\
     (a) Started without Feedback, (b) Started with Feedback
   \end{center}
-\end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{Workload Analysis}
-\begin{figure}
   \begin{center}
     \includegraphics[width=\linewidth]{../img/x_design_y_tlx_hue_device_col_cbf_first.pdf}\\
     (a) Started without Feedback, (b) Started with Feedback
   \end{center}
-\end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{Result Summary}
@@ -439,27 +443,21 @@
 \end{frame}
 
 \begin{frame}[fragile]{ROBoT Workstation}
-\begin{figure}
   \begin{center}
     \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.16_PM.png}
   \end{center}
-\end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{ROBoT Visualization}
-\begin{figure}
   \begin{center}
     \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.02_PM.png}
   \end{center}
-\end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{ROBoT Performance Reports}
-\begin{figure}
   \begin{center}
     \includegraphics[trim={13cm 5cm 22cm 15.5cm},clip,width=\linewidth]{../img/Screen_Shot_2018-07-26_at_1.43.07_PM.png}
   \end{center}
-\end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{Experiment Two}
@@ -472,16 +470,12 @@
 \end{frame}
 
 \begin{frame}[fragile]{ROBoT Treatment Group}
-\begin{figure}
   \begin{center}
-
-  \begin{tikzpicture}
-    \node<1-> (img1) {\includegraphics[width=\textwidth]{../img/robot_edit.png}};
-    \draw<2-> [red,ultra thick] (4,1.5) ellipse (1cm and 2cm);
-  \end{tikzpicture}
-
+    \begin{tikzpicture}
+      \node<1-> (img1) {\includegraphics[width=\textwidth]{../img/robot_edit.png}};
+      \draw<2-> [red,ultra thick] (4,1.5) ellipse (1cm and 2cm);
+    \end{tikzpicture}
   \end{center}
-\end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{Experiment Two Flowchart}
@@ -499,11 +493,9 @@
 \subsection{Modeling}
 
 \begin{frame}[fragile]{Hess Simplified Pursuit Model, 2009~\cite{Hess2009}}
-  \begin{figure}[h!]
-    \begin{center}
-      \includegraphics[width=\linewidth]{./../img/Screen_Shot_2018-08-09_at_4.15.24_PM.png}
-    \end{center}
-  \end{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{./../img/Screen_Shot_2018-08-09_at_4.15.24_PM.png}
+  \end{center}
 \end{frame}
 
 \begin{frame}[fragile]{Current Adaptation}
@@ -532,11 +524,9 @@
 \end{frame}
 
 \begin{frame}[fragile]{Hess Structural Model, 1997~\cite{Hess1997}}
-  \begin{figure}[h!]
-    \begin{center}
-      \includegraphics[width=\linewidth]{../img/Screen_Shot_2018-07-31_at_11.21.44_AM.png}
-    \end{center}
-  \end{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{../img/Screen_Shot_2018-07-31_at_11.21.44_AM.png}
+  \end{center}
 \end{frame}
 
 \begin{frame}[fragile]{Proposed Modification}
@@ -560,11 +550,9 @@
 \section{Timeline}
 
 \begin{frame}[fragile]{Timeline}
-  \begin{figure}[h!]
-    \begin{center}
-      \includegraphics[width=\linewidth]{../img/image1.png}
-    \end{center}
-  \end{figure}
+  \begin{center}
+    \includegraphics[trim={3.5cm 5cm 3.5cm 5cm},clip,width=\linewidth]{../img/timeline.pdf}
+  \end{center}
 \end{frame}
 
 \begin{frame}[fragile]{Acknowledgments}
@@ -612,11 +600,9 @@
 \end{frame}
 
 \begin{frame}[fragile]{Controller}
-  \begin{figure}[h!]
-    \begin{center}
-      \includegraphics[width=0.75\linewidth]{../img/Xbox_Controller.pdf}
-    \end{center}
-  \end{figure}
+  \begin{center}
+    \includegraphics[width=0.75\linewidth]{../img/Xbox_Controller.pdf}
+  \end{center}
 \end{frame}
 
 \begin{frame}[fragile]{Microsoft HoloLens}
@@ -632,61 +618,57 @@
 \end{frame}
 
 \begin{frame}[fragile]{Performance Analysis by Starting Design}
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=\linewidth]{../img/x_design_y_zrmse_col_startdesign_hue_device.pdf}
-  \end{center}
-\end{figure}
+\begin{center}
+  \includegraphics[width=\linewidth]{../img/x_design_y_zrmse_col_startdesign_hue_device.pdf}
+\end{center}
 \end{frame}
 
 \begin{frame}[fragile]{Three-axis tracking rotated design}
-  \begin{figure}
-    \begin{center}
-      \newcommand{\rotateRPY}[3]% roll, pitch, yaw
-      {   \pgfmathsetmacro{\rollangle}{#1}
-          \pgfmathsetmacro{\pitchangle}{#2}
-          \pgfmathsetmacro{\yawangle}{#3}
+  \begin{center}
+    \newcommand{\rotateRPY}[3]% roll, pitch, yaw
+    {   \pgfmathsetmacro{\rollangle}{#1}
+        \pgfmathsetmacro{\pitchangle}{#2}
+        \pgfmathsetmacro{\yawangle}{#3}
 
-          % to what vector is the x unit vector transformed, and which 2D vector is this?
-          \pgfmathsetmacro{\newxx}{cos(\yawangle)*cos(\pitchangle)}
-          \pgfmathsetmacro{\newxy}{sin(\yawangle)*cos(\pitchangle)}
-          \pgfmathsetmacro{\newxz}{-sin(\pitchangle)}
-          \path (\newxx,\newxy,\newxz);
-          \pgfgetlastxy{\nxx}{\nxy};
+        % to what vector is the x unit vector transformed, and which 2D vector is this?
+        \pgfmathsetmacro{\newxx}{cos(\yawangle)*cos(\pitchangle)}
+        \pgfmathsetmacro{\newxy}{sin(\yawangle)*cos(\pitchangle)}
+        \pgfmathsetmacro{\newxz}{-sin(\pitchangle)}
+        \path (\newxx,\newxy,\newxz);
+        \pgfgetlastxy{\nxx}{\nxy};
 
-          % to what vector is the y unit vector transformed, and which 2D vector is this?
-          \pgfmathsetmacro{\newyx}{cos(\yawangle)*sin(\pitchangle)*sin(\rollangle)-sin(\yawangle)*cos(\rollangle)}
-          \pgfmathsetmacro{\newyy}{sin(\yawangle)*sin(\pitchangle)*sin(\rollangle)+ cos(\yawangle)*cos(\rollangle)}
-          \pgfmathsetmacro{\newyz}{cos(\pitchangle)*sin(\rollangle)}
-          \path (\newyx,\newyy,\newyz);
-          \pgfgetlastxy{\nyx}{\nyy};
+        % to what vector is the y unit vector transformed, and which 2D vector is this?
+        \pgfmathsetmacro{\newyx}{cos(\yawangle)*sin(\pitchangle)*sin(\rollangle)-sin(\yawangle)*cos(\rollangle)}
+        \pgfmathsetmacro{\newyy}{sin(\yawangle)*sin(\pitchangle)*sin(\rollangle)+ cos(\yawangle)*cos(\rollangle)}
+        \pgfmathsetmacro{\newyz}{cos(\pitchangle)*sin(\rollangle)}
+        \path (\newyx,\newyy,\newyz);
+        \pgfgetlastxy{\nyx}{\nyy};
 
-          % to what vector is the z unit vector transformed, and which 2D vector is this?
-          \pgfmathsetmacro{\newzx}{cos(\yawangle)*sin(\pitchangle)*cos(\rollangle)+ sin(\yawangle)*sin(\rollangle)}
-          \pgfmathsetmacro{\newzy}{sin(\yawangle)*sin(\pitchangle)*cos(\rollangle)-cos(\yawangle)*sin(\rollangle)}
-          \pgfmathsetmacro{\newzz}{cos(\pitchangle)*cos(\rollangle)}
-          \path (\newzx,\newzy,\newzz);
-          \pgfgetlastxy{\nzx}{\nzy};
-      }
+        % to what vector is the z unit vector transformed, and which 2D vector is this?
+        \pgfmathsetmacro{\newzx}{cos(\yawangle)*sin(\pitchangle)*cos(\rollangle)+ sin(\yawangle)*sin(\rollangle)}
+        \pgfmathsetmacro{\newzy}{sin(\yawangle)*sin(\pitchangle)*cos(\rollangle)-cos(\yawangle)*sin(\rollangle)}
+        \pgfmathsetmacro{\newzz}{cos(\pitchangle)*cos(\rollangle)}
+        \path (\newzx,\newzy,\newzz);
+        \pgfgetlastxy{\nzx}{\nzy};
+    }
 
-      \tikzset{RPY/.style={x={(\nxx,\nxy)},y={(\nyx,\nyy)},z={(\nzx,\nzy)}}}
+    \tikzset{RPY/.style={x={(\nxx,\nxy)},y={(\nyx,\nyy)},z={(\nzx,\nzy)}}}
 
-      \begin{tikzpicture}
-          \draw[-] node at (3.5,0,0) {x} (-3,0,0) -- (3,0,0);
-          \draw[-] node at (0,3.5,0) {y, {\color{red} y\textprime}} (0,-3,0) -- (0,3,0);
-          \draw[-] node at (0,0,3.5) {z} (0,0,-3) -- (0,0,3);
+    \begin{tikzpicture}
+        \draw[-] node at (3.5,0,0) {x} (-3,0,0) -- (3,0,0);
+        \draw[-] node at (0,3.5,0) {y, {\color{red} y\textprime}} (0,-3,0) -- (0,3,0);
+        \draw[-] node at (0,0,3.5) {z} (0,0,-3) -- (0,0,3);
 
-          \rotateRPY{0}{-30}{0}
-          \begin{scope}[draw=red, text=red,fill=red,densely dashed,RPY]
-              \draw[-] node at (3.5,0,0) {x\textprime} (-3,0,0) -- (3,0,0);
-              %\draw[-] node at (0,3.5,0) {} (0,0,0) -- (0,3,0);
-              \draw[-] node at (0,0,3.5) {z\textprime} (0,0,-3) -- (0,0,3);
-          \end{scope}
-          \draw [->] (0:1.5) arc (0:-15:1.5);
-          \draw[-] node at (1.7,-.2,0) {$\theta$};
-      \end{tikzpicture}
-    \end{center}
-  \end{figure}
+        \rotateRPY{0}{-30}{0}
+        \begin{scope}[draw=red, text=red,fill=red,densely dashed,RPY]
+            \draw[-] node at (3.5,0,0) {x\textprime} (-3,0,0) -- (3,0,0);
+            %\draw[-] node at (0,3.5,0) {} (0,0,0) -- (0,3,0);
+            \draw[-] node at (0,0,3.5) {z\textprime} (0,0,-3) -- (0,0,3);
+        \end{scope}
+        \draw [->] (0:1.5) arc (0:-15:1.5);
+        \draw[-] node at (1.7,-.2,0) {$\theta$};
+    \end{tikzpicture}
+  \end{center}
 \end{frame}
 
 \begin{frame}[fragile]{Cupola Provides an Extra View}
@@ -715,11 +697,9 @@ Compared to existing terminal feedback techniques, concurrent bandwidth feedback
 \end{frame}
 
 \begin{frame}[fragile]{McRuer's Pilot/Vehicle System, 1974~\cite{McRuer1974}}
-  \begin{figure}[h!]
-    \begin{center}
-      \includegraphics[width=\linewidth]{../img/Screen_Shot_2018-07-25_at_10.37.08_AM.png}
-    \end{center}
-  \end{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{../img/Screen_Shot_2018-07-25_at_10.37.08_AM.png}
+  \end{center}
 \end{frame}
 
 \end{document}
