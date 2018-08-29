@@ -26,7 +26,7 @@
 \usepackage{flexisym}
 \usepackage[numbers,sort&compress]{natbib}
 
-\title{The Effects of Concurrent Bandwidth Feedback on Robotics Manual Control Tasks}
+\title{The Effects of Concurrent Bandwidth Feedback on Robotic Manual Control Tasks}
 \subtitle{An Experimental and Modeling Study}
 \date{August 29th, 2018}
 \author{John Austin Karasinski}
@@ -161,7 +161,7 @@
   \item ``suggests that the sudden onset of a stimulus is a more powerful perceptual event than a stimulus offset, facilitating low-level perceptual processing and resulting in faster reaction times~\cite{DeGroot2011}.''
 }
 
-\begin{frame}[fragile]{SAFER Experiment, 2016~\cite{Karasinski2016Masters}}
+\begin{frame}[fragile]{Karasinski, 2016~\cite{Karasinski2016Masters}}
   \begin{itemize}
     \setlength\itemsep{1em}
     \item I investigated feedback strategies in my Masters thesis
@@ -246,8 +246,21 @@
 
 \begin{frame}[fragile]{Sigrist et al., 2013~\cite{Sigrist2013}}
   \begin{center}
-    \includegraphics[width=\textwidth]{../img/sigrist.png}
+      \begin{tikzpicture}
+      \node<1-> (img1) {\includegraphics[width=\linewidth]{../img/sigrist.png}};
+      \draw<2-> [draw,red,thick] (-5.4,-2) rectangle ++(3.75,4.85);
+    \end{tikzpicture}
   \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Open Questions}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item What is the effect of concurrent bandwidth feedback on increasingly complex tasks?
+    \item Can feedback be removed after training without reducing performance?
+    \item Can we develop a model of human performance which includes the effects of concurrent bandwidth feedback?
+    \item Can we use this model to identify optimal bandwidths or operational limits?
+  \end{itemize}
 \end{frame}
 
 \section{Proposed Research}
@@ -525,7 +538,10 @@
 
 \begin{frame}[fragile]{Hess Structural Model, 1997~\cite{Hess1997}}
   \begin{center}
-    \includegraphics[width=\linewidth]{../img/Screen_Shot_2018-07-31_at_11.21.44_AM.png}
+      \begin{tikzpicture}
+      \node<1-> (img1) {\includegraphics[width=\linewidth]{../img/Screen_Shot_2018-07-31_at_11.21.44_AM.png}};
+      \node<2-> at (-2.82,.3) [minimum size=0.55cm,draw,red,ultra thick] () {};
+    \end{tikzpicture}
   \end{center}
 \end{frame}
 
@@ -551,7 +567,10 @@
 
 \begin{frame}[fragile]{Timeline}
   \begin{center}
-    \includegraphics[trim={3.5cm 5cm 3.5cm 5cm},clip,width=\linewidth]{../img/timeline.pdf}
+    \begin{tikzpicture}
+      \node<1-> (img1) {\includegraphics[trim={3.5cm 5cm 3.5cm 5cm},clip,width=\linewidth]{../img/timeline.pdf}};
+      \draw<2-> [red,ultra thick] (1.85,2) -- (1.85,-2);
+    \end{tikzpicture}
   \end{center}
 \end{frame}
 
